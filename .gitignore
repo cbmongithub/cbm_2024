@@ -1,5 +1,8 @@
-node_modules
 dist
+
 notes.md
-src/shaders
-package-lock.yaml
+
+pnpm-lock.yaml
+
+node_modules
+

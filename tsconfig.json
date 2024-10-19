@@ -1,39 +1,35 @@
 {
-	"$schema": "https://json.schemastore.org/tsconfig",
 	"compilerOptions": {
 		"target": "ESNext",
-		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"types": [
-			"vite-plugin-glsl/ext.d.ts",
-			"vite/client",
-			"leva",
-			"three",
-			"@react-three/fiber",
-			"@react-three/drei",
-			"vite-plugin-glsl",
-			"@vitejs/plugin-react"
-		],
-		"outDir": "dist",
-		"rootDir": ".",
-		"allowJs": true,
-		"skipLibCheck": false,
-		"esModuleInterop": false,
-		"allowSyntheticDefaultImports": true,
-		"strict": false,
-		"forceConsistentCasingInFileNames": true,
 		"module": "ESNext",
-		"moduleResolution": "Node",
-		"strictNullChecks": false,
-		"resolveJsonModule": true,
-		"isolatedModules": true,
+		"moduleResolution": "Bundler",
 		"noEmit": true,
-		"jsx": "react"
-	},
-	"include": [
-		"src/**/*.ts",
-		"src/**/*.tsx",
-		"leva.config.ts",
-		"vite.config.ts"
-	],
-	"exclude": ["node_modules"]
+		"strictNullChecks": true,
+		"allowJs": true,
+    "checkJs": true,
+		"pretty": true,
+    "useDefineForClassFields": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "sourceMap": false,
+    "resolveJsonModule": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "preact",
+		"typeRoots": ["node_modules/@types/*"],
+		"skipLibCheck": true,
+		"paths": {
+			"react/*": ["./node_modules/preact/compat/*"],
+			"react-dom/*": ["./node_modules/preact/compat/*"],
+		},
+		"baseUrl": ".",
+		"esModuleInterop": true,
+		"removeComments": true,
+		"resolvePackageJsonImports": true,
+		"incremental": true,
+		"experimentalDecorators": true,
+		"verbatimModuleSyntax": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true
+		},
+	"include": ["ext.d.ts", "src/**/*"],
+	"exclude": ["node_modules", "dist"]
 }

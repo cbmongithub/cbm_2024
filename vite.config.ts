@@ -1,7 +1,6 @@
-import { fileURLToPath as nodeFileURLToPath } from "node:url";
-import reactPlugin from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import preact from "@preact/preset-vite";
 import glslPlugin from "vite-plugin-glsl";
+import { defineConfig } from "vite";
 
 export default defineConfig({
 	plugins: [
@@ -10,21 +9,36 @@ export default defineConfig({
 			include: "**/*.{glsl,wgsl,vert,frag,vs,fs}", // File paths/extensions to import
 			defaultExtension: "glsl", // Shader suffix when no extension is specified
 			warnDuplicatedImports: true, // Warn if the same chunk was imported multiple times
-			compress: true, // Compress the resulting shader code
+			compress: false, // Compress the resulting shader code
 		}),
-		reactPlugin(),
+		preact({
+			prerender: {
+				enabled: true,
+				renderTarget: "#app",
+				additionalPrerenderRoutes: ["/", "/home",],
+				previewMiddlewareEnabled: true,
+				previewMiddlewareFallback: "/home",
+			},
+		}),
 	],
-	root: "src",
-	base: "./",
+	root: '/src',
+	base: '.',
+	publicDir: '/public',
+	optimizeDeps: {
+			"exclude": ["@react-three/drei", "@react-three/fiber"]
+	},
 	build: {
-		outDir: "../dist",
+			target: 'esnext',
+			emptyOutDir: true,
+			outDir: '../dist',
+			cssCodeSplit: true,
+			cssMinify: true,
+},
+resolve: {
+	alias: {
+		react: "preact/compat/",
+		"react-dom": "preact/compat"
 	},
-	resolve: {
-		alias: {
-			"@": fileURLToPath(new URL("./src", import.meta.url)),
-		},
-	},
-});
-function fileURLToPath(arg0: URL): string {
-	return nodeFileURLToPath(arg0);
+},
 }
+);

@@ -1,0 +1,179 @@
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+  --color-bg: hsl(0, 0%, 0%);
+  --color-fg: hsl(0, 0%, 100%);
+  --color-accent-blue: hsl(210, 80%, 45%);
+  --color-accent-plum: hsl(270, 80%, 45%);
+  --color-accent-pink: hsl(330, 80%, 45%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-offwhite: hsl(0, 0%, 96%);
+  --color-light-gray: hsl(0, 0%, 27%);
+  --color-dark-gray: hsl(0, 0%, 87%);
+
+  --max-width: 60ch;
+  --border-width: 1px;
+  --spacing-width: 16px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: hsl(0, 0%, 0%);
+    --color-fg: hsl(0, 0%, 100%);
+    --color-light-gray: hsl(0, 0%, 80%);
+    --color-dark-gray: hsl(0, 0%, 20%);
+  }
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  line-height: 1.4;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-width);
+}
+
+.container {
+  max-width: var(--max-width);
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  line-height: 1.2;
+  color: var(--color-offwhite);
+}
+
+a {
+  color: var(--color-accent-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-accent-blue);
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+hr {
+  border: 0;
+  border-bottom: var(--border-width) solid var(--color-light-gray);
+  margin: 25px 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  padding-bottom: 25px;
+}
+
+td, th {
+  border-bottom: var(--border-width) solid var(--color-light-gray);
+  padding: 5px;
+  vertical-align: bottom;
+}
+
+button, select {
+  background: var(--color-light-gray);
+  border: 0;
+  padding: 9px 20px;
+  font-size: 14px;
+}
+
+input, table {
+  font-size: 16px;
+}
+
+code, pre, button:hover {
+  background: var(--color-dark-gray);
+}
+
+pre {
+  padding: 8px;
+  white-space: pre-wrap;
+}
+
+textarea {
+  border-color: var(--color-light-gray);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 20px;
+  background: transparent;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  color: var(--color-white);
+}
+
+.navbar .menu {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .menu a {
+  color: var(--color-offwhite);
+}
+
+.navbar .hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+  }
+
+  .navbar .hamburger {
+    display: block;
+    color: var(--color-white);
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .col-2 {
+    flex: 0 0 50%;
+  }
+
+  .col-3 {
+    flex: 0 0 33.33%;
+  }
+
+  .col-3-2 {
+    flex: 0 0 66.66%;
+  }
+}
