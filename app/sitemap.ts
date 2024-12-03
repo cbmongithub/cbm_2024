@@ -1,6 +1,6 @@
 import { getBlogPosts } from "@/_lib/utils";
 
-export const baseUrl = 'https://portfolio-blog-starter.vercel.app'
+export const baseUrl = 'https://cbm2024.netlify.app'
 
 export default async function sitemap() {
   let blogs = getBlogPosts().map((post) => ({
