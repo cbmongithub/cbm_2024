@@ -1,15 +1,56 @@
 import fs from "fs";
 import path from "path";
+import { unstable_cache } from "next/cache";
+import { baseUrl } from "@/sitemap";
+import { notFound } from "next/navigation";
 
 export function cx(...classNames: (string | boolean | undefined)[]) {
 	return classNames.filter(Boolean).join(" ");
 }
 
-type Metadata = {
+export function formatDate(date: string, includeRelative = false) {
+	const currentDate = new Date();
+	const targetDate = new Date(date);
+	const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
+	const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
+	const daysAgo = currentDate.getDate() - targetDate.getDate();
+
+	let formattedDate = "";
+
+	if (yearsAgo > 0) {
+		formattedDate = `${yearsAgo}y ago`;
+	} else if (monthsAgo > 0) {
+		formattedDate = `${monthsAgo}mo ago`;
+	} else if (daysAgo > 0) {
+		formattedDate = `${daysAgo}d ago`;
+	} else {
+		formattedDate = "Today";
+	}
+
+	const fullDate = targetDate.toLocaleString("en-us", {
+		month: "long",
+		day: "numeric",
+		year: "numeric",
+	});
+
+	if (!includeRelative) {
+		return fullDate;
+	}
+
+	return `${fullDate} (${formattedDate})`;
+}
+
+export type Metadata = {
 	title: string;
 	publishedAt: string;
 	summary: string;
 	image?: string;
+};
+
+export type MetadataWithSlug = {
+	metadata: Metadata;
+	slug: string;
+	content: string;
 };
 
 function parseFrontmatter(fileContent: string) {
@@ -20,7 +61,6 @@ function parseFrontmatter(fileContent: string) {
 	const frontMatterLines = frontMatterBlock?.trim().split("\n") || [];
 	const metadata: Partial<Metadata> = {};
 
-	// biome-ignore lint/complexity/noForEach: <explanation>
 	frontMatterLines.forEach((line) => {
 		const [key, ...valueArr] = line.split(": ");
 		let value = valueArr.join(": ").trim();
@@ -58,34 +98,27 @@ export function getBlogPosts() {
 	return getMDXData(path.join(process.cwd(), "app", "blog", "posts"));
 }
 
-export function formatDate(date: string, includeRelative = false) {
-	const currentDate = new Date();
-	const targetDate = new Date(date);
-	const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-	const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
-	const daysAgo = currentDate.getDate() - targetDate.getDate();
+export async function getAllPosts() {
+	// The `fetch` function is automatically memoized and the result
+	// is cached
+	const res = await fetch(`${baseUrl}/api/posts`);
 
-	let formattedDate = "";
-
-	if (yearsAgo > 0) {
-		formattedDate = `${yearsAgo}y ago`;
-	} else if (monthsAgo > 0) {
-		formattedDate = `${monthsAgo}mo ago`;
-	} else if (daysAgo > 0) {
-		formattedDate = `${daysAgo}d ago`;
-	} else {
-		formattedDate = "Today";
+	if (res.status === 404) {
+		return notFound();
 	}
 
-	const fullDate = targetDate.toLocaleString("en-us", {
-		month: "long",
-		day: "numeric",
-		year: "numeric",
-	});
+	return res.json()
+  }
 
-	if (!includeRelative) {
-		return fullDate;
+  async function getPostBySlug({slug}: {slug: string}) {
+	// The `fetch` function is automatically memoized and the result
+	// is cached
+	const res = await fetch(`${baseUrl}/api/posts/${slug}`);
+
+	if (res.status === 404) {
+	  return notFound();
 	}
 
-	return `${fullDate} (${formattedDate})`;
-}
+	return res.json()
+  }
+

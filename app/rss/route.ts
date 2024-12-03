@@ -1,5 +1,6 @@
-import { getBlogPosts } from "@/_lib/utils";
+import { getBlogPosts, MetadataWithSlug } from "@/_lib/utils";
 import { baseUrl } from "@/sitemap";
+
 
 export async function GET() {
   let allBlogs = await getBlogPosts()
@@ -12,13 +13,13 @@ export async function GET() {
       return 1
     })
     .map(
-      (post) =>
+      ({slug, metadata: {title, publishedAt, summary}}: MetadataWithSlug) =>
         `<item>
-          <title>${post.metadata.title}</title>
-          <link>${baseUrl}/blog/${post.slug}</link>
-          <description>${post.metadata.summary || ''}</description>
+          <title>${title}</title>
+          <link>${baseUrl}/blog/${slug}</link>
+          <description>${summary || ''}</description>
           <pubDate>${new Date(
-            post.metadata.publishedAt
+            publishedAt
           ).toUTCString()}</pubDate>
         </item>`
     )

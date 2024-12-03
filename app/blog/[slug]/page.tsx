@@ -2,6 +2,13 @@ import { Mdx } from "@/_components/mdx";
 import { formatDate, getBlogPosts } from "@/_lib/utils";
 import { baseUrl } from "@/sitemap";
 import { notFound } from "next/navigation";
+import { MetadataWithSlug } from "@/_lib/utils";
+
+type MetadataRoute = {
+	params: {
+		slug: string;
+	};
+};
 
 export async function generateStaticParams() {
 	const posts = getBlogPosts();
@@ -11,9 +18,10 @@ export async function generateStaticParams() {
 	}));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata(params: MetadataRoute) {
 	const post = await getBlogPosts().find((post) => post.slug === params.slug);
-	if (!post) return {};
+
+	if (!post) return notFound();
 
 	const {
 		title,
@@ -49,12 +57,10 @@ export async function generateMetadata({ params }) {
 	};
 }
 
-export default async function Blog({ params }) {
+export default async function Blog(params: MetadataRoute) {
 	const post = await getBlogPosts().find((post) => post.slug === params.slug);
 
-	if (!post) {
-		notFound();
-	}
+	if (!post) return notFound();
 
 	return (
 		<section>
