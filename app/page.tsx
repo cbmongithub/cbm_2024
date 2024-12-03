@@ -3,7 +3,7 @@ import { PostCard } from "@/_components/post-card";
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      {/* <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
         My Portfolio
       </h1>
       <p className="mb-4">
@@ -15,7 +15,19 @@ export default function Page() {
       </p>
       <div className="my-8">
         <PostCard />
-      </div>
+      </div> */}
+            <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+        Under Construction 🚧
+      </h1>
+      <p className="mb-4">
+        {`Hey, I'm Christian! This is my new site currently under construction.
+        I'm a software engineer and I'm excited to share my projects and thoughts with you!
+        Feel free to reach out to me on social media or by email at hello [at] christianbmartinez.com.
+        Stay tuned!`}
+      </p>
+      <div className="my-8">
+        <PostCard />
+      </div>v
     </section>
   )
 }
