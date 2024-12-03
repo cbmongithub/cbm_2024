@@ -1,20 +1,11 @@
 import { formatDate, getBlogPosts } from "@/_lib/utils";
 import Link from "next/link";
 
-export function BlogPosts() {
+export function PostCard() {
 	const allBlogs = getBlogPosts();
 	return (
-		<div>
-			{allBlogs
-				.sort((a, b) => {
-					if (
-						new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-					) {
-						return -1;
-					}
-					return 1;
-				})
-				.map((post) => (
+		allBlogs.map((post) => (
+
 					<Link
 						key={post.slug}
 						className="flex flex-col space-y-1 mb-4"
@@ -29,7 +20,7 @@ export function BlogPosts() {
 							</p>
 						</div>
 					</Link>
-				))}
-		</div>
+
+	))
 	);
 }

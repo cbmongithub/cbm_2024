@@ -1,4 +1,14 @@
 {
+	"contributors": [
+		{
+			"name": "Christian B. Martinez",
+			"url": "https://christianbmartinez.com"
+		},
+		{
+			"name": "Lee Rob",
+			"url": "https://vercel.com"
+		}
+	],
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -6,22 +16,22 @@
 		"start": "next start"
 	},
 	"dependencies": {
-		"@vercel/analytics": "^1.1.3",
-		"@vercel/speed-insights": "^1.0.9",
-		"geist": "1.2.2",
-		"next": "canary",
-		"next-mdx-remote": "^4.4.1",
-		"react": "18.2.0",
-		"react-dom": "18.2.0"
+		"@vercel/analytics": "^1.4.1",
+		"@vercel/speed-insights": "^1.1.0",
+		"geist": "1.3.1",
+		"next": "15.0.4-canary.34",
+		"next-mdx-remote": "^5.0.0",
+		"react": "18.3.1",
+		"react-dom": "18.3.1"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "4.0.0-alpha.13",
-		"@types/node": "20.11.17",
-		"@types/react": "18.2.55",
-		"@types/react-dom": "18.2.19",
+		"@types/node": "22.10.1",
+		"@types/react": "18.3.12",
+		"@types/react-dom": "18.3.1",
 		"bright": "^0.8.5",
-		"postcss": "^8.4.35",
+		"postcss": "^8.4.49",
 		"tailwindcss": "4.0.0-alpha.13",
-		"typescript": "5.3.3"
+		"typescript": "5.7.2"
 	}
 }

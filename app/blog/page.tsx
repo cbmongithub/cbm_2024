@@ -1,4 +1,4 @@
-import { BlogPosts } from "app/_components/posts";
+import { PostCard } from "@/_components/post-card";
 
 export const metadata = {
   title: 'Blog',
@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <section>
       <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
-      <BlogPosts />
+      <PostCard />
     </section>
   )
 }

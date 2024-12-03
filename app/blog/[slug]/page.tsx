@@ -1,29 +1,27 @@
-import { CustomMDX } from "app/_components/mdx";
-import { formatDate, getBlogPosts } from "app/_lib/utils";
-import { baseUrl } from "app/sitemap";
+import { Mdx } from "@/_components/mdx";
+import { formatDate, getBlogPosts } from "@/_lib/utils";
+import { baseUrl } from "@/sitemap";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-	let posts = getBlogPosts();
+	const posts = getBlogPosts();
 
 	return posts.map((post) => ({
 		slug: post.slug,
 	}));
 }
 
-export function generateMetadata({ params }) {
-	let post = getBlogPosts().find((post) => post.slug === params.slug);
-	if (!post) {
-		return;
-	}
+export async function generateMetadata({ params }) {
+	const post = await getBlogPosts().find((post) => post.slug === params.slug);
+	if (!post) return {};
 
-	let {
+	const {
 		title,
 		publishedAt: publishedTime,
 		summary: description,
 		image,
 	} = post.metadata;
-	let ogImage = image
+	const ogImage = image
 		? image
 		: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
@@ -51,8 +49,8 @@ export function generateMetadata({ params }) {
 	};
 }
 
-export default function Blog({ params }) {
-	let post = getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Blog({ params }) {
+	const post = await getBlogPosts().find((post) => post.slug === params.slug);
 
 	if (!post) {
 		notFound();
@@ -63,6 +61,7 @@ export default function Blog({ params }) {
 			<script
 				type="application/ld+json"
 				suppressHydrationWarning
+				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
@@ -91,7 +90,7 @@ export default function Blog({ params }) {
 				</p>
 			</div>
 			<article className="prose">
-				<CustomMDX source={post.content} />
+				<Mdx source={post.content} />
 			</article>
 		</section>
 	);
