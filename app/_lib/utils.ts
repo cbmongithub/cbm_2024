@@ -1,6 +1,10 @@
 import fs from "fs";
 import path from "path";
 
+export function cx(...classNames: (string | boolean | undefined)[]) {
+	return classNames.filter(Boolean).join(" ");
+}
+
 type Metadata = {
 	title: string;
 	publishedAt: string;

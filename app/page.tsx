@@ -1,4 +1,4 @@
-import { BlogPosts } from "app/_components/posts";
+import { PostCard } from "@/_components/post-card";
 
 export default function Page() {
   return (
@@ -14,7 +14,7 @@ export default function Page() {
         mode, which eases long coding sessions by reducing eye strain.`}
       </p>
       <div className="my-8">
-        <BlogPosts />
+        <PostCard />
       </div>
     </section>
   )

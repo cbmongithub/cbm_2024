@@ -1,4 +1,4 @@
-import { getBlogPosts } from "app/_lib/utils";
+import { getBlogPosts } from "@/_lib/utils";
 
 export const baseUrl = 'https://portfolio-blog-starter.vercel.app'
 
