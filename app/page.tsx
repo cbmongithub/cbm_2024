@@ -1,33 +1,39 @@
-import { PostCard } from "@/_components/post-card";
+import Link from "next/link";
+import { formatDate, getBlogPosts } from "@/_lib/utils";
 
 export default function Page() {
+  const allPosts = getBlogPosts();
   return (
-    <section>
-      {/* <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
-      <div className="my-8">
-        <PostCard />
-      </div> */}
-            <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <section>
+      <h1 className="mb-8 text-xl font-semibold tracking-tighter">
         Under Construction 🚧
       </h1>
       <p className="mb-4">
-        {`Hey, I'm Christian! This is my new site currently under construction.
+        Hey, I'm Christian! This is my new site currently under construction.
         I'm a software engineer and I'm excited to share my projects and thoughts with you!
         Feel free to reach out to me on social media or by email at hello [at] christianbmartinez.com.
-        Stay tuned!`}
+        Stay tuned!
       </p>
-      <div className="my-8">
-        <PostCard />
-      </div>v
+        <h2 className="mt-8 text-lg font-semibold tracking-tighter mb-4">
+          Recent Posts
+        </h2>
+        {allPosts.map(({slug, metadata: { publishedAt, title }}) => (
+					<Link
+						key={slug}
+						className="flex flex-col space-y-1 mb-4"
+						href={`/blog/${slug}`}
+					>
+						<div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
+							<p className="mt-[0.1rem] text-xs md:text-sm md:mt-[0.2rem] text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
+								{formatDate(publishedAt, false)}
+							</p>
+							<p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
+								{title}
+							</p>
+						</div>
+					</Link>
+
+	      ))}
     </section>
   )
 }

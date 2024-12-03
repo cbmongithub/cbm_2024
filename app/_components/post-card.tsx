@@ -1,4 +1,4 @@
-import { formatDate, getBlogPosts } from "@/_lib/utils";
+import { getBlogPosts, formatDate } from "@/_lib/utils";
 import Link from "next/link";
 
 export function PostCard() {
