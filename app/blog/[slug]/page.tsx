@@ -2,12 +2,9 @@ import { Mdx } from "@/_components/mdx";
 import { formatDate, getBlogPosts } from "@/_lib/utils";
 import { baseUrl } from "@/sitemap";
 import { notFound } from "next/navigation";
-import { MetadataWithSlug } from "@/_lib/utils";
 
 type MetadataRoute = {
-	params: {
-		slug: string;
-	};
+	slug: string;
 };
 
 export async function generateStaticParams() {
