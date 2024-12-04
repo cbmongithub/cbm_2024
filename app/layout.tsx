@@ -6,21 +6,21 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import Footer from "./_components/footer";
 import { Navbar } from "./_components/nav";
-import { cx } from "./_lib/utils";
+import { cx } from "./_lib/utils/helpers";
 import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Christian B. Martinez | Full stack developer',
+    template: '%s | Christian B. Martinez | Full stack developer',
   },
-  description: 'This is my portfolio.',
+  description: 'I build apps and tools for the web.',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Christian B. Martinez | Full stack developer',
+    description: 'I build apps and tools for the web.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Christian B. Martinez | Full stack developer',
     locale: 'en_US',
     type: 'website',
   },

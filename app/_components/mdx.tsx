@@ -1,6 +1,6 @@
 import { Code } from "bright";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { createElement } from "react";
 
@@ -80,6 +80,10 @@ function createHeading(level: number) {
 	return Heading;
 }
 
+function customImage(props: any) {
+	return <Image className="rounded-lg shadow-2xl" {...props} />
+}
+
 const components = {
 	h1: createHeading(1),
 	h2: createHeading(2),
@@ -87,7 +91,7 @@ const components = {
 	h4: createHeading(4),
 	h5: createHeading(5),
 	h6: createHeading(6),
-	// img: customImage,
+	img: customImage,
 	a: CustomLink,
 	// https://bright.codehike.org
 	pre: Code,

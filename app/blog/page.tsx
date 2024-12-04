@@ -1,8 +1,9 @@
 import { PostCard } from "@/_components/post-card";
 
 export const metadata = {
-  title: 'Blog',
-  description: 'Read my blog.',
+  title: 'Blog | Christian B. Martinez',
+  description: `I write about software development, design, and other things I find interesting. For me,
+  writing is a way to reflect on my thoughts and share them with others. I hope you find something useful here.`,
 }
 
 export default function Page() {

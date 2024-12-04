@@ -1,8 +1,9 @@
-import { getBlogPosts, formatDate } from "@/_lib/utils";
+import { formatDate } from "@/_lib/utils/helpers";
+import { getBlogPostsCache } from "@/_lib/utils/posts";
 import Link from "next/link";
 
 export function PostCard() {
-	const allBlogs = getBlogPosts();
+	const allBlogs = getBlogPostsCache();
 	return (
 		allBlogs.map((post) => (
 

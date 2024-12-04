@@ -1,10 +1,10 @@
 import { ImageResponse } from 'next/og'
 
-export function GET(request: Request) {
-  let url = new URL(request.url)
-  let title = url.searchParams.get('title') || 'Next.js Portfolio Starter'
+export async function GET(req: Request, res: Response) {
+  const url = new URL(req.url)
+  const title = url.searchParams.get('title') || 'Christian B. Martinez | Full stack developer'
 
-  return new ImageResponse(
+  return await new ImageResponse(
     (
       <div tw="flex flex-col w-full h-full items-center justify-center bg-white">
         <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
@@ -19,4 +19,5 @@ export function GET(request: Request) {
       height: 630,
     }
   )
+
 }
