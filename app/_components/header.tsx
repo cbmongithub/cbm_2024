@@ -1,6 +1,6 @@
 
 import Image from "next/image";
-// Use blurdata to blur the image while loading
+
 export function Header({
 	imgSrc,
 	title,
@@ -12,8 +12,8 @@ export function Header({
 			<Image
 				priority
 				alt="image of tech"
-				width={1200}
-				height={630}
+				width={1280}
+				height={720}
 				className="rounded-2xl"
 				src={imgSrc}
 			/>

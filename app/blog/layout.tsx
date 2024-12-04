@@ -35,7 +35,5 @@ export default function BlogLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return (
-		<div className={`${GeistMono.variable} max-w-2xl mx-auto`}>{children}</div>
-	);
+	return <article className={`${GeistMono.variable}`}>{children}</article>;
 }

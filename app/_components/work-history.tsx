@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function WorkHistory() {
 	return (
 		<div className="relative p-6">
@@ -25,7 +27,7 @@ export function WorkHistory() {
 			<ol className="mt-6 space-y-4">
 				<li className="flex gap-4">
 					<div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-						<img
+						<Image
 							alt=""
 							width={28}
 							height={28}
@@ -55,12 +57,12 @@ export function WorkHistory() {
 				</li>
 				<li className="flex gap-4">
 					<div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-						<img
+						<Image
 							alt="Hello world"
 							width={28}
 							height={28}
 							className="h-7 w-7 rounded-full bg-white"
-							src="/mmbc.webp"
+							src="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=75&h=75&dpr=2"
 						/>
 					</div>
 					<dl className="flex flex-auto flex-wrap gap-x-2">
@@ -85,12 +87,12 @@ export function WorkHistory() {
 				</li>
 				<li className="flex gap-4">
 					<div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-						<img
+						<Image
 							alt=""
 							width={28}
 							height={28}
 							className="h-7 w-7 rounded-full"
-							src="/upworklogo.webp"
+							src="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=75&h=75&dpr=2"
 						/>
 					</div>
 					<dl className="flex flex-auto flex-wrap gap-x-2">
@@ -115,12 +117,12 @@ export function WorkHistory() {
 				</li>
 				<li className="flex gap-4">
 					<div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-						<img
+						<Image
 							alt=""
 							width={28}
 							height={28}
 							className="h-7 w-7 rounded-full bg-white"
-							src="/mixdlogo.webp"
+							src="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=75&h=75&dpr=2"
 						/>
 					</div>
 					<dl className="flex flex-auto flex-wrap gap-x-2">
