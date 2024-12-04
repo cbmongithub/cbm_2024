@@ -43,7 +43,7 @@ export default function RootLayout({
   return (
 			<html
 				lang="en"
-				className={`${GeistSans.variable} flex size-full flex-col scroll-smooth antialiased bg-white text-black dark:text-white dark:bg-black`}
+				className={`${GeistSans.variable} flex size-full flex-col scroll-smooth antialiased bg-neutral-100 text-neutral-900 dark:text-neutral-100 dark:bg-black`}
 			>
 				<body>
 					<main className="flex flex-col px-6">

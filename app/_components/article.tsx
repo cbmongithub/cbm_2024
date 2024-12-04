@@ -16,7 +16,7 @@ export function Article({
 	href: string;
 }) {
 	return (
-		<article className="group relative flex flex-col items-start">
+		<article className="relative flex flex-col items-start">
 			<h2 className="text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
 				<div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-neutral-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl" />
 				<span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
@@ -40,9 +40,9 @@ export function Article({
 			<Link
 				href={href}
 				aria-hidden="true"
-				className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500"
+				className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
 			>
-				Read article
+				Go to article
 				<svg
 					viewBox="0 0 16 16"
 					fill="none"

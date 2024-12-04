@@ -1,4 +1,3 @@
-import { PostCard } from "@/_components/post-card";
 
 export const metadata = {
   title: 'Blog | Christian B. Martinez',
@@ -8,9 +7,10 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Blog</h1>
-      <PostCard />
-    </section>
-  )
+			<section>
+				<h1 className="font-semibold text-2xl mb-8 tracking-tighter">
+					My Blog
+				</h1>
+			</section>
+		);
 }

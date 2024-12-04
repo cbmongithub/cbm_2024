@@ -55,7 +55,7 @@ export function Card({
 				className="absolute -inset-px opacity-0 transition duration-300"
 				style={{
 					opacity,
-					background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,182,255,.1), transparent 40%)`,
+					background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(0,0,255,.1), transparent 40%)`,
 				}}
 			/>
 			{children}
