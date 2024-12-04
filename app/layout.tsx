@@ -6,7 +6,6 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import Footer from "./_components/footer";
 import { Navbar } from "./_components/navbar";
-import { cx } from "./_lib/utils/helpers";
 import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
@@ -43,23 +42,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
-        GeistSans.variable,
-        GeistMono.variable
-      )}
-    >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
-      </body>
-    </html>
-  )
+			<html
+				lang="en"
+				className={`${GeistSans.variable + GeistMono.variable} flex size-full flex-col scroll-smooth antialiased bg-white text-black dark:text-white dark:bg-black`}
+			>
+				<body>
+					<main className="flex flex-col px-6">
+						<div className="absolute z-[-1] bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#eeeeeeee_1px,transparent_1px),linear-gradient(to_bottom,#eeeeeeee_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#3333333e_1px,transparent_1px),linear-gradient(to_bottom,#3333333e_1px,transparent_1px)] bg-[size:14px_24px]" />
+						<Navbar />
+						{children}
+						<Footer />
+						<Analytics />
+						<SpeedInsights />
+					</main>
+				</body>
+			</html>
+		);
 }
