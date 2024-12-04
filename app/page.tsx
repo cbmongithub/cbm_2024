@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { formatDate, getBlogPosts } from "@/_lib/utils";
+import { formatDate } from "@/_lib/utils/helpers";
+import { getBlogPosts } from "@/_lib/utils/posts";
 
 export default function Page() {
   const allPosts = getBlogPosts();

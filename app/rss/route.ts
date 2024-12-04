@@ -1,4 +1,4 @@
-import { getBlogPosts, MetadataWithSlug } from "@/_lib/utils";
+import { getBlogPosts, MetadataWithSlug } from "@/_lib/utils/posts";
 import { baseUrl } from "@/sitemap";
 
 

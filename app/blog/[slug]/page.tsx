@@ -1,22 +1,19 @@
 import { Mdx } from "@/_components/mdx";
-import { formatDate, getBlogPosts } from "@/_lib/utils";
+import { formatDate } from "@/_lib/utils/helpers";
+import { getBlogPostsCache } from "@/_lib/utils/posts";
 import { baseUrl } from "@/sitemap";
 import { notFound } from "next/navigation";
 
-type MetadataRoute = {
-	slug: string;
-};
-
 export async function generateStaticParams() {
-	const posts = getBlogPosts();
+	let posts = await getBlogPostsCache()
 
 	return posts.map((post) => ({
-		slug: post.slug,
-	}));
-}
+	  slug: post.slug,
+	}))
+  }
 
-export async function generateMetadata(params: MetadataRoute) {
-	const post = await getBlogPosts().find((post) => post.slug === params.slug);
+export async function generateMetadata({params}) {
+	const post = await getBlogPostsCache().find((post) => post.slug === params.slug);
 
 	if (!post) return notFound();
 
@@ -54,8 +51,8 @@ export async function generateMetadata(params: MetadataRoute) {
 	};
 }
 
-export default async function Blog(params: MetadataRoute) {
-	const post = await getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Page({ params }) {
+	let post = await getBlogPostsCache().find((post) => post.slug === params.slug)
 
 	if (!post) return notFound();
 

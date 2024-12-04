@@ -1,4 +1,4 @@
-import { getBlogPosts } from "@/_lib/utils";
+import { getBlogPosts } from "@/_lib/utils/posts";
 
 export const baseUrl = 'https://cbm2024.netlify.app'
 

@@ -6,7 +6,7 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import Footer from "./_components/footer";
 import { Navbar } from "./_components/nav";
-import { cx } from "./_lib/utils";
+import { cx } from "./_lib/utils/helpers";
 import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
