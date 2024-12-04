@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import Footer from "./_components/footer";
-import { Navbar } from "./_components/nav";
+import { Navbar } from "./_components/navbar";
 import { cx } from "./_lib/utils/helpers";
 import { baseUrl } from './sitemap'
 

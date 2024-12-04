@@ -5,6 +5,7 @@ import Link from "next/link";
 export function PostCard() {
 	const allBlogs = getBlogPostsCache();
 	return (
+
 		allBlogs.map((post) => (
 
 					<Link

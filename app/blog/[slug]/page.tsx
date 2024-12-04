@@ -5,7 +5,7 @@ import { baseUrl } from "@/sitemap";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-	let posts = await getBlogPostsCache()
+	const posts = await getBlogPostsCache();
 
 	return posts.map((post) => ({
 	  slug: post.slug,
@@ -54,7 +54,9 @@ export async function generateMetadata(props) {
 
 export default async function Page(props) {
     const params = await props.params;
-    let post = await getBlogPostsCache().find((post) => post.slug === params.slug)
+    const post = await getBlogPostsCache().find(
+					(post) => post.slug === params.slug,
+				);
 
     if (!post) return notFound();
 

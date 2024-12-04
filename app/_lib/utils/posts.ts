@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 import { cache } from "react";
 
 type Metadata = {
@@ -7,13 +7,13 @@ type Metadata = {
 	publishedAt: string;
 	summary: string;
 	image?: string;
-}
+};
 
 export type MetadataWithSlug = {
-    slug: string;
-    metadata: Metadata;
-    content: string;
-}
+	slug: string;
+	metadata: Metadata;
+	content: string;
+};
 
 function parseFrontmatter(fileContent: string) {
 	const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
@@ -60,7 +60,7 @@ export function getBlogPosts() {
 	return getMDXData(path.join(process.cwd(), "app", "blog", "posts"));
 }
 
- export const getBlogPostsCache = cache(() => {
+export const getBlogPostsCache = cache(() => {
 	const allPosts = getBlogPosts();
 	return allPosts;
-  })
+});
