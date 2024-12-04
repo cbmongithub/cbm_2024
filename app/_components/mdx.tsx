@@ -4,14 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { createElement } from "react";
 
-function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
+function customTable({
+	data,
+}: { data: { headers: string[]; rows: string[][] } }) {
 	const headers = data.headers.map((header, i) => (
-		<th key={`th-${i}`}>{header}</th>
+		<th key={`th-${i + 1}`}>{header}</th>
 	));
 	const rows = data.rows.map((row, i) => (
-		<tr key={`tr-${i}`}>
+		<tr key={`tr-${i + 1}`}>
 			{row.map((cell, i) => (
-				<td key={`cell-${i}`}>{cell}</td>
+				<td key={`cell-${i + 1}`}>{cell}</td>
 			))}
 		</tr>
 	));
@@ -32,7 +34,7 @@ interface CustomLinkProps
 	children?: React.ReactNode;
 }
 
-function CustomLink({ href, children, ...props }: CustomLinkProps) {
+function customLink({ href, children, ...props }: CustomLinkProps) {
 	if (href.startsWith("/")) {
 		return (
 			<Link href={href} {...props}>
@@ -60,7 +62,7 @@ function slugify(str: string) {
 
 function createHeading(level: number) {
 	const Heading = ({ children }: { children: string }) => {
-		let slug = slugify(children);
+		const slug = slugify(children);
 		return createElement(
 			`h${level}`,
 			{ id: slug },
@@ -80,8 +82,22 @@ function createHeading(level: number) {
 	return Heading;
 }
 
-function customImage(props: any) {
-	return <Image className="rounded-lg shadow-2xl" {...props} />
+function customImage({ ...props }: React.ComponentProps<typeof Image>) {
+	return <Image className="rounded-lg shadow-2xl" {...props} />;
+}
+
+export default function customCode({ children: code }) {
+	Code.theme = {
+		dark: "github-dark",
+		light: "github-light",
+	};
+	return (
+		<>
+			<div data-theme={Code.theme.dark}>
+				<Code lang="ts">{code}</Code>
+			</div>
+		</>
+	);
 }
 
 const components = {
@@ -92,10 +108,10 @@ const components = {
 	h5: createHeading(5),
 	h6: createHeading(6),
 	img: customImage,
-	a: CustomLink,
+	a: customLink,
 	// https://bright.codehike.org
-	pre: Code,
-	Table,
+	pre: customCode,
+	table: customTable,
 };
 
 export function Mdx(

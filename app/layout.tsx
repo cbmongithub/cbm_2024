@@ -1,12 +1,11 @@
-import "./global.css";
+import "./_assets/css/globals.css";
+
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { GeistMono } from "geist/font/mono";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import Footer from "./_components/footer";
-import { Navbar } from "./_components/nav";
-import { cx } from "./_lib/utils/helpers";
+import { Navbar } from "./_components/navbar";
 import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
@@ -43,23 +42,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
-        GeistSans.variable,
-        GeistMono.variable
-      )}
-    >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
-      </body>
-    </html>
-  )
+			<html
+				lang="en"
+				className={`${GeistSans.variable} flex size-full flex-col scroll-smooth antialiased bg-neutral-100 text-neutral-900 dark:text-neutral-100 dark:bg-black`}
+			>
+				<body>
+					<main className="flex flex-col px-6">
+						<div className="absolute z-[-1] bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#eeeeeeee_1px,transparent_1px),linear-gradient(to_bottom,#eeeeeeee_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#3333333e_1px,transparent_1px),linear-gradient(to_bottom,#3333333e_1px,transparent_1px)]" />
+						<Navbar />
+						{children}
+						<Footer />
+						<Analytics />
+						<SpeedInsights />
+					</main>
+				</body>
+			</html>
+		);
 }

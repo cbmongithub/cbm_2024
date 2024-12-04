@@ -1,40 +1,54 @@
-import Link from "next/link";
-import { formatDate } from "@/_lib/utils/helpers";
-import { getBlogPosts } from "@/_lib/utils/posts";
+import { getBlogPostsCache } from "@/_lib/utils/posts";
+import { Article } from "./_components/article";
+import { Card } from "./_components/card";
+import { Header } from "./_components/header";
+import { SignUpForm } from "./_components/signup-form";
+import { WorkHistory } from "./_components/work-history";
 
 export default function Page() {
-  const allPosts = getBlogPosts();
-  return (
-      <section>
-      <h1 className="mb-8 text-xl font-semibold tracking-tighter">
-        Under Construction 🚧
-      </h1>
-      <p className="mb-4">
-        Hey, I'm Christian! This is my new site currently under construction.
-        I'm a software engineer and I'm excited to share my projects and thoughts with you!
-        Feel free to reach out to me on social media or by email at hello [at] christianbmartinez.com.
-        Stay tuned!
-      </p>
-        <h2 className="mt-8 text-lg font-semibold tracking-tighter mb-4">
-          Recent Posts
-        </h2>
-        {allPosts.map(({slug, metadata: { publishedAt, title }}) => (
-					<Link
-						key={slug}
-						className="flex flex-col space-y-1 mb-4"
-						href={`/blog/${slug}`}
-					>
-						<div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-							<p className="mt-[0.1rem] text-xs md:text-sm md:mt-[0.2rem] text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-								{formatDate(publishedAt, false)}
-							</p>
-							<p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
-								{title}
-							</p>
+	const recentPosts = getBlogPostsCache();
+	if (!recentPosts) return null;
+	return (
+		<section>
+			<Header
+				title="Hello world"
+				description="Welcome! I'm Christian, I build apps and tools for the web."
+				imgSrc="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+			/>
+			<div className="py-16 sm:px-8 md:pt-28">
+				<div className="mx-auto w-full lg:px-8">
+					<div className="relative px-4 sm:px-8 lg:px-12">
+						<div className="mx-auto max-w-2xl lg:max-w-5xl">
+							<div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+								<div className="flex flex-col gap-16">
+									<div className="py-16">
+										{recentPosts.map((post) => (
+											<Card key={post.slug}>
+												<Article
+													key={post.slug}
+													href={`/blog/${post.slug}`}
+													title={post.metadata.title}
+													dateTime={post.metadata.publishedAt}
+													date={post.metadata.publishedAt}
+													description={post.metadata.summary}
+												/>
+											</Card>
+										))}
+									</div>
+								</div>
+								<div className="space-y-10 lg:pl-16 xl:pl-24">
+									<Card>
+										<SignUpForm />
+									</Card>
+									<Card height="h-96">
+										<WorkHistory />
+									</Card>
+								</div>
+							</div>
 						</div>
-					</Link>
-
-	      ))}
-    </section>
-  )
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 }
