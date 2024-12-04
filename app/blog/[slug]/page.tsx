@@ -12,22 +12,23 @@ export async function generateStaticParams() {
 	}))
   }
 
-export async function generateMetadata({params}) {
-	const post = await getBlogPostsCache().find((post) => post.slug === params.slug);
+export async function generateMetadata(props) {
+    const params = await props.params;
+    const post = await getBlogPostsCache().find((post) => post.slug === params.slug);
 
-	if (!post) return notFound();
+    if (!post) return notFound();
 
-	const {
+    const {
 		title,
 		publishedAt: publishedTime,
 		summary: description,
 		image,
 	} = post.metadata;
-	const ogImage = image
+    const ogImage = image
 		? image
 		: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
-	return {
+    return {
 		title,
 		description,
 		openGraph: {
@@ -51,12 +52,13 @@ export async function generateMetadata({params}) {
 	};
 }
 
-export default async function Page({ params }) {
-	let post = await getBlogPostsCache().find((post) => post.slug === params.slug)
+export default async function Page(props) {
+    const params = await props.params;
+    let post = await getBlogPostsCache().find((post) => post.slug === params.slug)
 
-	if (!post) return notFound();
+    if (!post) return notFound();
 
-	return (
+    return (
 		<section>
 			<script
 				type="application/ld+json"
