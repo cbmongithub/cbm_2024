@@ -1,6 +1,7 @@
 import { getBlogPostsCache } from "@/_lib/utils/posts";
 import { Article } from "./_components/article";
 import { Card } from "./_components/card";
+import { Header } from "./_components/header";
 import { SignUpForm } from "./_components/signup-form";
 import { WorkHistory } from "./_components/work-history";
 
@@ -9,6 +10,11 @@ export default function Page() {
 	if (!recentPosts) return null;
 	return (
 		<section>
+			<Header
+				title="Hello world"
+				description="Welcome! I'm Christian, I build apps and tools for the web."
+				imgSrc="https://images.unsplash.com/photo-1621961458348-f013d219b50c"
+			/>
 			<div className="py-16 sm:px-8 md:pt-28">
 				<div className="mx-auto w-full max-w-7xl lg:px-8">
 					<div className="relative px-4 sm:px-8 lg:px-12">

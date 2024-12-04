@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { createElement } from "react";
 
-function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
+function customTable({
+	data,
+}: { data: { headers: string[]; rows: string[][] } }) {
 	const headers = data.headers.map((header, i) => (
 		<th key={`th-${i + 1}`}>{header}</th>
 	));
@@ -32,7 +34,7 @@ interface CustomLinkProps
 	children?: React.ReactNode;
 }
 
-function CustomLink({ href, children, ...props }: CustomLinkProps) {
+function customLink({ href, children, ...props }: CustomLinkProps) {
 	if (href.startsWith("/")) {
 		return (
 			<Link href={href} {...props}>
@@ -84,6 +86,20 @@ function customImage({ ...props }: React.ComponentProps<typeof Image>) {
 	return <Image className="rounded-lg shadow-2xl" {...props} />;
 }
 
+export default function customCode({ children: code }) {
+	Code.theme = {
+		dark: "github-dark",
+		light: "github-light",
+	};
+	return (
+		<>
+			<div data-theme={Code.theme.dark}>
+				<Code lang="ts">{code}</Code>
+			</div>
+		</>
+	);
+}
+
 const components = {
 	h1: createHeading(1),
 	h2: createHeading(2),
@@ -92,10 +108,10 @@ const components = {
 	h5: createHeading(5),
 	h6: createHeading(6),
 	img: customImage,
-	a: CustomLink,
+	a: customLink,
 	// https://bright.codehike.org
-	pre: Code,
-	Table,
+	pre: customCode,
+	table: customTable,
 };
 
 export function Mdx(
