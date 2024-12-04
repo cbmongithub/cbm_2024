@@ -1,7 +1,6 @@
 import "./global.css";
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { GeistMono } from "geist/font/mono";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import Footer from "./_components/footer";
@@ -44,7 +43,7 @@ export default function RootLayout({
   return (
 			<html
 				lang="en"
-				className={`${GeistSans.variable + GeistMono.variable} flex size-full flex-col scroll-smooth antialiased bg-white text-black dark:text-white dark:bg-black`}
+				className={`${GeistSans.variable} flex size-full flex-col scroll-smooth antialiased bg-white text-black dark:text-white dark:bg-black`}
 			>
 				<body>
 					<main className="flex flex-col px-6">

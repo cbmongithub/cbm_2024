@@ -40,7 +40,7 @@ export function Article({
 			<Link
 				href={href}
 				aria-hidden="true"
-				className="relative z-10 mt-4 flex items-center text-sm font-medium text-blue-500"
+				className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500"
 			>
 				Read article
 				<svg
