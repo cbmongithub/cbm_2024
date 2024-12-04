@@ -1,6 +1,6 @@
 ---
-title: 'Spaces vs. Tabs: The Indentation Debate Continues'
-publishedAt: '2024-04-08'
+title: 'Vim: The Indentation Debate Continues'
+publishedAt: '2023-04-08'
 summary: 'Explore the enduring debate between using spaces and tabs for code indentation, and why this choice matters more than you might think.'
 ---
 
@@ -9,6 +9,32 @@ The debate between using spaces and tabs for indentation in coding may seem triv
 Let's delve into the arguments for both sides and consider why this debate remains relevant in the software development world.
 
 ## The Case for Spaces
+
+```typescript
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+			<html
+				lang="en"
+				className={`${GeistSans.variable} flex size-full flex-col scroll-smooth antialiased bg-white text-black dark:text-white dark:bg-black`}
+			>
+				<body>
+					<main className="flex flex-col px-6">
+						<div className="absolute z-[-1] bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#eeeeeeee_1px,transparent_1px),linear-gradient(to_bottom,#eeeeeeee_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#3333333e_1px,transparent_1px),linear-gradient(to_bottom,#3333333e_1px,transparent_1px)] bg-[size:14px_24px]" />
+						<Navbar />
+						{children}
+						<Footer />
+						<Analytics />
+						<SpeedInsights />
+					</main>
+				</body>
+			</html>
+		);
+}
+```
 
 Advocates for using spaces argue that it ensures consistent code appearance across different editors, tools, and platforms. Because a space is a universally recognized character with a consistent width, code indented with spaces will look the same no matter where it's viewed. This consistency is crucial for maintaining readability and avoiding formatting issues when code is shared between team members or published online.
 
