@@ -34,7 +34,7 @@ export function Article({
 				</span>
 				{date}
 			</time>
-			<p className="relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+			<p className="hidden sm:block relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400">
 				{description}
 			</p>
 			<Link

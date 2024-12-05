@@ -35,7 +35,7 @@ export const links = {
 		twitter: "https://x.com/cbmonx",
 	},
 };
-
+//1740x80 or 256x75
 export const portfolioData = [
 	{
 		title: "Portfolio Site",
@@ -46,7 +46,7 @@ export const portfolioData = [
 			"My old portfolio site built with react, bootstrap, and threejs.",
 		repo: "https://github.com/christianbmartinez/cbm_2022",
 		href: "https://preeminent-raindrop-7e0d9e.netlify.app/",
-		tags: ["#REACT", "#BOOTSTRAP"],
+		date: "9/2021",
 	},
 	{
 		title: "Colorfill App",
@@ -57,7 +57,7 @@ export const portfolioData = [
 			"A css tool that configures text fill animations. Also available on npm.",
 		repo: "https://github.com/christianbmartinez/colorfill",
 		href: "https://codepen.io/_coderchris/pen/KKgyywR",
-		tags: ["#CSS VARIABLES", "#JS"],
+		date: "9/2021",
 	},
 	{
 		title: "Full Stack Blog",
@@ -67,7 +67,7 @@ export const portfolioData = [
 		description: "A full stack tech blog written with MVC architecture",
 		repo: "https://github.com/christianbmartinez/tech-blog",
 		href: "https://guarded-ocean-61686-3600ffdf6cf0.herokuapp.com/",
-		tags: ["#EXPRESS", "#HANDLEBARS"],
+		date: "9/2021",
 	},
 	{
 		title: "Consulting Site",
@@ -77,7 +77,7 @@ export const portfolioData = [
 		description: "A single page application built with react and tailwind.",
 		repo: "https://github.com/christianbmartinez/mmbc",
 		href: "https://www.mmbc.llc/",
-		tags: ["#TAILWIND", "#REACT"],
+		date: "9/2021",
 	},
 	{
 		title: "Employee Tracker",
@@ -87,7 +87,7 @@ export const portfolioData = [
 		description: "A node cli application that uses mysql to manage employees.",
 		repo: "https://github.com/christianbmartinez/employee-tracker",
 		href: "https://drive.google.com/file/d/1uLsYvFhE-2sl5wxVCUevMd-yZhQ4aVN0/view",
-		tags: ["#INQUIRER", "#MYSQL"],
+		date: "9/2021",
 	},
 	{
 		title: "Mysteryboard",
@@ -98,7 +98,7 @@ export const portfolioData = [
 			"A full stack application that allows users to post anonymously.",
 		repo: "https://github.com/christianbmartinez/mysteryboard",
 		href: "https://mysteryboard.herokuapp.com/",
-		tags: ["#EXPRESS", "#MONGODB"],
+		date: "9/2021",
 	},
 	{
 		title: "Tic Tac Toe",
@@ -109,7 +109,7 @@ export const portfolioData = [
 			"A tic tac toe multiplayer game with chat. Built with Next, Socketio, and Express.",
 		repo: "https://github.com/christianbmartinez/tic-tac-toe",
 		href: "https://tictactoenextjs.netlify.app/",
-		tags: ["#NEXT", "#SOCKETIO"],
+		date: "9/2021",
 	},
 	{
 		title: "Create Chattr App",
@@ -120,6 +120,7 @@ export const portfolioData = [
 			"A Nextjs chatbot boilerplate that uses the chattr library I authored.",
 		repo: "https://github.com/christianbmartinez/create-chattr-app",
 		href: "https://githubbox.com/christianbmartinez/create-chattr-app",
+		date: "9/2021",
 	},
 	{
 		title: "Logo Generator",
@@ -129,5 +130,6 @@ export const portfolioData = [
 		description: "A node cli application for generating quality svg logos",
 		repo: "https://github.com/christianbmartinez/svg-logo-generator",
 		href: "https://drive.google.com/file/d/1Tg1iBDdUqCIz06HrNIAeVbb3j-26K3-V/view",
+		date: "9/2021",
 	},
 ];

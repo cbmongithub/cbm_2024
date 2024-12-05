@@ -14,7 +14,7 @@ export default function PortfolioPage() {
 		<>
 			<Header
 				title="Portfolio"
-				description="I have built many projects over the years, but these ones I liked the most"
+				description="Some projects I have built over the years"
 			/>
 			<div className="mx-auto max-w-2xl">
 				<div className="w-full">
@@ -26,17 +26,16 @@ export default function PortfolioPage() {
 								</h1>
 								<div className="pb-10">
 									{portfolioData.map(
-										({ title, imgUrl, alt, description, repo, tags }) => (
+										({ title, imgUrl, alt, description, repo, date }) => (
 											<Card key={title}>
 												<PortfolioCard
 													key={title}
 													href={repo}
 													imgUrl={imgUrl}
-													alt={alt}
+													imgAlt={alt}
 													title={title}
 													description={description}
-													tags={JSON.stringify(tags)}
-													date={JSON.stringify(tags)}
+													date={date}
 												/>
 											</Card>
 										),

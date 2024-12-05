@@ -12,7 +12,7 @@ export default function Page() {
 		<>
 			<Header
 				title="Hello world"
-				description="Welcome! I'm Christian, I build apps and tools for the web."
+				description="I'm Christian and I build apps and tools for the web"
 			/>
 			<div className="mx-auto max-w-2xl">
 				<div className="w-full">
