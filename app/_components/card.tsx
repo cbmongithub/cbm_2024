@@ -49,7 +49,7 @@ export function Card({
 			onBlur={handleBlur}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className={`rounded-2xl mt-6 relative flex ${height} w-full items-center justify-center overflow-hidden rounded-xl border border-neutral-800 bg-gradient-to-r from-black to-neutral-950 px-6 py-16 shadow-2xl`}
+			className={`mt-6 relative flex ${height} w-full items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 bg-gradient-to-r from-black to-neutral-950 px-6 py-16`}
 		>
 			<div
 				className="absolute -inset-px opacity-0 transition duration-300"

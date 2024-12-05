@@ -77,6 +77,8 @@ Special thanks to the following individuals and projects:
 
 - **Marcin Jozwiak**: [Pexels Profile](https://www.pexels.com/@marcin-jozwiak-199600/)
 - **Lee Robinson** and contributors to the [Next.js blog portfolio starter](https://github.com/vercel/examples/tree/main/solutions/blog)
+- **Tailwind UI**: [Tailwind Spotlight](https://spotlight.tailwindui.com/) Misc components
+- **ui.belick.com**: For the spotlight [component](https://ui.ibelick.com/)
 
 ---
 
