@@ -28,11 +28,10 @@ function customTable({
 	);
 }
 
-interface CustomLinkProps
-	extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
 	href: string;
 	children?: React.ReactNode;
-}
+};
 
 function customLink({ href, children, ...props }: CustomLinkProps) {
 	if (href.startsWith("/")) {

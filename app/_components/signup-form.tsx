@@ -25,7 +25,7 @@ export function SignUpForm() {
 				</svg>
 				<span className="ml-3">Stay up to date</span>
 			</h2>
-			<p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+			<p className="text-xs md:text-base mt-2 text-neutral-600 dark:text-neutral-400">
 				Get notified when I publish something new, and unsubscribe at any time.
 			</p>
 			<div className="mt-6 flex">

@@ -49,13 +49,13 @@ export function Card({
 			onBlur={handleBlur}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className={`mt-6 relative flex ${height} w-full items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 bg-gradient-to-r from-black to-neutral-950 px-6 py-16`}
+			className={`mt-6 relative flex ${height} w-full items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 px-6 py-16`}
 		>
 			<div
 				className="absolute -inset-px opacity-0 transition duration-300"
 				style={{
 					opacity,
-					background: `radial-gradient(300px circle at ${position.x}px ${position.y}px, rgba(0,0,255,.1), transparent 50%)`,
+					background: `radial-gradient(150px circle at ${position.x}px ${position.y}px, rgba(0,0,255,.25), transparent 100%)`,
 				}}
 			/>
 			{children}
