@@ -17,7 +17,7 @@ export function Article({
 }) {
 	return (
 		<article className="relative p-6 flex flex-col items-start">
-			<h2 className="text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
+			<h2 className="text-sm font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
 				<div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-neutral-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl" />
 				<span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
 				<span className="relative z-10">{title}</span>
@@ -34,7 +34,7 @@ export function Article({
 				</span>
 				{date}
 			</time>
-			<p className="relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+			<p className="text-xs md:text-sm relative z-10 mt-2 text-neutral-600 dark:text-neutral-400">
 				{description}
 			</p>
 			<Link
