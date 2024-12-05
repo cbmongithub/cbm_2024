@@ -32,7 +32,7 @@ export function WorkHistory() {
 							width={28}
 							height={28}
 							className="h-7 w-7 rounded-full"
-							src="/nglogo.webp"
+							src="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=75&h=75&dpr=2"
 						/>
 					</div>
 					<dl className="flex flex-auto flex-wrap gap-x-2">

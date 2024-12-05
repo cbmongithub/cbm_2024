@@ -15,8 +15,8 @@ export default function Page() {
 	return (
 		<>
 			<Header
-				title="Hello world"
-				description="Welcome! I'm Christian, I build apps and tools for the web."
+				title="Blog"
+				description="Welcome to my blog RSS feed! I hope you find some value here."
 				imgSrc="https://images.unsplash.com/photo-1621961458348-f013d219b50c"
 			/>
 			<div className="mx-auto max-w-2xl py-16 sm:px-8 md:pt-28">

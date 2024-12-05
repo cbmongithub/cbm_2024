@@ -1,9 +1,6 @@
 import { getBlogPosts } from "@/_lib/utils/posts";
+import { baseUrl } from "./_lib/config";
 
-export const baseUrl =
-	process.env.NODE_ENV === "development"
-		? "https://christianbmartinez.com"
-		: "http://localhost:3000";
 
 export default async function sitemap() {
   const blogs = getBlogPosts().map((post) => ({

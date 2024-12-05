@@ -6,35 +6,35 @@ import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import Footer from "./_components/footer";
 import { Navbar } from "./_components/navbar";
-import { baseUrl } from './sitemap'
+import { baseUrl } from "./_lib/config";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
-  title: {
-    default: 'Christian B. Martinez | Full stack developer',
-    template: '%s | Christian B. Martinez | Full stack developer',
-  },
-  description: 'I build apps and tools for the web.',
-  openGraph: {
-    title: 'Christian B. Martinez | Full stack developer',
-    description: 'I build apps and tools for the web.',
-    url: baseUrl,
-    siteName: 'Christian B. Martinez | Full stack developer',
-    locale: 'en_US',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-}
+	metadataBase: new URL(baseUrl as unknown as URL),
+	title: {
+		default: "Christian B. Martinez",
+		template: "%s | Christian B. Martinez",
+	},
+	description: "I build apps and tools for the web.",
+	openGraph: {
+		title: "Christian B. Martinez",
+		description: "I build apps and tools for the web.",
+		url: baseUrl,
+		siteName: "christianbmartinez.com",
+		locale: "en_US",
+		type: "website",
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
+};
 
 export default function RootLayout({
   children,

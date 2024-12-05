@@ -1,20 +1,20 @@
 import { Mdx } from "@/_components/mdx";
+import { baseUrl } from "@/_lib/config";
 import { formatDate } from "@/_lib/utils/helpers";
 import { getBlogPostsCache } from "@/_lib/utils/posts";
-import { baseUrl } from "@/sitemap";
 import { notFound } from "next/navigation";
 
-export async function generateStaticParams() {
-	const posts = await getBlogPostsCache();
+export function generateStaticParams() {
+	const posts = getBlogPostsCache();
 
 	return posts.map((post) => ({
-	  slug: post.slug,
-	}))
-  }
+		slug: post.slug,
+	}));
+}
 
 export async function generateMetadata(props) {
     const params = await props.params;
-    const post = await getBlogPostsCache().find((post) => post.slug === params.slug);
+    const post = getBlogPostsCache().find((post) => post.slug === params.slug);
 
     if (!post) return notFound();
 
@@ -54,48 +54,46 @@ export async function generateMetadata(props) {
 
 export default async function Page(props) {
     const params = await props.params;
-    const post = await getBlogPostsCache().find(
-					(post) => post.slug === params.slug,
-				);
+    const post = getBlogPostsCache().find((post) => post.slug === params.slug);
 
     if (!post) return notFound();
 
     return (
-		<section>
-			<script
-				type="application/ld+json"
-				suppressHydrationWarning
-				// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "BlogPosting",
-						headline: post.metadata.title,
-						datePublished: post.metadata.publishedAt,
-						dateModified: post.metadata.publishedAt,
-						description: post.metadata.summary,
-						image: post.metadata.image
-							? `${baseUrl}${post.metadata.image}`
-							: `/og?title=${encodeURIComponent(post.metadata.title)}`,
-						url: `${baseUrl}/blog/${post.slug}`,
-						author: {
-							"@type": "Person",
-							name: "My Portfolio",
-						},
-					}),
-				}}
-			/>
-			<h1 className="title font-semibold text-2xl tracking-tighter">
-				{post.metadata.title}
-			</h1>
-			<div className="flex justify-between items-center mt-2 mb-8 text-sm">
-				<p className="text-sm text-neutral-600 dark:text-neutral-400">
-					{formatDate(post.metadata.publishedAt)}
-				</p>
-			</div>
-			<article className="prose">
-				<Mdx source={post.content} />
-			</article>
-		</section>
-	);
+					<section>
+						<script
+							type="application/ld+json"
+							suppressHydrationWarning
+							// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
+							dangerouslySetInnerHTML={{
+								__html: JSON.stringify({
+									"@context": "https://schema.org",
+									"@type": "BlogPosting",
+									headline: post.metadata.title,
+									datePublished: post.metadata.publishedAt,
+									dateModified: post.metadata.publishedAt,
+									description: post.metadata.summary,
+									image: post.metadata.image
+										? `${baseUrl}${post.metadata.image}`
+										: `/og?title=${encodeURIComponent(post.metadata.title)}`,
+									url: `${baseUrl}/blog/${post.slug}`,
+									author: {
+										"@type": "Person",
+										name: "Christian B. Martinez",
+									},
+								}),
+							}}
+						/>
+						<h1 className="title font-semibold text-2xl tracking-tighter">
+							{post.metadata.title}
+						</h1>
+						<div className="flex justify-between items-center mt-2 mb-8 text-sm">
+							<p className="text-sm text-neutral-600 dark:text-neutral-400">
+								{formatDate(post.metadata.publishedAt)}
+							</p>
+						</div>
+						<article className="prose">
+							<Mdx source={post.content} />
+						</article>
+					</section>
+				);
 }
