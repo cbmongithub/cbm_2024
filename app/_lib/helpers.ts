@@ -33,3 +33,7 @@ export function formatDate(date: string, includeRelative = false) {
 
 	return `${fullDate} (${formattedDate})`;
 }
+
+export function mapper<T, U>(arr: T[], callback: (item: T) => U): U[] {
+	return arr.map(callback);
+}

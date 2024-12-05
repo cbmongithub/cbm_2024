@@ -83,7 +83,7 @@ function createHeading(level: number) {
 }
 
 function customImage({ ...props }: React.ComponentProps<typeof Image>) {
-	return <Image className="rounded-lg shadow-2xl" {...props} />;
+	return <Image className="blur-md rounded-2xl" {...props} />;
 }
 
 export default function customCode({ children: code }) {
@@ -92,11 +92,9 @@ export default function customCode({ children: code }) {
 		light: "github-light",
 	};
 	return (
-		<>
-			<div data-theme={Code.theme.dark}>
-				<Code lang="ts">{code}</Code>
-			</div>
-		</>
+		<div data-theme="dark">
+			<Code lang="ts">{code}</Code>
+		</div>
 	);
 }
 

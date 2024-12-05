@@ -8,7 +8,7 @@ export function Header({
 	description,
 }: { imgSrc: string; title: string; date?: string; description: string }) {
 	return (
-		<header className="flex flex-col justify-center items-center max-w-2xl mx-auto">
+		<header className="min-h-screen">
 			<Image
 				priority
 				alt="image of tech"

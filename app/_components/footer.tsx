@@ -1,10 +1,6 @@
+import { links } from "@/_lib/config";
 import Link from "next/link";
 
-export const navLinks = [
-	{ href: "/", text: "Home" },
-	{ href: "/blog", text: "Blog" },
-	{ href: "/portfolio", text: "Portfolio" },
-];
 export default function Footer() {
 	return (
 		<footer className="z-10 flex-none pt-32">
@@ -15,20 +11,20 @@ export default function Footer() {
 							<div className="mx-auto max-w-2xl lg:max-w-5xl">
 								<div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
 									<ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-neutral-800 dark:text-neutral-200">
-										{navLinks.map((link: { href: string; text: string }) => {
+										{links.footer.map(({ href, text }) => {
 											return (
 												<Link
-													key={link.text}
+													key={text}
 													className="transition hover:text-blue-500 dark:hover:text-blue-600"
-													href={link.href}
+													href={href}
 												>
-													<li>{link.text}</li>
+													<li>{text}</li>
 												</Link>
 											);
 										})}
 									</ul>
 									<p className="text-sm text-neutral-400 dark:text-neutral-500">
-										&copy;&nbsp;Christian B. Martinez {new Date().getFullYear()}
+										&copy;&nbsp;cbm {new Date().getFullYear()}
 									</p>
 								</div>
 							</div>

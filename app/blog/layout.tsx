@@ -1,19 +1,19 @@
-import { baseUrl } from "@/sitemap";
+import { baseUrl } from "@/_lib/config";
 import { GeistMono } from "geist/font/mono";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	metadataBase: new URL(baseUrl),
+	metadataBase: new URL(`${baseUrl}/blog`),
 	title: {
-		default: "Blog | Christian B. Martinez | Full stack developer",
-		template: "%s | Christian B. Martinez | Full stack developer",
+		default: "Blog | Christian B. Martinez",
+		template: "%s | Christian B. Martinez",
 	},
-	description: "I build apps and tools for the web.",
+	description: "Welcome to my blog! I hope you find some value here.",
 	openGraph: {
-		title: "Blog | Christian B. Martinez | Full stack developer",
-		description: "I build apps and tools for the web.",
-		url: baseUrl,
-		siteName: "Christian B. Martinez | Full stack developer",
+		title: "Blog | Christian B. Martinez",
+		description: "Welcome to my blog! I hope you find some value here.",
+		url: `${baseUrl}/blog`,
+		siteName: "christianbmartinez.com",
 		locale: "en_US",
 		type: "website",
 	},
@@ -35,5 +35,5 @@ export default function BlogLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return <article className={`${GeistMono.variable}`}>{children}</article>;
+	return <div className={`${GeistMono.variable}`}>{children}</div>;
 }
