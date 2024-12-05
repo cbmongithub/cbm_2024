@@ -1,5 +1,5 @@
 import { getBlogPostsCache } from "@/_lib/posts";
-import { Article } from "./_components/article";
+import { Article } from "./_components/article-card";
 import { Card } from "./_components/card";
 import { Header } from "./_components/header";
 import { SignUpForm } from "./_components/signup-form";
@@ -19,7 +19,7 @@ export default function Page() {
 					<div className="relative">
 						<div className="grid grid-cols-1 gap-y-20">
 							<div className="flex flex-col">
-								<h1 className="mt-32 text-3xl pb-3 font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
+								<h1 className="mt-32 text-2xl font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
 									Recent Posts
 								</h1>
 								<div className="pb-10">
@@ -38,17 +38,17 @@ export default function Page() {
 								</div>
 
 								<div className="space-y-10">
-									<h1 className="mt-32 text-3xl pb-3 font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
+									<h1 className="mt-32 text-2xl pb-3 font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
+										Work
+									</h1>
+									<Card height="h-96">
+										<WorkHistory />
+									</Card>
+									<h1 className="mt-32 text-2xl pb-3 font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
 										Newsletter
 									</h1>
 									<Card>
 										<SignUpForm />
-									</Card>
-									<h1 className="mt-32 text-3xl pb-3 font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
-										Employment
-									</h1>
-									<Card height="h-96">
-										<WorkHistory />
 									</Card>
 								</div>
 							</div>
