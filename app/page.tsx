@@ -20,7 +20,7 @@ export default function Page() {
 						<div className="grid grid-cols-1 gap-y-20">
 							<div className="flex flex-col">
 								<h1 className="mt-32 text-3xl pb-3 font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
-									Blog
+									Recent Posts
 								</h1>
 								<div className="pb-10">
 									{recentPosts.map((post) => (

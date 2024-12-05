@@ -4,8 +4,8 @@ export function Header({
 	description,
 }: { title: string; date?: string; description: string }) {
 	return (
-		<header className="min-h-screen">
-			<h1 className="mt-32 font-bold font-lg text-5xl">{title}</h1>
+		<header className="mt-6">
+			<h1 className="font-bold font-lg text-5xl">{title}</h1>
 			{date && <time>{date}</time>}
 			<p className="mt-6 text-md">{description}</p>
 		</header>
