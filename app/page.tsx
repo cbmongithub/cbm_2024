@@ -9,11 +9,10 @@ export default function Page() {
 	const recentPosts = getBlogPostsCache();
 	if (!recentPosts) return null;
 	return (
-		<section>
+		<>
 			<Header
 				title="Hello world"
 				description="Welcome! I'm Christian, I build apps and tools for the web."
-				imgSrc="https://images.pexels.com/photos/13637152/pexels-photo-13637152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 			/>
 			<div className="mx-auto max-w-2xl">
 				<div className="w-full">
@@ -37,6 +36,7 @@ export default function Page() {
 										</Card>
 									))}
 								</div>
+
 								<div className="space-y-10">
 									<h1 className="mt-32 text-3xl pb-3 font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
 										Newsletter
@@ -56,6 +56,6 @@ export default function Page() {
 					</div>
 				</div>
 			</div>
-		</section>
+		</>
 	);
 }

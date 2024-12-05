@@ -1,22 +1,10 @@
-
-import Image from "next/image";
-
 export function Header({
-	imgSrc,
 	title,
 	date,
 	description,
-}: { imgSrc: string; title: string; date?: string; description: string }) {
+}: { title: string; date?: string; description: string }) {
 	return (
 		<header className="min-h-screen">
-			<Image
-				priority
-				alt="image of tech"
-				width={1280}
-				height={720}
-				className="rounded-2xl"
-				src={imgSrc}
-			/>
 			<h1 className="mt-32 font-bold font-lg text-5xl">{title}</h1>
 			{date && <time>{date}</time>}
 			<p className="mt-6 text-md">{description}</p>

@@ -16,7 +16,6 @@ export default function Page() {
 			<Header
 				title="Blog"
 				description="Welcome to my blog RSS feed! I hope you find some value here."
-				imgSrc="https://images.pexels.com/photos/2473183/pexels-photo-2473183.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 			/>
 			<div className="mx-auto max-w-2xl">
 				<div className="w-full">

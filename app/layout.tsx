@@ -48,7 +48,6 @@ export default function RootLayout({
 			>
 				<body>
 					<main className="mx-auto flex flex-col px-6 max-w-2xl">
-						<div className="absolute z-[-1] bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#eeeeeeee_1px,transparent_1px),linear-gradient(to_bottom,#eeeeeeee_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#3333333e_1px,transparent_1px),linear-gradient(to_bottom,#3333333e_1px,transparent_1px)]" />
 						<Navbar />
 						{children}
 						<Footer />
