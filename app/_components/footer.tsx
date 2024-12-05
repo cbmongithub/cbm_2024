@@ -24,7 +24,7 @@ export default function Footer() {
 										})}
 									</ul>
 									<p className="text-sm text-neutral-400 dark:text-neutral-500">
-										&copy;&nbsp;Christian B. Martinez {new Date().getFullYear()}
+										&copy;&nbsp;cbm {new Date().getFullYear()}
 									</p>
 								</div>
 							</div>

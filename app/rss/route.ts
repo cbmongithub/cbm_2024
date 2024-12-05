@@ -1,5 +1,5 @@
 import { baseUrl } from "@/_lib/config";
-import { type MetadataWithSlug, getBlogPostsCache } from "@/_lib/utils/posts";
+import { type MetadataWithSlug, getBlogPostsCache } from "@/_lib/posts";
 
 export function GET() {
 	const allBlogs = getBlogPostsCache();

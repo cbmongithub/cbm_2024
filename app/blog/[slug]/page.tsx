@@ -1,7 +1,7 @@
 import { Mdx } from "@/_components/mdx";
 import { baseUrl } from "@/_lib/config";
-import { formatDate } from "@/_lib/utils/helpers";
-import { getBlogPostsCache } from "@/_lib/utils/posts";
+import { formatDate } from "@/_lib/helpers";
+import { getBlogPostsCache } from "@/_lib/posts";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -59,7 +59,7 @@ export default async function Page(props) {
     if (!post) return notFound();
 
     return (
-					<section>
+					<>
 						<script
 							type="application/ld+json"
 							suppressHydrationWarning
@@ -94,6 +94,6 @@ export default async function Page(props) {
 						<article className="prose">
 							<Mdx source={post.content} />
 						</article>
-					</section>
+					</>
 				);
 }

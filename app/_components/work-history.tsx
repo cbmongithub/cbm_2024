@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function WorkHistory() {
 	return (
-		<div className="relative p-6">
+		<div className="relative p-6 w-full">
 			<h2 className="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100">
 				<svg
 					viewBox="0 0 24 24"

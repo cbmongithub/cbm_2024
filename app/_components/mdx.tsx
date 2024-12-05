@@ -92,11 +92,9 @@ export default function customCode({ children: code }) {
 		light: "github-light",
 	};
 	return (
-		<>
-			<div data-theme={Code.theme.dark}>
-				<Code lang="ts">{code}</Code>
-			</div>
-		</>
+		<div data-theme="dark">
+			<Code lang="ts">{code}</Code>
+		</div>
 	);
 }
 

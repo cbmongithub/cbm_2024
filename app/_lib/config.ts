@@ -17,16 +17,16 @@ export const links = {
 	],
 	footer: [
 		{
+			href: "/",
+			text: "home",
+		},
+		{
+			href: "/blog",
+			text: "blog",
+		},
+		{
 			href: "/rss",
 			text: "rss",
-		},
-		{
-			href: "/feed",
-			text: "feed",
-		},
-		{
-			href: "/newsletter",
-			text: "newsletter",
 		},
 	],
 };

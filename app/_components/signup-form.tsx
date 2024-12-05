@@ -1,7 +1,7 @@
 export function SignUpForm() {
 	return (
 		<form
-			className="relative rounded-2xl p-6 dark:border-neutral-700/40"
+			className="rounded-2xl p-6 dark:border-neutral-700/40"
 			action="/thank-you"
 		>
 			<h2 className="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100">
