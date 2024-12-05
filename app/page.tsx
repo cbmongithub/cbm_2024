@@ -13,7 +13,7 @@ export default function Page() {
 			<Header
 				title="Hello world"
 				description="Welcome! I'm Christian, I build apps and tools for the web."
-				imgSrc="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+				imgSrc="https://images.pexels.com/photos/13637152/pexels-photo-13637152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
 			/>
 			<div className="mx-auto max-w-2xl">
 				<div className="w-full">
