@@ -1,6 +1,7 @@
 import { Card } from "@/_components/card";
 import { Header } from "@/_components/header";
 import { Spotlight } from "@/_components/spotlight";
+import { formatDate, mapper } from "@/_lib/helpers";
 import { getBlogPostsCache } from "@/_lib/posts";
 
 export const metadata = {
@@ -23,13 +24,14 @@ export default function Page() {
 									Posts
 								</h1>
 								<div className="pb-10">
-									{recentPosts.map((post) => (
+									{mapper(recentPosts, (post) => (
 										<Spotlight key={post.slug}>
 											<Card
-												content="post"
-												contentUrl={`/blog/${post.slug}`}
+												key={post.slug}
+												content="project"
+												contentUrl={`/portfolio/${post.slug}`}
 												title={post.metadata.title}
-												date={post.metadata.publishedAt}
+												date={formatDate(post.metadata.publishedAt)}
 												description={post.metadata.summary}
 											/>
 										</Spotlight>

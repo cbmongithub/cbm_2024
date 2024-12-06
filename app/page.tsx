@@ -4,6 +4,7 @@ import { Header } from "./_components/header";
 import { SignUpForm } from "./_components/signup-form";
 import { Spotlight } from "./_components/spotlight";
 import { WorkHistory } from "./_components/work-history";
+import { formatDate, mapper } from "./_lib/helpers";
 
 export default function Page() {
 	const recentPosts = getBlogPostsCache();
@@ -20,13 +21,14 @@ export default function Page() {
 									Blog
 								</h1>
 								<div className="pb-10">
-									{recentPosts.map((post) => (
+									{mapper(recentPosts, (post) => (
 										<Spotlight key={post.slug}>
 											<Card
-												content="post"
-												contentUrl={`/blog/${post.slug}`}
+												key={post.slug}
+												content="project"
+												contentUrl={`/portfolio/${post.slug}`}
 												title={post.metadata.title}
-												date={post.metadata.publishedAt}
+												date={formatDate(post.metadata.publishedAt)}
 												description={post.metadata.summary}
 											/>
 										</Spotlight>

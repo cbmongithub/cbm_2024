@@ -6,9 +6,9 @@ import { getBlogPostsCache } from "@/_lib/posts";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-export function generateStaticParams() {
-	const posts = getBlogPostsCache();
+const posts = getBlogPostsCache();
 
+export function generateStaticParams() {
 	return posts.map((post) => ({
 		slug: post.slug,
 	}));
@@ -16,7 +16,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata(props) {
     const params = await props.params;
-    const post = getBlogPostsCache().find((post) => post.slug === params.slug);
+    const post = posts.find((post) => post.slug === params.slug);
 
     if (!post) return notFound();
 
@@ -56,7 +56,7 @@ export async function generateMetadata(props) {
 
 export default async function Page(props) {
     const params = await props.params;
-    const post = getBlogPostsCache().find((post) => post.slug === params.slug);
+    const post = posts.find((post) => post.slug === params.slug);
 
     if (!post) return notFound();
 

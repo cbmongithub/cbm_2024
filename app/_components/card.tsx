@@ -13,8 +13,6 @@ export function Card({
 		title: string;
 		date: string;
 		description: string;
-		imgUrl?: string;
-		imgAlt?: string;
 		content: string;
 		contentUrl?: string;
 	}) {

@@ -7,23 +7,23 @@ import { notFound } from "next/navigation";
 const projects = getProjectPostsCache();
 
 export function generateStaticParams() {
-	return projects.map((post) => ({
-		slug: post.slug,
+	return projects.map((project) => ({
+		slug: project.slug,
 	}));
 }
 
 export async function generateMetadata(props) {
 	const params = await props.params;
-	const post = projects.find((post) => post.slug === params.slug);
+	const project = projects.find((project) => project.slug === params.slug);
 
-	if (!post) return notFound();
+	if (!project) return notFound();
 
 	const {
 		title,
 		publishedAt: publishedTime,
 		summary: description,
 		image,
-	} = post.metadata;
+	} = project.metadata;
 	const ogImage = image
 		? image
 		: `${baseUrl}/og?title=${encodeURIComponent(title)}`;
@@ -36,7 +36,7 @@ export async function generateMetadata(props) {
 			description,
 			type: "article",
 			publishedTime,
-			url: `${baseUrl}/portfolio/${post.slug}`,
+			url: `${baseUrl}/portfolio/${project.slug}`,
 			images: [
 				{
 					url: ogImage,
@@ -54,9 +54,9 @@ export async function generateMetadata(props) {
 
 export default async function Page(props) {
 	const params = await props.params;
-	const post = getProjectPostsCache().find((post) => post.slug === params.slug);
+	const project = projects.find((project) => project.slug === params.slug);
 
-	if (!post) return notFound();
+	if (!project) return notFound();
 
 	return (
 		<>
@@ -68,14 +68,14 @@ export default async function Page(props) {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "BlogPosting",
-						headline: post.metadata.title,
-						datePublished: post.metadata.publishedAt,
-						dateModified: post.metadata.publishedAt,
-						description: post.metadata.summary,
-						image: post.metadata.image
-							? `${baseUrl}${post.metadata.image}`
-							: `/og?title=${encodeURIComponent(post.metadata.title)}`,
-						url: `${baseUrl}/portfolio/${post.slug}`,
+						headline: project.metadata.title,
+						datePublished: project.metadata.publishedAt,
+						dateModified: project.metadata.publishedAt,
+						description: project.metadata.summary,
+						image: project.metadata.image
+							? `${baseUrl}${project.metadata.image}`
+							: `/og?title=${encodeURIComponent(project.metadata.title)}`,
+						url: `${baseUrl}/portfolio/${project.slug}`,
 						author: {
 							"@type": "Person",
 							name: "Christian B. Martinez",
@@ -84,15 +84,15 @@ export default async function Page(props) {
 				}}
 			/>
 			<h1 className="title font-semibold text-2xl tracking-tighter">
-				{post.metadata.title}
+				{project.metadata.title}
 			</h1>
 			<div className="flex justify-between items-center mt-2 mb-8 text-sm">
 				<p className="text-sm text-neutral-600 dark:text-neutral-400">
-					{formatDate(post.metadata.publishedAt)}
+					{formatDate(project.metadata.publishedAt)}
 				</p>
 			</div>
 			<article className="prose">
-				<Mdx source={post.content} />
+				<Mdx source={project.content} />
 			</article>
 		</>
 	);
