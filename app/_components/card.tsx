@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowRightIcon } from "./ui/icons";
 
 export function Card({
 		title,
@@ -42,19 +43,7 @@ export function Card({
 					className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
 				>
 					Go to {content}
-					<svg
-						viewBox="0 0 16 16"
-						fill="none"
-						aria-hidden="true"
-						className="ml-1 h-4 w-4 stroke-current"
-					>
-						<path
-							d="M6.75 5.75 9.25 8l-2.5 2.25"
-							strokeWidth="1.5"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-						/>
-					</svg>
+					<ArrowRightIcon />
 				</Link>
 			</div>
 		);
