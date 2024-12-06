@@ -26,7 +26,7 @@ export function CardAlt({
 					alt={imgAlt}
 					height={360}
 					width={480}
-					className="size-full rounded-l-2xl object-cover"
+					className="size-full rounded-2xl object-cover"
 				/>
 			</div>
 			<div className="p-6">

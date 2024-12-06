@@ -6,8 +6,6 @@ export function Card({
 		title,
 		date,
 		description,
-		imgUrl,
-		imgAlt,
 		content,
 		contentUrl,
 	}: {
@@ -21,15 +19,6 @@ export function Card({
 	}) {
 		return (
 			<div className="relative p-6 flex flex-col items-start">
-				<div className="relative md:w-2/5 shrink-0 overflow-hidden">
-					{imgUrl && imgAlt && (
-						<img
-							src={imgUrl}
-							alt={imgAlt}
-							className="order-first sm:relative sm:w-24 rounded-l-2xl"
-						/>
-					)}
-				</div>
 				<h2 className="text-sm md:text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
 					<div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-neutral-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl" />
 					<span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
