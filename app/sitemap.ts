@@ -1,8 +1,8 @@
 import { baseUrl } from "@/_lib/config";
-import { getBlogPosts } from "@/_lib/posts";
+import { getBlogPostsCache } from "@/_lib/posts";
 
 export default async function sitemap() {
-	const blogs = getBlogPosts().map((post) => ({
+	const blogs = getBlogPostsCache().map((post) => ({
 		url: `${baseUrl}/blog/${post.slug}`,
 		lastModified: post.metadata.publishedAt,
 	}));

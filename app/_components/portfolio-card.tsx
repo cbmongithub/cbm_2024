@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -52,16 +50,18 @@ export function PortfolioCard({
 					>
 						Go to project
 						<svg
-							viewBox="0 0 16 16"
+							xmlns="http://www.w3.org/2000/svg"
+							className="ml-2 h-4 w-4"
 							fill="none"
-							aria-hidden="true"
-							className="ml-1 h-4 w-4 stroke-current"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
 						>
+							<title>Arrow Icon</title>
 							<path
-								d="M6.75 5.75 9.25 8l-2.5 2.25"
-								strokeWidth="1.5"
-								strokeLinecap="round"
-								strokeLinejoin="round"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M14 5l7 7m0 0l-7 7m7-7H3"
 							/>
 						</svg>
 					</Link>
