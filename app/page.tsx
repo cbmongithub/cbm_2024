@@ -1,13 +1,13 @@
-import { getBlogPostsCache } from "@/_lib/posts";
-import { Card } from "./_components/card";
+import { getPosts } from "@/_lib/posts";
 import { Header } from "./_components/header";
 import { SignUpForm } from "./_components/signup-form";
 import { Spotlight } from "./_components/spotlight";
+import { Card } from "./_components/ui/card";
 import { WorkHistory } from "./_components/work-history";
 import { formatDate, mapper } from "./_lib/helpers";
 
 export default function Page() {
-	const recentPosts = getBlogPostsCache();
+	const recentPosts = getPosts("blog");
 	if (!recentPosts) return null;
 	return (
 		<>

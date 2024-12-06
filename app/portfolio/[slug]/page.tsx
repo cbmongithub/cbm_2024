@@ -1,10 +1,11 @@
 import { Mdx } from "@/_components/mdx";
+import { BackButton } from "@/_components/ui/back-button";
 import { baseUrl } from "@/_lib/config";
 import { formatDate } from "@/_lib/helpers";
-import { getProjectPostsCache } from "@/_lib/posts";
+import { getPosts } from "@/_lib/posts";
 import { notFound } from "next/navigation";
 
-const projects = getProjectPostsCache();
+const projects = getPosts("projects");
 
 export function generateStaticParams() {
 	return projects.map((project) => ({
@@ -83,6 +84,7 @@ export default async function Page(props) {
 					}),
 				}}
 			/>
+			<BackButton href="/portfolio" />
 			<h1 className="title font-semibold text-2xl tracking-tighter">
 				{project.metadata.title}
 			</h1>

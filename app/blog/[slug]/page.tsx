@@ -1,12 +1,11 @@
 import { Mdx } from "@/_components/mdx";
-import { ArrowLeftIcon } from "@/_components/ui/icons";
+import { BackButton } from "@/_components/ui/back-button";
 import { baseUrl } from "@/_lib/config";
 import { formatDate } from "@/_lib/helpers";
-import { getBlogPostsCache } from "@/_lib/posts";
-import Link from "next/link";
+import { getPosts } from "@/_lib/posts";
 import { notFound } from "next/navigation";
 
-const posts = getBlogPostsCache();
+const posts = getPosts("blog");
 
 export function generateStaticParams() {
 	return posts.map((post) => ({
@@ -85,13 +84,7 @@ export default async function Page(props) {
 								}),
 							}}
 						/>
-						<Link
-							href="/blog"
-							aria-hidden="true"
-							className="relative flex font-medium pb-12"
-						>
-							<ArrowLeftIcon />
-						</Link>
+						<BackButton href="/blog" />
 						<h1 className="title font-semibold text-2xl tracking-tighter">
 							{post.metadata.title}
 						</h1>

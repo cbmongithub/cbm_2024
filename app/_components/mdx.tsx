@@ -1,7 +1,6 @@
-import { Code } from "bright";
+import { Code, type Extension } from "bright";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import Image from "next/image";
-import Link from "next/link";
 import { createElement } from "react";
 
 function customTable({
@@ -28,26 +27,6 @@ function customTable({
 	);
 }
 
-type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-	href: string;
-	children?: React.ReactNode;
-};
-
-function customLink({ href, children, ...props }: CustomLinkProps) {
-	if (href.startsWith("/")) {
-		return (
-			<Link href={href} {...props}>
-				{children}
-			</Link>
-		);
-	}
-
-	if (href.startsWith("#")) {
-		return <a {...props} />;
-	}
-
-	return <a target="_blank" rel="noopener noreferrer" {...props} />;
-}
 
 function slugify(str: string) {
 	return str
@@ -97,6 +76,15 @@ export default function customCode({ children: code }) {
 	);
 }
 
+export const customLink: Extension = {
+	name: "link",
+	InlineAnnotation: ({ children, query }) => (
+		<a href={query} style={{ textDecoration: "underline" }}>
+			{children}
+		</a>
+	),
+};
+
 const components = {
 	h1: createHeading(1),
 	h2: createHeading(2),
@@ -105,8 +93,8 @@ const components = {
 	h5: createHeading(5),
 	h6: createHeading(6),
 	img: customImage,
-	a: customLink,
 	// https://bright.codehike.org
+	a: customLink,
 	pre: customCode,
 	table: customTable,
 };
