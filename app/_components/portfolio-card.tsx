@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowRightIcon } from "./ui/icons";
 
 export function PortfolioCard({
 		title,
@@ -49,21 +50,7 @@ export function PortfolioCard({
 						className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
 					>
 						Go to project
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							className="ml-2 h-4 w-4"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<title>Arrow Icon</title>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M14 5l7 7m0 0l-7 7m7-7H3"
-							/>
-						</svg>
+						<ArrowRightIcon />
 					</Link>
 				</div>
 			</>
