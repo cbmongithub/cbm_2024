@@ -87,8 +87,8 @@ function customImage({ ...props }: React.ComponentProps<typeof Image>) {
 
 export default function customCode({ children: code }) {
 	Code.theme = {
-		dark: "github-dark",
-		light: "github-light",
+		dark: "material-darker",
+		light: "material-darker",
 	};
 	return (
 		<div data-theme="dark">

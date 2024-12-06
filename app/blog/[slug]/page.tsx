@@ -1,7 +1,9 @@
 import { Mdx } from "@/_components/mdx";
+import { ArrowLeftIcon } from "@/_components/ui/icons";
 import { baseUrl } from "@/_lib/config";
 import { formatDate } from "@/_lib/helpers";
 import { getBlogPostsCache } from "@/_lib/posts";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
@@ -83,6 +85,13 @@ export default async function Page(props) {
 								}),
 							}}
 						/>
+						<Link
+							href="/blog"
+							aria-hidden="true"
+							className="relative flex font-medium pb-12"
+						>
+							<ArrowLeftIcon />
+						</Link>
 						<h1 className="title font-semibold text-2xl tracking-tighter">
 							{post.metadata.title}
 						</h1>
