@@ -7,7 +7,7 @@ import { links } from "@/_lib/config";
 export function Socials({ style }: { style: string }) {
 	return (
 		<ul className={`${style} text-neutral-600`}>
-			<li className="px-5 text-neutral-600 transition duration-150 ease-in-out hover:text-pink-500">
+			<li className="px-5 text-neutral-600 transition duration-150 ease-in-out hover:text-neutral-500">
 				<Link
 					href={links.socials.github}
 					target="_blank"
@@ -17,7 +17,7 @@ export function Socials({ style }: { style: string }) {
 					<FaGithub />
 				</Link>
 			</li>
-			<li className="px-5 text-neutral-600 transition duration-150 ease-in-out hover:text-pink-500">
+			<li className="px-5 text-neutral-600 transition duration-150 ease-in-out hover:text-neutral-500">
 				<Link
 					href={links.socials.twitter}
 					target="_blank"
@@ -27,7 +27,7 @@ export function Socials({ style }: { style: string }) {
 					<FaSquareXTwitter />
 				</Link>
 			</li>
-			<li className="px-5 text-neutral-600 transition duration-150 ease-in-out hover:text-pink-500">
+			<li className="px-5 text-neutral-600 transition duration-150 ease-in-out hover:text-neutral-500">
 				<Link
 					href={links.socials.linkedin}
 					target="_blank"
