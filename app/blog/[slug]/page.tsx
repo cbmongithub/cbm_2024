@@ -1,4 +1,3 @@
-import Avatar from "@/_components/avatar";
 import { Mdx } from "@/_components/mdx";
 import { baseUrl } from "@/_lib/config";
 import { formatDate } from "@/_lib/helpers";
@@ -84,7 +83,6 @@ export default async function Page(props) {
 								}),
 							}}
 						/>
-						<Avatar />
 						<h1 className="title font-semibold text-2xl tracking-tighter">
 							{post.metadata.title}
 						</h1>
