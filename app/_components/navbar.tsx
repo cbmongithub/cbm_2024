@@ -5,6 +5,9 @@ export function Navbar() {
   return (
 			<aside className="mb-32 tracking-tight pt-8">
 				<nav className="flex flex-row items-center justify-between">
+					<Link href="/">
+						<p className="text-2xl">&#120148;</p>
+					</Link>
 					<ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-md text-neutral-800 dark:text-neutral-200">
 						{links.nav.map((link: { href: string; text: string }) => {
 							return (
