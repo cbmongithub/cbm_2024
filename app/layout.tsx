@@ -1,4 +1,4 @@
-import "./_assets/css/globals.css";
+import "./globals.css";
 
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next";

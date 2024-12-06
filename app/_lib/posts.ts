@@ -7,6 +7,7 @@ type Metadata = {
 	publishedAt: string;
 	summary: string;
 	image?: string;
+	imageAlt?: string;
 };
 
 export type MetadataWithSlug = {
@@ -56,11 +57,16 @@ function getMDXData(dir: string) {
 	});
 }
 
-export function getBlogPosts() {
-	return getMDXData(path.join(process.cwd(), "app", "_assets", "posts"));
+export function getPosts(dir: string) {
+	return getMDXData(path.join(process.cwd(), "app", "_posts", dir));
 }
 
 export const getBlogPostsCache = cache(() => {
-	const allPosts = getBlogPosts();
-	return allPosts;
+	const blogPosts = getPosts("blog");
+	return blogPosts;
+});
+
+export const getProjectPostsCache = cache(() => {
+	const projectPosts = getPosts("projects");
+	return projectPosts;
 });
