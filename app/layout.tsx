@@ -4,7 +4,9 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Footer from "./_components/footer";
+import { Loader } from "./_components/loader";
 import { Navbar } from "./_components/navbar";
 import { baseUrl } from "./_lib/config";
 
@@ -48,9 +50,13 @@ export default function RootLayout({
 			>
 				<body>
 					<main className="mx-auto flex flex-col px-6 max-w-2xl">
-						<Navbar />
-						{children}
-						<Footer />
+						<Suspense fallback={<div>Loading...</div>}>
+							<Loader>
+								<Navbar />
+								{children}
+								<Footer />
+							</Loader>
+						</Suspense>
 						<Analytics />
 						<SpeedInsights />
 					</main>
