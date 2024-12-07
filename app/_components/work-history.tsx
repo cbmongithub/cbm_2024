@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function WorkHistory() {
 	return (
-		<div className="relative p-6 w-full">
+		<div className="relative w-full">
 			<h2 className="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100">
 				<svg
 					viewBox="0 0 24 24"
@@ -12,7 +12,7 @@ export function WorkHistory() {
 					strokeLinecap="round"
 					strokeLinejoin="round"
 					aria-hidden="true"
-					className="h-6 w-6 flex-none"
+					className="size-6 flex-none"
 				>
 					<path
 						d="M2.75 9.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"

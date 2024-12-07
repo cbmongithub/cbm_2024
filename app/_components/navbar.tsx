@@ -1,7 +1,11 @@
+"use client";
 import { links } from "@/_lib/config";
 import Link from 'next/link'
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
+	const pathname = usePathname();
+
   return (
 			<aside className="mb-32 tracking-tight pt-8">
 				<nav className="flex flex-row items-center justify-between">
@@ -13,7 +17,7 @@ export function Navbar() {
 							return (
 								<li key={link.text}>
 									<Link
-										className="transition duration-300 hover:text-blue-500 dark:hover:text-blue-600"
+										className={`${pathname === link.href && "text-blue-500"} transition duration-300 hover:text-blue-500 dark:hover:text-blue-600`}
 										href={link.href}
 									>
 										{link.text}

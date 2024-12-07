@@ -1,11 +1,13 @@
-export function ArrowLeftIcon() {
+type IconProps = React.SVGProps<SVGSVGElement>;
+
+export function ArrowLeftIcon(props: IconProps) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			className="mr-2 size-3"
 			fill="none"
 			viewBox="0 0 24 24"
 			stroke="currentColor"
+			{...props}
 		>
 			<title>Arrow Icon</title>
 			<path
@@ -18,14 +20,14 @@ export function ArrowLeftIcon() {
 	);
 }
 
-export function ArrowRightIcon() {
+export function ArrowRightIcon(props: IconProps) {
 	return (
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			className="ml-2 size-3"
 			fill="none"
 			viewBox="0 0 24 24"
 			stroke="currentColor"
+			{...props}
 		>
 			<title>Arrow Icon</title>
 			<path
