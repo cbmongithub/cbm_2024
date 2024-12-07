@@ -1,7 +1,9 @@
-import { CardAlt } from "@/_components/card-alt";
 import { Header } from "@/_components/header";
-import { formatDate } from "@/_lib/helpers";
-import { getProjectPostsCache } from "@/_lib/posts";
+import { CardAlt } from "@/_components/ui/card-alt";
+import { formatDate, mapper } from "@/_lib/helpers";
+import { getPosts } from "@/_lib/posts";
+
+const recentProjects = getPosts("projects");
 
 export const metadata = {
 	title: "Portfolio | Christian B. Martinez",
@@ -9,7 +11,6 @@ export const metadata = {
 };
 
 export default function Page() {
-	const recentProjects = getProjectPostsCache();
 	if (!recentProjects) return null;
 	return (
 		<>
@@ -21,7 +22,7 @@ export default function Page() {
 							Projects
 						</h1>
 						<div className="pb-10">
-							{recentProjects.map((post) => (
+							{mapper(recentProjects, (post) => (
 								<CardAlt
 									key={post.slug}
 									content="project"

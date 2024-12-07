@@ -1,7 +1,7 @@
+import { slugify } from "@/_lib/helpers";
 import { Code } from "bright";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import Image from "next/image";
-import Link from "next/link";
 import { createElement } from "react";
 
 function customTable({
@@ -26,37 +26,6 @@ function customTable({
 			<tbody>{rows}</tbody>
 		</table>
 	);
-}
-
-type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-	href: string;
-	children?: React.ReactNode;
-};
-
-function customLink({ href, children, ...props }: CustomLinkProps) {
-	if (href.startsWith("/")) {
-		return (
-			<Link href={href} {...props}>
-				{children}
-			</Link>
-		);
-	}
-
-	if (href.startsWith("#")) {
-		return <a {...props} />;
-	}
-
-	return <a target="_blank" rel="noopener noreferrer" {...props} />;
-}
-
-function slugify(str: string) {
-	return str
-		.toLowerCase()
-		.trim()
-		.replace(/\s+/g, "-")
-		.replace(/&/g, "-and-")
-		.replace(/[^\w\-]+/g, "")
-		.replace(/--+/g, "-");
 }
 
 function createHeading(level: number) {
@@ -85,18 +54,6 @@ function customImage({ ...props }: React.ComponentProps<typeof Image>) {
 	return <Image className="blur-md rounded-2xl" {...props} />;
 }
 
-export default function customCode({ children: code }) {
-	Code.theme = {
-		dark: "material-darker",
-		light: "material-darker",
-	};
-	return (
-		<div data-theme="dark">
-			<Code lang="ts">{code}</Code>
-		</div>
-	);
-}
-
 const components = {
 	h1: createHeading(1),
 	h2: createHeading(2),
@@ -105,9 +62,7 @@ const components = {
 	h5: createHeading(5),
 	h6: createHeading(6),
 	img: customImage,
-	a: customLink,
-	// https://bright.codehike.org
-	pre: customCode,
+	pre: Code,
 	table: customTable,
 };
 

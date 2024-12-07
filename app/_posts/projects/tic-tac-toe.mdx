@@ -13,29 +13,57 @@ Let's delve into the arguments for both sides and consider why this debate remai
 ## The Case for Spaces
 
 ```ts
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-			<html
-				lang="en"
-				className={`${GeistSans.variable} flex size-full flex-col scroll-smooth antialiased bg-white text-black dark:text-white dark:bg-black`}
-			>
-				<body>
-					<main className="flex flex-col px-6">
-						<div className="absolute z-[-1] bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#eeeeeeee_1px,transparent_1px),linear-gradient(to_bottom,#eeeeeeee_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#3333333e_1px,transparent_1px),linear-gradient(to_bottom,#3333333e_1px,transparent_1px)] bg-[size:14px_24px]" />
-						<Navbar />
-						{children}
-						<Footer />
-						<Analytics />
-						<SpeedInsights />
-					</main>
-				</body>
-			</html>
-		);
+// link[9:14] https://christianbmartinez.com
+import { Header } from "@/_components/header";
+import { Spotlight } from "@/_components/spotlight";
+import { Card } from "@/_components/ui/card";
+
+import { formatDate, mapper } from "@/_lib/helpers";
+import { getPosts } from "@/_lib/posts";
+
+const recentPosts = getPosts("blog");
+
+export const metadata = {
+	title: "Blog | Christian B. Martinez",
+	description: "Posts on web development",
+};
+
+export default function Page() {
+	if (!recentPosts) return null;
+	return (
+		<>
+			<Header title="Blog" description="Everything web development" />
+			<div className="mx-auto max-w-2xl">
+				<div className="w-full">
+					<div className="relative">
+						<div className="grid grid-cols-1 gap-y-20">
+							<div className="flex flex-col">
+								<h1 className="mt-32 text-2xl font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
+									Posts
+								</h1>
+								<div className="pb-10">
+									{mapper(recentPosts, (post) => (
+										<Spotlight key={post.slug}>
+											<Card
+												key={post.slug}
+												content="project"
+												contentUrl={`/blog/${post.slug}`}
+												title={post.metadata.title}
+												date={formatDate(post.metadata.publishedAt)}
+												description={post.metadata.summary}
+											/>
+										</Spotlight>
+									))}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }
+
 ```
 
 Advocates for using spaces argue that it ensures consistent code appearance across different editors, tools, and platforms. Because a space is a universally recognized character with a consistent width, code indented with spaces will look the same no matter where it's viewed. This consistency is crucial for maintaining readability and avoiding formatting issues when code is shared between team members or published online.

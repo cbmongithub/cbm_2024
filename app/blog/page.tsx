@@ -1,7 +1,10 @@
-import { Card } from "@/_components/card";
 import { Header } from "@/_components/header";
 import { Spotlight } from "@/_components/spotlight";
-import { getBlogPostsCache } from "@/_lib/posts";
+import { Card } from "@/_components/ui/card";
+import { formatDate, mapper } from "@/_lib/helpers";
+import { getPosts } from "@/_lib/posts";
+
+const recentPosts = getPosts("blog");
 
 export const metadata = {
 	title: "Blog | Christian B. Martinez",
@@ -9,7 +12,6 @@ export const metadata = {
 };
 
 export default function Page() {
-	const recentPosts = getBlogPostsCache();
 	if (!recentPosts) return null;
 	return (
 		<>
@@ -23,13 +25,14 @@ export default function Page() {
 									Posts
 								</h1>
 								<div className="pb-10">
-									{recentPosts.map((post) => (
+									{mapper(recentPosts, (post) => (
 										<Spotlight key={post.slug}>
 											<Card
-												content="post"
+												key={post.slug}
+												content="article"
 												contentUrl={`/blog/${post.slug}`}
 												title={post.metadata.title}
-												date={post.metadata.publishedAt}
+												date={formatDate(post.metadata.publishedAt)}
 												description={post.metadata.summary}
 											/>
 										</Spotlight>

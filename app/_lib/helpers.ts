@@ -34,6 +34,16 @@ export function formatDate(date: string, includeRelative = false) {
 	return `${fullDate} (${formattedDate})`;
 }
 
-// export function mapper<T, U>(arr: T[], callback: (item: T) => U): U[] {
-// 	return arr.map(callback);
-// }
+export function mapper<T, U>(arr: T[], callback: (post: T) => U): U[] {
+	return arr.map(callback);
+}
+
+export function slugify(str: string) {
+	return str
+		.toLowerCase()
+		.trim()
+		.replace(/\s+/g, "-")
+		.replace(/&/g, "-and-")
+		.replace(/[^\w\-]+/g, "")
+		.replace(/--+/g, "-");
+}
