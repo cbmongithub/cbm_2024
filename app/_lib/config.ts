@@ -7,6 +7,10 @@ export const links = {
 			text: "home",
 		},
 		{
+			href: "/about",
+			text: "about",
+		},
+		{
 			href: "/blog",
 			text: "blog",
 		},

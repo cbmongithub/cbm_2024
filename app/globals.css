@@ -6,10 +6,9 @@
   }
 }
 
-html {
+html, body {
   color-scheme: dark;
   background: #000;
-  min-width: 360px;
 }
 
 .prose .anchor {
