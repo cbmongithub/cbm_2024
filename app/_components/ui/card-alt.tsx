@@ -54,7 +54,7 @@ export function CardAlt({
 							className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
 						>
 							Go to demo
-							<ArrowRightIcon />
+							<ArrowRightIcon className="ml-2 size-3" />
 						</Link>
 						<Link
 							href={contentUrl as unknown as URL}
@@ -62,7 +62,7 @@ export function CardAlt({
 							className="relative z-20 mt-4 ml-12 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
 						>
 							View source
-							<ArrowRightIcon />
+							<ArrowRightIcon className="ml-2 size-3" />
 						</Link>
 					</div>
 				</div>

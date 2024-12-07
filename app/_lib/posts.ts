@@ -11,10 +11,10 @@ type Metadata = {
 };
 
 export type MetadataWithSlug = {
-	slug: string;
-	metadata: Metadata;
-	content: string;
-};
+		slug: string;
+		metadata: Metadata;
+		content: string;
+	};
 
 function parseFrontmatter(fileContent: string) {
 	const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
