@@ -51,7 +51,7 @@ export function Spotlight({
 			onBlur={handleBlur}
 			onMouseEnter={handleMouseEnter}
 			onMouseLeave={handleMouseLeave}
-			className={`mt-6 relative flex ${height} ${width} items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 px-6 py-16`}
+			className={`my-6 relative flex ${height} ${width} items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 px-6 py-16`}
 		>
 			<div
 				className="absolute -inset-px opacity-0 transition duration-300"

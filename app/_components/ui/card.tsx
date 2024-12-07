@@ -17,13 +17,13 @@ export function Card({
 	contentUrl?: string;
 }) {
 	return (
-		<div className="relative p-6 flex flex-col items-start">
+		<div className="flex flex-col items-start">
 			<h2 className="text-sm md:text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
-				<div className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-neutral-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl" />
-				<span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
-				<span className="relative z-10">{title}</span>
+				<div className="-inset-x-4 -inset-y-6 z-0 scale-95 bg-neutral-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl" />
+				<span className="-inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
+				<span className="z-30">{title}</span>
 			</h2>
-			<time className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-neutral-400 dark:text-neutral-500">
+			<time className="hidden sm:flex z-30 relative order-first mb-3 items-center pl-3.5 text-sm text-neutral-400 dark:text-neutral-500">
 				<span
 					className="absolute inset-y-0 left-0 flex items-center"
 					aria-hidden="true"
@@ -32,7 +32,7 @@ export function Card({
 				</span>
 				{date}
 			</time>
-			<p className="hidden sm:block relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400">
+			<p className="relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400">
 				{description}
 			</p>
 			<Link
@@ -40,7 +40,7 @@ export function Card({
 				aria-hidden="true"
 				className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
 			>
-				Go to {content}
+				Read {content}
 				<ArrowRightIcon />
 			</Link>
 		</div>

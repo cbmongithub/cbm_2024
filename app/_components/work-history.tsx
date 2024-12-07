@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function WorkHistory() {
 	return (
@@ -146,8 +147,8 @@ export function WorkHistory() {
 					</dl>
 				</li>
 			</ol>
-			<a
-				className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-neutral-50 px-3 py-2 text-sm font-medium text-neutral-900 outline-offset-2 transition hover:bg-neutral-100 active:bg-neutral-100 active:text-neutral-900/60 active:transition-none dark:bg-neutral-800/50 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:active:bg-neutral-800/50 dark:active:text-neutral-50/70"
+			<Link
+				className="group mt-6 inline-flex w-full items-center justify-center rounded-md bg-neutral-50 px-3 py-2 text-sm font-medium text-neutral-900 outline-offset-2 transition hover:bg-neutral-100 active:bg-neutral-100 active:text-neutral-900/75 active:transition-none dark:bg-neutral-800/75 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:active:bg-neutral-800/50 dark:active:text-neutral-50/70"
 				href="/"
 				download
 			>
@@ -165,7 +166,7 @@ export function WorkHistory() {
 						strokeLinejoin="round"
 					/>
 				</svg>
-			</a>
+			</Link>
 		</div>
 	);
 }

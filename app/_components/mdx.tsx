@@ -1,4 +1,5 @@
-import { Code, type Extension } from "bright";
+import { slugify } from "@/_lib/helpers";
+import { Code } from "bright";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { createElement } from "react";
@@ -27,17 +28,6 @@ function customTable({
 	);
 }
 
-
-function slugify(str: string) {
-	return str
-		.toLowerCase()
-		.trim()
-		.replace(/\s+/g, "-")
-		.replace(/&/g, "-and-")
-		.replace(/[^\w\-]+/g, "")
-		.replace(/--+/g, "-");
-}
-
 function createHeading(level: number) {
 	const Heading = ({ children }: { children: string }) => {
 		const slug = slugify(children);
@@ -64,27 +54,6 @@ function customImage({ ...props }: React.ComponentProps<typeof Image>) {
 	return <Image className="blur-md rounded-2xl" {...props} />;
 }
 
-export default function customCode({ children: code }) {
-	Code.theme = {
-		dark: "material-darker",
-		light: "material-darker",
-	};
-	return (
-		<div data-theme="dark">
-			<Code lang="ts">{code}</Code>
-		</div>
-	);
-}
-
-export const customLink: Extension = {
-	name: "link",
-	InlineAnnotation: ({ children, query }) => (
-		<a href={query} style={{ textDecoration: "underline" }}>
-			{children}
-		</a>
-	),
-};
-
 const components = {
 	h1: createHeading(1),
 	h2: createHeading(2),
@@ -93,9 +62,7 @@ const components = {
 	h5: createHeading(5),
 	h6: createHeading(6),
 	img: customImage,
-	// https://bright.codehike.org
-	a: customLink,
-	pre: customCode,
+	pre: Code,
 	table: customTable,
 };
 

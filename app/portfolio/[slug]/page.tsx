@@ -76,7 +76,7 @@ export default async function Page(props) {
 						image: project.metadata.image
 							? `${baseUrl}${project.metadata.image}`
 							: `/og?title=${encodeURIComponent(project.metadata.title)}`,
-						url: `${baseUrl}/portfolio/${project.slug}`,
+						url: `${baseUrl}/blog/${project.slug}`,
 						author: {
 							"@type": "Person",
 							name: "Christian B. Martinez",

@@ -29,7 +29,7 @@ export default function Page() {
 										<Spotlight key={post.slug}>
 											<Card
 												key={post.slug}
-												content="project"
+												content="article"
 												contentUrl={`/blog/${post.slug}`}
 												title={post.metadata.title}
 												date={formatDate(post.metadata.publishedAt)}
