@@ -3,12 +3,10 @@ import "./globals.css";
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Suspense } from "react";
 
 import { baseUrl } from "./_lib/config";
 
 import { Footer } from "./_components/footer";
-import { Loader } from "./_components/loader";
 import { Navbar } from "./_components/navbar";
 
 export const metadata: Metadata = {
@@ -51,13 +49,9 @@ export default function RootLayout({
 			>
 				<body>
 					<main className="mx-auto flex flex-col px-6 max-w-2xl">
-						<Suspense fallback={<div>Loading...</div>}>
-							<Loader>
-								<Navbar />
-								{children}
-								<Footer />
-							</Loader>
-						</Suspense>
+						<Navbar />
+						{children}
+						<Footer />
 						<Analytics />
 						<SpeedInsights />
 					</main>
