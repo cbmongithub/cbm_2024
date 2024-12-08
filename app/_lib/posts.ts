@@ -1,6 +1,5 @@
 import fs from "node:fs";
 import path from "node:path";
-import { cache } from "react";
 
 type Metadata = {
 	title: string;
@@ -24,7 +23,7 @@ function parseFrontmatter(fileContent: string) {
 	const frontMatterLines = frontMatterBlock?.trim().split("\n") || [];
 	const metadata: Partial<Metadata> = {};
 
-	// biome-ignore lint/complexity/noForEach: <explanation>
+	// biome-ignore lint/complexity/noForEach: node:path
 	frontMatterLines.forEach((line) => {
 		const [key, ...valueArr] = line.split(": ");
 		let value = valueArr.join(": ").trim();
@@ -61,12 +60,12 @@ export function getPosts(dir: string) {
 	return getMDXData(path.join(process.cwd(), "app", "_posts", dir));
 }
 
-export const getBlogPostsCache = cache(() => {
+export const getBlogPostsCache = () => {
 	const blogPosts = getPosts("blog");
 	return blogPosts;
-});
+};
 
-export const getProjectPostsCache = cache(() => {
+export const getProjectPostsCache = () => {
 	const projectPosts = getPosts("projects");
 	return projectPosts;
-});
+};

@@ -7,12 +7,16 @@ export const links = {
 			text: "home",
 		},
 		{
-			href: "/blog",
-			text: "blog",
+			href: "/about",
+			text: "about",
 		},
 		{
 			href: "/portfolio",
 			text: "portfolio",
+		},
+		{
+			href: "/blog",
+			text: "blog",
 		},
 	],
 	footer: [

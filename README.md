@@ -24,7 +24,8 @@ This project leverages a variety of modern web technologies and tools:
 - **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 - **PostCSS**: A tool for transforming CSS with JavaScript plugins.
 - **Sharp**: High-performance image processing in Node.js.
-- **bright**: A new tool for using vscode styled themes with zero dependencies.
+- **Bright**: A new tool for using vscode styled themes with zero dependencies.
+- **Biome**: A new tool used as a drop in replacement for eslint and prettier.
 
 ### Analytics and Performance
 - **@vercel/analytics**: Analytics for Vercel deployments.
