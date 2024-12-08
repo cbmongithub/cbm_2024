@@ -11,12 +11,12 @@ export const links = {
 			text: "about",
 		},
 		{
-			href: "/blog",
-			text: "blog",
-		},
-		{
 			href: "/portfolio",
 			text: "portfolio",
+		},
+		{
+			href: "/blog",
+			text: "blog",
 		},
 	],
 	footer: [

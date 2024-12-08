@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-export function Loader({ children }: { children: React.ReactNode }) {
+export function Loader({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() => {

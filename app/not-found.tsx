@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "./_components/header";
+import { Container } from "./_components/ui/container";
 import { ArrowLeftIcon } from "./_components/ui/icons";
 
 export default function NotFound() {
   return (
 			<>
 				<Header title="404" description="Page not found" />
-				<div className="flex flex-col justify-center items-center h-[45vh]">
+				<Container>
 					<Image
 						className="rounded-2xl mt-16"
 						src="https://media1.tenor.com/m/lx2WSGRk8bcAAAAC/pulp-fiction-john-travolta.gif"
@@ -23,10 +24,10 @@ export default function NotFound() {
 						aria-hidden="true"
 						className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
 					>
-						<ArrowLeftIcon />
+						<ArrowLeftIcon className="size-3" />
 						Go back home
 					</Link>
-				</div>
+				</Container>
 			</>
 		);
 

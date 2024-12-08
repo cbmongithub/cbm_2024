@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function WorkHistory() {
 	return (
-		<div className="relative flex flex-col justify-start items-start w-full">
+		<div className="relative w-full">
 			<h2 className="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100">
 				<svg
 					viewBox="0 0 24 24"

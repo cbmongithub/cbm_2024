@@ -1,4 +1,6 @@
 import { getPosts } from "@/_lib/posts";
+import { formatDate, mapper } from "./_lib/helpers";
+
 import { Header } from "./_components/header";
 import { SignUpForm } from "./_components/signup-form";
 import { Spotlight } from "./_components/spotlight";
@@ -6,12 +8,12 @@ import { Title } from "./_components/title";
 import { Card } from "./_components/ui/card";
 import { Container } from "./_components/ui/container";
 import { ViewButton } from "./_components/ui/view-button";
-import { WorkHistory } from "./_components/work-history";
-import { formatDate, mapper } from "./_lib/helpers";
 
 export default function Page() {
 	const recentPosts = getPosts("blog");
+
 	if (!recentPosts) return null;
+
 	return (
 		<>
 			<Header title="I'm Christian" description="I code apps and tools" />
@@ -31,10 +33,6 @@ export default function Page() {
 				))}
 			</Container>
 			<ViewButton href="/blog" content="blog" />
-			<Title>Work</Title>
-			<Spotlight height="h-96">
-				<WorkHistory />
-			</Spotlight>
 			<Title>Subscribe</Title>
 			<Spotlight>
 				<SignUpForm />
