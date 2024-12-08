@@ -1,10 +1,11 @@
+import { formatDate, mapper } from "@/_lib/helpers";
+import { getPosts } from "@/_lib/posts";
+
 import { Header } from "@/_components/header";
 import { Spotlight } from "@/_components/spotlight";
 import { Title } from "@/_components/title";
 import { Card } from "@/_components/ui/card";
 import { Container } from "@/_components/ui/container";
-import { formatDate, mapper } from "@/_lib/helpers";
-import { getPosts } from "@/_lib/posts";
 
 const recentPosts = getPosts("blog");
 

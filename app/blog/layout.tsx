@@ -1,5 +1,6 @@
-import { baseUrl } from "@/_lib/config";
 import type { Metadata } from "next";
+
+import { baseUrl } from "@/_lib/config";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(`${baseUrl}/blog`),

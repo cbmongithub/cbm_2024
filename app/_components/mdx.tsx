@@ -1,8 +1,9 @@
-import { slugify } from "@/_lib/helpers";
 import { Code } from "bright";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { createElement } from "react";
+
+import { slugify } from "@/_lib/helpers";
 
 function customTable({
 	data,

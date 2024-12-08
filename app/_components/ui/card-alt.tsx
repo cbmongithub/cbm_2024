@@ -1,6 +1,7 @@
-import { ArrowRightIcon } from "@/_components/ui/icons";
 import Image from "next/image";
 import Link from "next/link";
+
+import { ArrowRightIcon } from "@/_components/ui/icons";
 
 export function CardAlt({
 		title,
