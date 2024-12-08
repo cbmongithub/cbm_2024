@@ -1,8 +1,9 @@
+import { formatDate, mapper } from "@/_lib/helpers";
+import { getPosts } from "@/_lib/posts";
+
 import { Header } from "@/_components/header";
 import { CardAlt } from "@/_components/ui/card-alt";
 import { Container } from "@/_components/ui/container";
-import { formatDate, mapper } from "@/_lib/helpers";
-import { getPosts } from "@/_lib/posts";
 
 const recentProjects = getPosts("projects");
 

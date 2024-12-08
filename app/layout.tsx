@@ -2,13 +2,14 @@ import "./globals.css";
 
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import Footer from "./_components/footer";
+
+import { baseUrl } from "./_lib/config";
+
+import { Footer } from "./_components/footer";
 import { Loader } from "./_components/loader";
 import { Navbar } from "./_components/navbar";
-import { baseUrl } from "./_lib/config";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(baseUrl as unknown as URL),
@@ -46,7 +47,7 @@ export default function RootLayout({
   return (
 			<html
 				lang="en"
-				className={`${GeistSans.variable} flex size-full flex-col scroll-smooth antialiased bg-neutral-100 text-neutral-900 dark:text-neutral-100 dark:bg-black`}
+				className="flex size-full flex-col scroll-smooth antialiased bg-neutral-100 text-neutral-900 dark:text-neutral-100 dark:bg-black"
 			>
 				<body>
 					<main className="mx-auto flex flex-col px-6 max-w-2xl">

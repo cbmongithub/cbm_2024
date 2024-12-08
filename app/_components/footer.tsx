@@ -1,7 +1,8 @@
-import { links } from "@/_lib/config";
 import Link from "next/link";
 
-export default function Footer() {
+import { links } from "@/_lib/config";
+
+export function Footer() {
 	return (
 		<footer className="relative bottom-0 left-0 flex-none pt-32">
 			<div className="mx-auto w-full max-w-7xl lg:px-8">
@@ -23,7 +24,7 @@ export default function Footer() {
 									})}
 								</ul>
 								<p className="text-sm text-neutral-400 dark:text-neutral-500">
-									&copy;&nbsp;cbm {new Date().getFullYear()}
+									&copy;&nbsp;Christian B. Martinez {new Date().getFullYear()}
 								</p>
 							</div>
 						</div>

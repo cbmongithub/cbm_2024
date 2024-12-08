@@ -1,9 +1,10 @@
-import { Mdx } from "@/_components/mdx";
-import { BackButton } from "@/_components/ui/back-button";
 import { baseUrl } from "@/_lib/config";
 import { formatDate } from "@/_lib/helpers";
 import { getPosts } from "@/_lib/posts";
 import { notFound } from "next/navigation";
+
+import { Mdx } from "@/_components/mdx";
+import { BackButton } from "@/_components/ui/back-button";
 
 const projects = getPosts("projects");
 

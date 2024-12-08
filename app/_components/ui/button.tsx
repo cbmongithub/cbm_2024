@@ -1,9 +1,12 @@
-import { cx } from "@/_lib/helpers";
 import type { ButtonHTMLAttributes } from "react";
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+import { cx } from "@/_lib/helpers";
 
-export function Button({ className, children, ...props }: ButtonProps) {
+export function Button({
+	className,
+	children,
+	...props
+}: ButtonHTMLAttributes<HTMLButtonElement>) {
 	return (
 		<button
 			type="button"

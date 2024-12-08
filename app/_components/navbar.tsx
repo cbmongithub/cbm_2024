@@ -1,7 +1,9 @@
 "use client";
-import { links } from "@/_lib/config";
+
 import Link from 'next/link'
 import { usePathname } from "next/navigation";
+
+import { links } from "@/_lib/config";
 
 export function Navbar() {
 	const pathname = usePathname();

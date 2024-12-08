@@ -1,4 +1,4 @@
-import { Button } from "./ui/button";
+import { Button } from "@/_components/ui/button";
 
 export function SignUpForm() {
 	return (

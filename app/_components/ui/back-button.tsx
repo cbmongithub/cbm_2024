@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowLeftIcon } from "./icons";
+
+import { ArrowLeftIcon } from "@/_components/ui/icons";
 
 export function BackButton({ href }: { href: string }) {
 	return (

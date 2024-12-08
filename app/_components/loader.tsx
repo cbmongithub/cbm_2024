@@ -14,8 +14,6 @@ export function Loader({
 	}, []);
 
 	return (
-		<div className={`${!isLoaded ? "animate-pulse blur-lg" : ""}`}>
-			{children}
-		</div>
+		<div className={`${!isLoaded && "animate-pulse blur-lg"}`}>{children}</div>
 	);
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { Button } from "./button";
-import { ArrowRightIcon } from "./icons";
+
+import { Button } from "@/_components/ui/button";
+import { ArrowRightIcon } from "@/_components/ui/icons";
 
 export function ViewButton({
 	href,
