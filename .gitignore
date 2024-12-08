@@ -3,4 +3,5 @@ node_modules
 pnpm-lock.yaml
 .DS_Store
 **/**/.DS_Store
-*.env
+.env.production.local
+.env.preview.local

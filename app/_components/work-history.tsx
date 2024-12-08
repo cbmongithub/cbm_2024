@@ -32,8 +32,8 @@ export function WorkHistory() {
 							alt=""
 							width={28}
 							height={28}
-							className="h-7 w-7 rounded-full"
-							src="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=75&h=75&dpr=2"
+							className="size-7 rounded-full"
+							src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKLqS4eru5_cEDH2O8ET9zq_R5hNarBTq2Z_XjXvo6dCLIyEC9bF9TBIdzBVJwZg_m4IA&usqp=CAU"
 						/>
 					</div>
 					<dl className="flex flex-auto flex-wrap gap-x-2">
@@ -62,14 +62,14 @@ export function WorkHistory() {
 							alt="Hello world"
 							width={28}
 							height={28}
-							className="h-7 w-7 rounded-full bg-white"
-							src="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=75&h=75&dpr=2"
+							className="size-7 object-contain aspect-square rounded-full bg-black"
+							src="/img/cbmlogo.webp"
 						/>
 					</div>
 					<dl className="flex flex-auto flex-wrap gap-x-2">
 						<dt className="sr-only">Company</dt>
 						<dd className="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
-							MMBC
+							CBM, LLC
 						</dd>
 						<dt className="sr-only">Role</dt>
 						<dd className="text-xs text-neutral-500 dark:text-neutral-400">
@@ -92,38 +92,8 @@ export function WorkHistory() {
 							alt=""
 							width={28}
 							height={28}
-							className="h-7 w-7 rounded-full"
-							src="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=75&h=75&dpr=2"
-						/>
-					</div>
-					<dl className="flex flex-auto flex-wrap gap-x-2">
-						<dt className="sr-only">Company</dt>
-						<dd className="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
-							Upwork
-						</dd>
-						<dt className="sr-only">Role</dt>
-						<dd className="text-xs text-neutral-500 dark:text-neutral-400">
-							Web Developer
-						</dd>
-						<dt className="sr-only">Date</dt>
-						<dd
-							className="ml-auto text-xs text-neutral-400 dark:text-neutral-500"
-							aria-label="2013 until 2014"
-						>
-							<time dateTime="2013">2017</time>{" "}
-							<span aria-hidden="true">—</span>{" "}
-							<time dateTime="2014">2018</time>
-						</dd>
-					</dl>
-				</li>
-				<li className="flex gap-4">
-					<div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-						<Image
-							alt=""
-							width={28}
-							height={28}
-							className="h-7 w-7 rounded-full bg-white"
-							src="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=75&h=75&dpr=2"
+							className="size-7 rounded-full bg-white"
+							src="/img/mixdlogo.webp"
 						/>
 					</div>
 					<dl className="flex flex-auto flex-wrap gap-x-2">

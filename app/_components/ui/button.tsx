@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes } from "react";
 import { cx } from "@/_lib/helpers";
 
 type VariantProps = keyof typeof variants;
-
+// TODO: Move all buttons here eventually
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 	variant?: VariantProps;
 	className?: string;
