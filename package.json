@@ -13,11 +13,13 @@
 	],
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev -p 3001",
 		"build": "next build",
 		"start": "next start"
 	},
 	"dependencies": {
+		"@upstash/ratelimit": "^2.0.5",
+		"@upstash/redis": "^1.34.3",
 		"@vercel/analytics": "^1.4.1",
 		"@vercel/speed-insights": "^1.1.0",
 		"next": "15.0.4-canary.46",

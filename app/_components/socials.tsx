@@ -4,7 +4,7 @@ export function Socials() {
 			<li className="flex">
 				<a
 					className="group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
-					href="https://twitter.com/_coderchris"
+					href="https://twitter.com/cbmonx"
 				>
 					<svg
 						viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ export function Socials() {
 			<li className="mt-4 flex">
 				<a
 					className="group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
-					href="https://github.com/christianbmartinez"
+					href="https://github.com/cbmongithub"
 				>
 					<svg
 						viewBox="0 0 24 24"
@@ -38,7 +38,7 @@ export function Socials() {
 			<li className="mt-4 flex">
 				<a
 					className="group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
-					href="https://www.linkedin.com/in/cmartinez1089"
+					href="https://www.linkedin.com/in/cbmonlinkedn"
 				>
 					<svg
 						viewBox="0 0 24 24"
@@ -53,7 +53,7 @@ export function Socials() {
 			<li className="mt-4 flex">
 				<a
 					className="group flex text-sm font-medium text-zinc-800 transition hover:text-blue-500 dark:text-zinc-200 dark:hover:text-blue-500"
-					href="https://www.linkedin.com/in/cmartinez1089"
+					href="mailto:hello@christianbmartinez.com?subject=Hello?body=Hello%20Christian,"
 				>
 					<svg
 						viewBox="0 0 24 24"
