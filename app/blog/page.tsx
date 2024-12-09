@@ -6,12 +6,14 @@ import { Spotlight } from "@/_components/spotlight";
 import { Title } from "@/_components/title";
 import { Card } from "@/_components/ui/card";
 import { Container } from "@/_components/ui/container";
+import { baseUrl } from "@/_lib/config";
 
 const recentPosts = getPosts("blog");
 
 export const metadata = {
-	title: "Blog | Christian B. Martinez",
-	description: "Posts on web development",
+  metadataBase: new URL(`${baseUrl}/blog`),
+  title: "Blog | Christian B. Martinez",
+  description: "Posts on web development",
 };
 
 export default function Page() {
