@@ -1,5 +1,5 @@
-import { getPosts } from "@/_lib/posts";
 import { formatDate, mapper } from "./_lib/helpers";
+import { getPosts } from "./_lib/posts";
 
 import { Header } from "./_components/header";
 import { SignUpForm } from "./_components/signup-form";
@@ -12,31 +12,33 @@ import { ViewButton } from "./_components/ui/view-button";
 export default function Page() {
 	const recentPosts = getPosts("blog");
 
-	if (!recentPosts) return null;
+	if (!recentPosts) {
+  return null;
+}
 
 	return (
-		<>
-			<Header title="I'm Christian" description="I code apps and tools" />
-			<Container>
-				<Title>Blog</Title>
-				{mapper(recentPosts, (post) => (
-					<Spotlight key={post.slug}>
-						<Card
-							key={post.slug}
-							content="article"
-							contentUrl={`/blog/${post.slug}`}
-							title={post.metadata.title}
-							date={formatDate(post.metadata.publishedAt)}
-							description={post.metadata.summary}
-						/>
-					</Spotlight>
-				))}
-			</Container>
-			<ViewButton href="/blog" content="blog" />
-			<Title>Subscribe</Title>
-			<Spotlight>
-				<SignUpForm />
-			</Spotlight>
-		</>
-	);
+  <>
+    <Header title="I'm Christian" description="I code apps and tools" />
+    <Container>
+      <Title>Blog</Title>
+      {mapper(recentPosts, (post) => (
+        <Spotlight height="h-auto" key={post.slug}>
+          <Card
+            key={post.slug}
+            content="article"
+            contentUrl={`/blog/${post.slug}`}
+            title={post.metadata.title}
+            date={formatDate(post.metadata.publishedAt)}
+            description={post.metadata.summary}
+          />
+        </Spotlight>
+      ))}
+    </Container>
+    <ViewButton href="/blog" content="blog" />
+    <Title>Subscribe</Title>
+    <Spotlight>
+      <SignUpForm />
+    </Spotlight>
+  </>
+);
 }

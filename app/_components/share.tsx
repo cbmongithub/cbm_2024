@@ -10,9 +10,14 @@ import {
   TwitterShareButton,
 } from "react-share";
 
-export function Share({ title, url, description }) {
+export function Share({
+  className,
+  title,
+  url,
+  description,
+}: { className?: string; title: string; url: string; description: string }) {
   return (
-    <div className="flex w-full flex-row items-center justify-center ">
+    <div className={className}>
       <EmailShareButton
         url={url}
         subject={`Check out this blog post: ${title}`}
@@ -22,10 +27,7 @@ export function Share({ title, url, description }) {
           <AiFillMail className="size-4 text-white" />
         </div>
       </EmailShareButton>
-      <FacebookShareButton
-        url={url}
-        aria-label="Share blog post through facebook button"
-      >
+      <FacebookShareButton url={url} aria-label="Share blog post through facebook button">
         <div className="mx-3 cursor-pointer rounded-full bg-blue-600 p-2 shadow-xl hover:bg-blue-700">
           <FaFacebook className="size-4 text-white" />
         </div>
@@ -41,11 +43,7 @@ export function Share({ title, url, description }) {
           <FaLinkedin className="size-4 text-white" />
         </div>
       </LinkedinShareButton>
-      <RedditShareButton
-        url={url}
-        title={title}
-        aria-label="Share blog post through reddit button"
-      >
+      <RedditShareButton url={url} title={title} aria-label="Share blog post through reddit button">
         <div className="mx-3 cursor-pointer rounded-full bg-orange-600 p-2 shadow-xl hover:bg-orange-700">
           <FaReddit className="size-4 text-white" />
         </div>
@@ -53,7 +51,7 @@ export function Share({ title, url, description }) {
       <TwitterShareButton
         url={url}
         title={`Check out this blog post by @cbmonx! ${title}`}
-        hashtags={["webdevelopment", "blog", "fullstack"]}
+        hashtags={['webdevelopment', 'blog', 'fullstack']}
         aria-label="Share blog post through x button"
       >
         <div className="mx-3 cursor-pointer rounded-full bg-sky-500 p-2 shadow-xl hover:bg-sky-600">

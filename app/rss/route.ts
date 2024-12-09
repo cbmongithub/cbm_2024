@@ -1,4 +1,4 @@
-import type { MetadataWithSlug } from "@/_types";
+import type { MetadataWithSlug } from "@/_lib/posts";
 
 import { baseUrl } from "@/_lib/config";
 import { getBlogPostsCache } from "@/_lib/posts";
