@@ -3,7 +3,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Suspense } from "react";
+import { type ReactNode, Suspense } from "react";
 
 import { baseUrl } from "./_lib/config";
 
@@ -40,28 +40,28 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-	children,
+  children,
 }: {
-	children: React.ReactNode;
+  children: ReactNode;
 }) {
-	return (
-		<html
-			lang="en"
-			className="flex size-full flex-col scroll-smooth antialiased bg-neutral-100 text-neutral-900 dark:text-neutral-100 dark:bg-black"
-		>
-			<body>
-				<main className="mx-auto flex flex-col px-6 max-w-2xl">
-					<Suspense fallback={<div>Loading...</div>}>
-						<Loader>
-							<Navbar />
-							{children}
-							<Footer />
-						</Loader>
-					</Suspense>
-					<Analytics />
-					<SpeedInsights />
-				</main>
-			</body>
-		</html>
-	);
+  return (
+    <html
+      lang="en"
+      className="flex size-full flex-col scroll-smooth antialiased text-neutral-100 bg-black"
+    >
+      <body>
+        <main className="mx-auto flex flex-col px-6 max-w-2xl">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Loader>
+              <Navbar />
+              {children}
+              <Footer />
+            </Loader>
+          </Suspense>
+          <Analytics />
+          <SpeedInsights />
+        </main>
+      </body>
+    </html>
+  );
 }
