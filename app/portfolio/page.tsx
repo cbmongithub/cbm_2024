@@ -9,7 +9,7 @@ import { Container } from "@/_components/ui/container";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}/portfolio`),
-  title: "portfolio",
+  title: "Portfolio",
   description: "Welcome to my portfolio! I hope you find some value here.",
   openGraph: {
     title: "portfolio",

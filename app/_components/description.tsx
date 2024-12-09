@@ -1,3 +1,5 @@
-export function Description({ children }: { children: React.ReactNode }) {
-	return <p className="text-base py-3">{children}</p>;
+import type { ReactNode } from "react";
+
+export function Description({ children }: { children: ReactNode }) {
+  return <p className="text-base py-3">{children}</p>;
 }
