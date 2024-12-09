@@ -16,13 +16,13 @@ You will also need to have Node.js and NPM installed on your machine. If you hav
 
 To use the OpenAI package in your JavaScript application, you will need to install it via NPM. You can do this by running the following command in your terminal:
 
-```
+```bash
 npm install openai
 ```
 
 Once you have installed the package, you can import it into your JavaScript file like this:
 
-```javascript
+```ts
 const openai = require('openai')
 ```
 
@@ -30,13 +30,13 @@ const openai = require('openai')
 
 To authenticate with the OpenAI API, you will first need to install dotenv to set your API key as an environment variable in your JavaScript application. You can do this by adding the following:
 
-```javascript
+```bash
 npm install dotenv
 ```
 
 then create a .env file and paste in your environment variable
 
-```javascript
+```bash
 process.env.OPENAI_API_KEY = 'your-api-key-here'
 ```
 
@@ -46,7 +46,7 @@ Be sure to replace `'your-api-key-here'` with your actual API key.
 
 The OpenAI package provides a variety of functions for interacting with the OpenAI API. Here is an example of how to use the `completions` function to generate text:
 
-```javascript
+```ts
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,

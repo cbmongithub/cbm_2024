@@ -15,7 +15,7 @@ State is a JavaScript object that contains the data that needs to be displayed o
 
 To use state in a component, we first need to define the initial state. This is done by using the `useState` hook, which is a function provided by React. The `useState` hook takes one argument, which is the initial value of the state.
 
-```jsx
+```tsx
 import React, { useState } from 'react'
 
 function Counter() {
@@ -40,7 +40,7 @@ To update the state, we use the function that was returned by the `useState` hoo
 
 In many cases, we want to use state with props. To do this, we simply pass the state value as a prop to a child component.
 
-```jsx
+```tsx
 import React, { useState } from 'react'
 
 function Parent() {
