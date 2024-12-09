@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description: "Welcome to my portfolio! I hope you find some value here.",
   openGraph: {
-    title: "portfolio",
+    title: "Portfolio",
     description: "Welcome to my portfolio! I hope you find some value here.",
     url: `${baseUrl}/portfolio`,
     siteName: "christianbmartinez.com",
