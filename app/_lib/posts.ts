@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-export type Metadata = {
+type Metadata = {
 	title: string;
 	publishedAt: string;
 	summary: string;
