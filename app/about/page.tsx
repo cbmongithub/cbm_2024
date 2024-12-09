@@ -1,3 +1,7 @@
+import type { Metadata } from "next";
+
+import { baseUrl } from "@/_lib/config";
+
 import { Description } from "@/_components/description";
 import { Header } from "@/_components/header";
 import { Socials } from "@/_components/socials";
@@ -5,6 +9,34 @@ import { Spotlight } from "@/_components/spotlight";
 import { Title } from "@/_components/title";
 import { Container } from "@/_components/ui/container";
 import { WorkHistory } from "@/_components/work-history";
+
+export const metadata: Metadata = {
+	metadataBase: new URL(`${baseUrl}/about`),
+	title: {
+		default: "About | Christian B. Martinez",
+		template: "%s | Christian B. Martinez",
+	},
+	description: "A little about me",
+	openGraph: {
+		title: "About | Christian B. Martinez",
+		description: "A little about me",
+		url: `${baseUrl}/about`,
+		siteName: "christianbmartinez.com",
+		locale: "en_US",
+		type: "website",
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
+};
 
 export default function About() {
 	return (
