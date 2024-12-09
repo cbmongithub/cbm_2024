@@ -1,7 +1,19 @@
 import fs from "node:fs";
 import path from "node:path";
 
-import type { Metadata } from "@/_types";
+export type Metadata = {
+	title: string;
+	publishedAt: string;
+	summary: string;
+	image?: string;
+	imageAlt?: string;
+};
+
+export type MetadataWithSlug = {
+	slug: string;
+	metadata: Metadata;
+	content: string;
+};
 
 function parseFrontmatter(fileContent: string) {
 	const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
