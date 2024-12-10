@@ -31,7 +31,7 @@ html, body {
   transition: all;
   text-decoration-color: #a3a3a3;
   text-decoration-color: #4b5563;
-  text-underline-offset: 0.5em;
+  text-underline-offset: 0.3em;
   text-decoration-thickness: 0.1em;
 }
 
@@ -43,36 +43,6 @@ html, body {
 
 .prose *:hover > .anchor {
   visibility: visible;
-}
-
-.prose pre {
-  background-color: #111827;
-  border-radius: 0.5rem;
-  overflow-x: auto;
-  border: 1px solid #111827;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.875rem;
-}
-
-.prose code {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
-  border-radius: 0.5rem;
-}
-
-.prose pre code {
-  padding: 0;
-  border: initial;
-  line-height: 1.5;
-}
-
-.prose code span {
-  font-weight: 500;
 }
 
 .prose img {
@@ -144,13 +114,4 @@ input[type='email'] {
   appearance: none;
 }
 
-table {
-  display: block;
-  max-width: fit-content;
-  overflow-x: auto;
-  white-space: nowrap;
-}
 
-.title {
-  text-wrap: balance;
-}

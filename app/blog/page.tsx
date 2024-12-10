@@ -37,7 +37,7 @@ export default function Page() {
     <>
       <Header title="Blog" description="Everything web development" />
       <Container>
-        <Title>Blog</Title>
+        <Title>Posts</Title>
         <Posts />
       </Container>
     </>

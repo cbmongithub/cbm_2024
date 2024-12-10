@@ -3,7 +3,7 @@ import { XIcon } from 'react-share';
 
 export function Socials() {
   return (
-    <ul>
+    <ul className="my-6">
       <li>
         <Link
           className="group flex text-sm font-medium transition text-neutral-200 hover:text-neutral-300"

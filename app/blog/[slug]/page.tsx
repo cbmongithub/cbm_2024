@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 
 import { baseUrl } from "@/_lib/config";
-import { formatDate } from "@/_lib/helpers";
 import { getPosts } from "@/_lib/posts";
 
+import { Header } from "@/_components/header";
 import { Mdx } from "@/_components/mdx";
 import { Share } from "@/_components/share";
 import { ButtonRound } from "@/_components/ui/buttons";
@@ -92,21 +92,21 @@ export default async function Page(props) {
           }}
         />
         <ButtonRound href="/blog" />
-        <h1 className="title font-semibold text-2xl tracking-tighter">{post.metadata.title}</h1>
-        <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
-          </p>
-        </div>
         <article className="prose">
+          <Header
+            title={post.metadata.title}
+            description={post.metadata.summary}
+            date={post.metadata.publishedAt}
+          />
           <Mdx source={post.content} />
+          <h2>Share</h2>
+          <Share
+            className="mt-6"
+            title={post.metadata.title}
+            description={post.metadata.summary}
+            url={`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${post.slug}`}
+          />
         </article>
-        <Share
-          className="mt-8"
-          title={post.metadata.title}
-          description={post.metadata.summary}
-          url={`${process.env.NEXT_PUBLIC_BASE_URL}/blog/${post.slug}`}
-        />
       </>
     );
 }
