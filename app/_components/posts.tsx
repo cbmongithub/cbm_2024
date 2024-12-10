@@ -2,11 +2,11 @@
 import { formatDate } from "@/_lib/helpers";
 import { getPosts } from "@/_lib/posts";
 
-import { Spotlight } from "./spotlight";
-import { Card } from "./ui/card";
+import { Spotlight } from "@/_components/spotlight";
+import { Card } from "@/_components/ui/cards";
 
-export function FilterPosts({ filter }: { filter: string }) {
-  const posts = getPosts(filter);
+export function Posts() {
+  const posts = getPosts();
 
   if (!posts) {
     return null;

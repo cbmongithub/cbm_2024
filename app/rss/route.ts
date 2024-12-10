@@ -1,11 +1,10 @@
-import type { MetadataWithSlug } from "@/_lib/posts";
-
 import { baseUrl } from "@/_lib/config";
-import { getBlogPostsCache } from "@/_lib/posts";
+import type { MetadataWithSlug } from "@/_lib/posts";
+import { getPosts } from "@/_lib/posts";
 
 
 export function GET() {
-	const allBlogs = getBlogPostsCache();
+	const allBlogs = getPosts();
 
 	const itemsXml = allBlogs
 		.sort((a, b) => {

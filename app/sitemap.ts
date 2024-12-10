@@ -2,10 +2,10 @@ import { baseUrl } from "@/_lib/config";
 import { getPosts } from "@/_lib/posts";
 
 export default async function sitemap() {
-	const blogs = getPosts("blog").map((post) => ({
-		url: `${baseUrl}/blog/${post.slug}`,
-		lastModified: post.metadata.publishedAt,
-	}));
+	const blogs = getPosts().map((post) => ({
+  url: `${baseUrl}/blog/${post.slug}`,
+  lastModified: post.metadata.publishedAt,
+}));
 
 	const routes = ["", "/blog"].map((route) => ({
 		url: `${baseUrl}${route}`,

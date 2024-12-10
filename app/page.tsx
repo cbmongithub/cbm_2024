@@ -5,12 +5,12 @@ import { Header } from "./_components/header";
 import { SignUpForm } from "./_components/signup-form";
 import { Spotlight } from "./_components/spotlight";
 import { Title } from "./_components/title";
-import { Card } from "./_components/ui/card";
+import { ButtonAlt } from "./_components/ui/buttons";
+import { Card } from "./_components/ui/cards";
 import { Container } from "./_components/ui/container";
-import { ViewButton } from "./_components/ui/view-button";
 
 export default function Page() {
-	const recentPosts = getPosts("blog");
+	const recentPosts = getPosts();
 
 	if (!recentPosts) {
   return null;
@@ -34,7 +34,7 @@ export default function Page() {
         </Spotlight>
       ))}
     </Container>
-    <ViewButton href="/blog" content="blog" />
+    <ButtonAlt href="/blog" content="blog" />
     <Title>Subscribe</Title>
     <Spotlight>
       <SignUpForm />

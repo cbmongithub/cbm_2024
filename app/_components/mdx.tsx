@@ -6,14 +6,10 @@ import myTheme from "@/_lib/theme.json";
 
 Code.theme = myTheme;
 
-const components = {
-  pre: Code,
-};
-
 export function Mdx(
   props: MDXRemoteProps & {
     components?: ComponentProps<ElementType>;
   },
 ) {
-  return <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />;
+  return <MDXRemote {...props} components={{ pre: Code }} />;
 }

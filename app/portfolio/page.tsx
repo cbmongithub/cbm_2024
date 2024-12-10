@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "@/_lib/config";
 
-import { FilterPosts } from "@/_components/filter-posts";
 import { Header } from "@/_components/header";
 import { Title } from "@/_components/title";
+import { CardAlt } from "@/_components/ui/cards";
 import { Container } from "@/_components/ui/container";
 
 export const metadata: Metadata = {
@@ -38,7 +38,15 @@ export default function Page() {
       <Header title="Portfolio" description="Some of my favorite projects" />
       <Container>
         <Title>Projects</Title>
-        <FilterPosts filter="projects" />
+        <CardAlt
+          title="Project Title"
+          imgSrc="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          imgAlt="Project Image"
+          date="2024-01-01"
+          description="Project Description"
+          content="Project Content"
+          contentUrl="/path/to/content"
+        />
       </Container>
     </>
   );

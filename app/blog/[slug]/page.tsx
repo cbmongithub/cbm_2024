@@ -6,9 +6,9 @@ import { getPosts } from "@/_lib/posts";
 
 import { Mdx } from "@/_components/mdx";
 import { Share } from "@/_components/share";
-import { GoBack } from "@/_components/ui/go-back";
+import { ButtonRound } from "@/_components/ui/buttons";
 
-const posts = getPosts("blog");
+const posts = getPosts();
 
 export function generateStaticParams() {
 	return posts.map((post) => ({
@@ -91,7 +91,7 @@ export default async function Page(props) {
             }),
           }}
         />
-        <GoBack href="/blog" />
+        <ButtonRound href="/blog" />
         <h1 className="title font-semibold text-2xl tracking-tighter">{post.metadata.title}</h1>
         <div className="flex justify-between items-center mt-2 mb-8 text-sm">
           <p className="text-sm text-neutral-600 dark:text-neutral-400">

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "@/_lib/config";
 
-import { FilterPosts } from "@/_components/filter-posts";
 import { Header } from "@/_components/header";
+import { Posts } from "@/_components/posts";
 import { Title } from "@/_components/title";
 import { Container } from "@/_components/ui/container";
 
@@ -38,7 +38,7 @@ export default function Page() {
       <Header title="Blog" description="Everything web development" />
       <Container>
         <Title>Blog</Title>
-        <FilterPosts filter="blog" />
+        <Posts />
       </Container>
     </>
   );

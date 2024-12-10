@@ -60,6 +60,6 @@ function getMdxData(dir: string) {
   });
 }
 
-export function getPosts(dir: string) {
-  return getMdxData(path.join(process.cwd(), "app", "_posts", dir));
+export function getPosts() {
+  return getMdxData(path.join(process.cwd(), "app", "_content", "blog"));
 }
