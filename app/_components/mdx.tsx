@@ -4,9 +4,9 @@ import Link, { type LinkProps } from "next/link";
 import { type ComponentProps, type ElementType, createElement } from "react";
 
 import { slugify } from "@/_lib/helpers";
-import codeTheme from "@/_lib/theme.json";
+import theme from "@/_lib/theme.json";
 
-Code.theme = codeTheme;
+Code.theme = theme;
 
 function createHeading(level: number) {
   const Heading = ({ children }: { children: string }) => {

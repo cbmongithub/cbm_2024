@@ -16,7 +16,6 @@ export type MetadataWithSlug = {
   metadata: Metadata;
   content: string;
 };
-
 const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
 const quotesRegex = /^['"](.*)['"]$/;
 
@@ -60,6 +59,12 @@ function getMdxData(dir: string) {
   });
 }
 
+let cachedPosts: MetadataWithSlug[] | null = null;
+
 export function getPosts() {
-  return getMdxData(path.join(process.cwd(), "app", "_content", "blog"));
+  if (!cachedPosts) {
+    cachedPosts = getMdxData(path.join(process.cwd(), "app", "_content", "blog"));
+  }
+
+  return cachedPosts;
 }
