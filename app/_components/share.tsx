@@ -1,5 +1,6 @@
 "use client";
 
+import { XIcon } from "@/_components/ui/icons";
 import { AiFillMail } from "react-icons/ai";
 import { FaFacebook, FaLinkedin, FaReddit } from "react-icons/fa";
 import {
@@ -8,7 +9,6 @@ import {
   LinkedinShareButton,
   RedditShareButton,
   TwitterShareButton,
-  XIcon,
 } from "react-share";
 
 export function Share({
@@ -56,7 +56,7 @@ export function Share({
         aria-label="Share blog post through twitter button"
       >
         <div className="mr-3 cursor-pointer rounded-full hover:bg-gray-600">
-          <XIcon className="size-5 text-white" />
+          <XIcon small={true} />
         </div>
       </TwitterShareButton>
     </div>
