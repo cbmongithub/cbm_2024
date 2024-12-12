@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "@/_lib/config";
 
-import { Header } from "@/_components/header";
-import { Title } from "@/_components/title";
-import { CardAlt } from "@/_components/ui/cards";
-import { Container } from "@/_components/ui/container";
+import Header from "@/_components/header";
+import Title from "@/_components/title";
+import CardImg from "@/_components/ui/card-img";
+import Container from "@/_components/ui/container";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}/portfolio`),
@@ -38,7 +38,7 @@ export default function Page() {
       <Header title="Portfolio" description="Some of my favorite projects" />
       <Container>
         <Title>Projects</Title>
-        <CardAlt
+        <CardImg
           title="Project Title"
           imgSrc="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           imgAlt="Project Image"

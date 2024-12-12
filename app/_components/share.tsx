@@ -11,7 +11,7 @@ import {
   TwitterShareButton,
 } from "react-share";
 
-export function Share({
+export default function Share({
   className,
   title,
   url,

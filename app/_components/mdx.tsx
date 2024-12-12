@@ -39,7 +39,7 @@ const components = {
   pre: Code,
 };
 
-export function Mdx(
+export default function Mdx(
   props: MDXRemoteProps & {
     components?: ComponentProps<ElementType>;
   },

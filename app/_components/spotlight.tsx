@@ -2,7 +2,7 @@
 
 import { type MouseEvent, type ReactNode, useCallback, useRef, useState } from "react";
 
-export function Spotlight({
+export default function Spotlight({
   height = "h-48",
   width = "w-full",
   children,

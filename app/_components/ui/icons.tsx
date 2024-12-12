@@ -4,7 +4,7 @@ type IconProps = SVGProps<SVGSVGElement> & {
   small?: boolean;
 };
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
+// biome-ignore lint/style/useNamingConvention: Disable naming convention rule for this line
 export function XIcon(props: IconProps) {
   return (
     <svg

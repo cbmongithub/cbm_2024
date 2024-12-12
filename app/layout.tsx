@@ -7,9 +7,9 @@ import { type ReactNode, Suspense } from "react";
 
 import { baseUrl } from "./_lib/config";
 
-import { Footer } from "./_components/footer";
-import { Loader } from "./_components/loader";
-import { Navbar } from "./_components/navbar";
+import Footer from "./_components/footer";
+import Loader from "./_components/loader";
+import Navbar from "./_components/navbar";
 
 export const metadata: Metadata = {
 	metadataBase: new URL(baseUrl as unknown as URL),

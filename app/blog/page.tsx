@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "@/_lib/config";
 
-import { Header } from "@/_components/header";
+import Header from "@/_components/header";
 import { Posts } from "@/_components/posts";
-import { Title } from "@/_components/title";
-import { Container } from "@/_components/ui/container";
+import Title from "@/_components/title";
+import Container from "@/_components/ui/container";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}/blog`),
