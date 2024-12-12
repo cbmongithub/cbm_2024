@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 
 export default function Loader({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
