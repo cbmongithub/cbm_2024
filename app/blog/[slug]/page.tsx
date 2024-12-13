@@ -16,7 +16,8 @@ export function generateStaticParams() {
 	}));
 }
 
-export async function generateMetadata(props: { params: { slug: string } }) {
+// biome-ignore lint/suspicious/noExplicitAny: Unknown type
+export async function generateMetadata(props: any) {
   const params = await props.params;
   const post = posts.find((post) => post.slug === params.slug);
 
@@ -51,7 +52,8 @@ export async function generateMetadata(props: { params: { slug: string } }) {
   };
 }
 
-export default async function Page(props: { params: { slug: string } }) {
+// biome-ignore lint/suspicious/noExplicitAny: Unknown type
+export default async function Page(props: any) {
   const params = await props.params;
   const post = posts.find((post) => post.slug === params.slug);
 

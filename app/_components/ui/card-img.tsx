@@ -20,7 +20,7 @@ export default function CardImg({
   contentUrl: string;
 }) {
   return (
-    <div className="relative h-auto rounded-2xl my-6 flex flex-col md:flex-row border border-neutral-800">
+    <div className="relative h-auto lg:h-48 rounded-2xl my-6 flex flex-col md:flex-row border border-neutral-800">
       <div className="relative md:w-2/5 shrink-0 overflow-hidden">
         <Image
           src={imgSrc}

@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+const config = {
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -22,3 +22,5 @@ module.exports = {
   reactStrictMode: true,
   transpilePackages: ["next-mdx-remote"],
 };
+
+export default config;

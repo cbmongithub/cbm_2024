@@ -1,20 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { cache } from "react";
+import type { Metadata } from "../_types";
 
-type Metadata = {
-  title: string;
-  publishedAt: string;
-  summary: string;
-  image?: string;
-  imageAlt?: string;
-};
-
-export type MetadataWithSlug = {
-  slug: string;
-  metadata: Metadata;
-  content: string;
-};
 const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
 const quotesRegex = /^['"](.*)['"]$/;
 
@@ -25,13 +13,12 @@ function parseFrontmatter(fileContent: string) {
   const frontMatterLines = frontMatterBlock?.trim().split("\n") || [];
   const metadata: Partial<Metadata> = {};
 
-  // biome-ignore lint/complexity/noForEach: node:path
-  frontMatterLines.forEach((line) => {
+  for (const line of frontMatterLines) {
     const [key, ...valueArr] = line.split(": ");
     let value = valueArr.join(": ").trim();
     value = value.replace(quotesRegex, "$1");
     metadata[key.trim() as keyof Metadata] = value;
-  });
+  }
 
   return { metadata: metadata as Metadata, content };
 }
