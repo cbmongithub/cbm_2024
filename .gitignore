@@ -9,3 +9,4 @@ pnpm-lock.yaml
 
 .env.local
 .env.preview.local
+.env.development.local
