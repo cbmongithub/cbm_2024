@@ -1,0 +1,123 @@
+---
+title: 'Classes vs. Functions: Which Is Better to use in TypeScript?'
+publishedAt: '2024-12-12'
+summary: 'Are TypeScript classes better than functions? Lets go over using classes over functions in TypeScript, including structuring code, maintaining readability, and leveraging TypeScripts features.'
+---
+
+As I came across a great codebase, I noticed they had a great mix of classes and functions I hardly see in codebases these days. Of course, being the curious person I am, I dove deep into this topic to get to the bottom of my question: What are the advantages of using classes over functions? However, TypeScript (TS) classes offer distinct advantages, particularly around structuring code, maintaining readability, and leveraging TypeScript’s features to provide better tooling, predictability, and maintainability. Here’s a closer look at some of the specific advantages TypeScript classes offer over functions for creating reusable structures, encapsulating functionality, and enforcing type safety:
+
+1. Clear Blueprint Structure
+
+	•	Purpose-Built Structure: Classes inherently signal that they represent a blueprint or a model of an entity, such as a User, Product, or Cart. This makes code more readable and recognizable, as developers can instantly understand its role as a template.
+	•	Static Members: Classes allow defining static members, methods, and properties that are bound to the class itself (not the instance). This can be particularly helpful when building utilities that are conceptually tied to a class, making them more intuitive to locate and use.
+
+2. Encapsulation with Visibility Modifiers
+
+	•	Visibility Modifiers: TypeScript classes can leverage private, protected, and public access modifiers to control access to properties and methods. This is not possible with plain functions. It allows you to hide implementation details and enforce which properties and methods are accessible from outside.
+	•	Data Hiding: Unlike functions, classes offer a built-in way to encapsulate internal states, making it easier to control and prevent unintended access or mutations to sensitive data.
+
+3. Getters and Setters
+
+	•	True Getters/Setters: While you can create similar functionality in functions, TS classes support true get and set accessors. This enables more controlled access to properties and calculated values, creating a seamless interface where the logic appears as properties rather than methods, enhancing readability.
+	•	Validation on Setters: Classes can enforce validation or additional logic when a property is set or retrieved, helping to enforce constraints or preconditions in an organized manner.
+
+4. Instance Management and Prototypes
+
+	•	Instance Methods and Prototype Inheritance: Functions do not carry inheritance by default, whereas TS classes support prototype inheritance, making it easy to build on and extend existing classes.
+	•	Object Instances: When you instantiate a class, it’s immediately clear that the resulting object is an instance of that class. Functions don’t have the same level of self-descriptiveness in terms of instantiation.
+
+5. Richer Type Safety and Enhanced TypeScript Features
+
+	•	Constructor Enforcement: TypeScript enforces constructor typings, meaning you can define specific requirements and defaults for initializing instances of a class. This is particularly useful when working in larger codebases, as it catches errors at the time of object creation.
+	•	Inheritance and Generics: Classes allow for easy inheritance and composition, meaning you can create sophisticated, type-safe hierarchies using TypeScript’s class inheritance combined with generics, which functions do not support as elegantly.
+	•	Type Inference and IntelliSense: Classes allow for better type inference, and IDEs can offer richer autocomplete and IntelliSense experiences. This results in better tooling and documentation as developers work with the code.
+
+6. Design Patterns and Object-Oriented Principles
+
+	•	Design Pattern Compatibility: Many design patterns, such as Singletons, Factories, or Builders, are easier to implement with classes than functions. Classes align with object-oriented principles like inheritance and polymorphism, making these patterns more intuitive.
+	•	Organized Codebase: Classes inherently lend themselves to encapsulation and organization, particularly when implementing patterns such as MVC, MVP, or even MVVM. They help to create predictable structures in codebases, enhancing maintainability.
+
+7. Improved Readability and Intent
+
+	•	Clearer Intent: Classes make it more obvious when we’re modeling objects or entities with specific properties and behaviors. A function can have properties attached, but it’s less clear that it’s intended to be a model or an entity.
+	•	Code Organization: Classes allow logically grouping properties and methods under a cohesive structure, making it easier to maintain a clean and readable codebase.
+
+Examples Comparing Classes vs. Functions
+
+Lets look at an example that showcases how classes in TypeScript improve structure and type safety compared to functions.
+
+## Class Example:
+
+```typescript
+class User {
+  private _balance: number;
+
+  constructor(public name: string, initialBalance: number) {
+    this._balance = initialBalance;
+  }
+
+  get balance(): number {
+    return this._balance;
+  }
+
+  set balance(amount: number) {
+    if (amount < 0) throw new Error("Balance cannot be negative");
+    this._balance = amount;
+  }
+
+  deposit(amount: number): void {
+    this._balance += amount;
+  }
+}
+```
+
+Here, the User class provides:
+
+	•	A clear structure for properties and methods.
+	•	Encapsulation of _balance, with restricted access.
+	•	Type safety enforced on balance through getter/setter.
+	•	A constructor that sets initial properties with enforced types.
+
+## Function Example:
+
+While we could try to replicate the same with a function, it would look like this:
+
+```typescript
+function createUser(name: string, initialBalance: number) {
+  let _balance = initialBalance;
+
+  return {
+    name,
+    get balance() {
+      return _balance;
+    },
+    set balance(amount: number) {
+      if (amount < 0) throw new Error("Balance cannot be negative");
+      _balance = amount;
+    },
+    deposit(amount: number) {
+      _balance += amount;
+    }
+  };
+}
+
+const user = createUser("Alice", 100);
+user.deposit(50);
+console.log(user.balance); // 150
+```
+This works, but:
+
+	•	It lacks explicit typing on each property.
+	•	Inconsistent readability: Accessors, validation, and property initialization are less consistent than in a class structure.
+	•	No Prototype: Each createUser function call creates a new object and methods in memory, which is less efficient than prototype inheritance.
+
+## When Functions Are Better
+
+There are still many cases where functions are preferable:
+
+	•	For lightweight utilities or stateless logic that dont need instance management.
+	•	Functional components in React, where hooks and contexts handle state, lifecycle, and logic management efficiently.
+
+## Conclusion
+
+While functions can replicate much of the functionality, TypeScript classes provide a stronger framework for building complex and scalable systems. They leverage TypeScript’s strengths to offer clarity, safety, and structure, especially when modeling entities that are more than just isolated operations. For reusable and object-oriented designs, classes make TypeScript code more predictable and maintainable, particularly in larger codebases.
