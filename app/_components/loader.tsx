@@ -5,7 +5,7 @@ import { type ReactNode, useEffect, useState } from "react";
 export default function Loader({
   children,
 }: {
-  children: ReactNode;
+  children?: ReactNode;
 }) {
   const [isLoaded, setIsLoaded] = useState(false);
 

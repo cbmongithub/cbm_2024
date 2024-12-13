@@ -2,7 +2,6 @@ import type { SVGProps } from "react";
 
 type IconProps = SVGProps<SVGSVGElement>;
 
-// biome-ignore lint/style/useNamingConvention: Disable naming convention rule for this line
 export function XIcon(props: IconProps) {
   return (
     <svg
