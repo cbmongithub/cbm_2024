@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function Socials() {
+export default function Socials() {
   return (
     <ul className="my-6">
       <li className="mt-4 flex">

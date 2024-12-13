@@ -2,7 +2,7 @@
 
 import { type MouseEvent, type ReactNode, useCallback, useRef, useState } from "react";
 
-export function Spotlight({
+export default function Spotlight({
   height = "h-48",
   width = "w-full",
   children,
@@ -59,7 +59,7 @@ export function Spotlight({
       onBlur={handleBlur}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className={`relative flex ${height} ${width} items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 p-16 my-6`}
+      className={`relative flex ${height} ${width} items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 my-6`}
     >
       <div
         className="absolute inset-0 transition-opacity duration-300"

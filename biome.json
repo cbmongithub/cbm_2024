@@ -13,7 +13,8 @@
         "useImportExtensions": "off"
       },
       "style": {
-        "noDefaultExport": "off"
+        "noDefaultExport": "off",
+        "useNamingConvention": "off"
       },
       "suspicious": {
         "noReactSpecificProps": "off"

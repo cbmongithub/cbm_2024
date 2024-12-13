@@ -2,8 +2,8 @@
 import { formatDate } from "@/_lib/helpers";
 import { getPosts } from "@/_lib/posts";
 
-import { Spotlight } from "@/_components/spotlight";
-import { Card } from "@/_components/ui/cards";
+import Spotlight from "@/_components/spotlight";
+import Card from "@/_components/ui/card";
 
 export function Posts() {
   const posts = getPosts();

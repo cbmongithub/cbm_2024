@@ -3,10 +3,10 @@ import { notFound } from "next/navigation";
 import { baseUrl } from "@/_lib/config";
 import { getPosts } from "@/_lib/posts";
 
-import { Header } from "@/_components/header";
-import { Mdx } from "@/_components/mdx";
-import { Share } from "@/_components/share";
-import { ButtonRound } from "@/_components/ui/buttons";
+import Header from "@/_components/header";
+import Mdx from "@/_components/mdx";
+import Share from "@/_components/share";
+import ButtonRound from "@/_components/ui/button-round";
 
 const posts = getPosts();
 

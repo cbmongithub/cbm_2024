@@ -1,17 +1,14 @@
 import type { SVGProps } from "react";
 
-type IconProps = SVGProps<SVGSVGElement> & {
-  small?: boolean;
-};
+type IconProps = SVGProps<SVGSVGElement>;
 
-// biome-ignore lint/style/useNamingConvention: <explanation>
 export function XIcon(props: IconProps) {
   return (
     <svg
       viewBox="0 0 64 64"
       width="64"
       height="64"
-      className={`ml-0.5 ${props.small ? "size-[0.95rem]" : "size-6"} group flex-none fill-neutral-200 transition group-hover:fill-neutral-300`}
+      className={`ml-0.5 ${props.className ?? "size-6"} group flex-none fill-neutral-200 transition group-hover:fill-neutral-300`}
       {...props}
     >
       <title>X Icon</title>

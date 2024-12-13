@@ -2,6 +2,7 @@
 import fs from "node:fs";
 // biome-ignore lint/correctness/noNodejsModules: <explanation>
 import path from "node:path";
+import { cache } from "react";
 
 type Metadata = {
   title: string;
@@ -37,19 +38,11 @@ function parseFrontmatter(fileContent: string) {
   return { metadata: metadata as Metadata, content };
 }
 
-function getMdxFiles(dir: string) {
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
-}
-
-function readMdxFile(filePath: string) {
-  const rawContent = fs.readFileSync(filePath, "utf-8");
-  return parseFrontmatter(rawContent);
-}
-
 function getMdxData(dir: string) {
-  const mdxFiles = getMdxFiles(dir);
+  const mdxFiles = fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
+
   return mdxFiles.map((file) => {
-    const { metadata, content } = readMdxFile(path.join(dir, file));
+    const { metadata, content } = parseFrontmatter(fs.readFileSync(path.join(dir, file), "utf-8"));
     const slug = path.basename(file, path.extname(file));
     return {
       metadata,
@@ -59,12 +52,8 @@ function getMdxData(dir: string) {
   });
 }
 
-let cachedPosts: MetadataWithSlug[] | null = null;
+export const getPosts = cache(() => {
+  const posts = getMdxData(path.join("app", "_content", "blog"));
+  return posts;
+});
 
-export function getPosts() {
-  if (!cachedPosts) {
-    cachedPosts = getMdxData(path.join(process.cwd(), "app", "_content", "blog"));
-  }
-
-  return cachedPosts;
-}

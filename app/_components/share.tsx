@@ -11,7 +11,7 @@ import {
   TwitterShareButton,
 } from "react-share";
 
-export function Share({
+export default function Share({
   className,
   title,
   url,
@@ -56,7 +56,7 @@ export function Share({
         aria-label="Share blog post through twitter button"
       >
         <div className="mr-3 cursor-pointer rounded-full hover:bg-gray-600">
-          <XIcon small={true} />
+          <XIcon className="size-[0.95rem]" />
         </div>
       </TwitterShareButton>
     </div>

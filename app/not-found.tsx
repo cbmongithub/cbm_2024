@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Header } from "./_components/header";
-import { Container } from "./_components/ui/container";
+import Header from "./_components/header";
+import Container from "./_components/ui/container";
 import { ArrowLeftIcon } from "./_components/ui/icons";
 
 export default function NotFound() {

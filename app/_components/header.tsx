@@ -1,6 +1,6 @@
 import { formatDate } from "@/_lib/helpers";
 
-export function Header({
+export default function Header({
   title,
   description,
   date,

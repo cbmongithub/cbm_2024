@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "@/_lib/config";
 
-import { Description } from "@/_components/description";
-import { Header } from "@/_components/header";
-import { Socials } from "@/_components/socials";
-import { Spotlight } from "@/_components/spotlight";
-import { Title } from "@/_components/title";
-import { Container } from "@/_components/ui/container";
-import { WorkHistory } from "@/_components/work-history";
+import Description from "@/_components/description";
+import Header from "@/_components/header";
+import Socials from "@/_components/socials";
+import Spotlight from "@/_components/spotlight";
+import Title from "@/_components/title";
+import Container from "@/_components/ui/container";
+import WorkHistory from "@/_components/work-history";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}/about`),
