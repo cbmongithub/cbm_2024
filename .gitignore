@@ -2,9 +2,8 @@
 
 node_modules
 
-pnpm-lock.yaml
-
 .DS_Store
-**/**/.DS_Store
+**/**/*.DS_Store
+*.DS_Store
 
 .env.development.local
