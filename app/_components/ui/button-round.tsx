@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import Button from "./button";
-import { ArrowLeftIcon } from "./icons";
+import Button from "@/_components/ui/button";
+import { ArrowLeftIcon } from "@/_components/ui/icons";
 
 export default function ButtonRound({ href }: { href: string }) {
   return (

@@ -1,43 +1,46 @@
 {
-	"name": "cbm_2024",
-	"url": "https://christianbmartinez.com",
-	"contributors": [
-		{
-			"name": "Christian B. Martinez",
-			"url": "https://christianbmartinez.com"
-		},
-		{
-			"name": "Lee Rob",
-			"url": "https://vercel.com"
-		}
-	],
-	"private": true,
-	"scripts": {
-		"dev": "next dev -p 3000",
-		"build": "next build",
-		"start": "next start"
-	},
-	"dependencies": {
-		"@vercel/analytics": "^1.4.1",
-		"@vercel/speed-insights": "^1.1.0",
-		"class-variance-authority": "^0.7.1",
-		"next": "15.0.4",
-		"next-mdx-remote": "^5.0.0",
-		"react": "19.0.0",
-		"react-dom": "19.0.0",
-		"react-icons": "^5.4.0",
-		"react-share": "^5.1.1",
-		"sharp": "^0.33.5"
-	},
-	"devDependencies": {
-		"@tailwindcss/postcss": "4.0.0-alpha.13",
-		"@tailwindcss/typography": "^0.5.15",
-		"@types/node": "^22.10.1",
-		"@types/react": "^19.0.1",
-		"@types/react-dom": "19.0.2",
-		"bright": "^0.8.5",
-		"postcss": "^8.4.49",
-		"tailwindcss": "4.0.0-alpha.13",
-		"typescript": "5.7.2"
-	}
+  "name": "cbm_2024",
+  "url": "https://christianbmartinez.com",
+  "contributors": [
+    {
+      "name": "Christian B. Martinez",
+      "url": "https://christianbmartinez.com"
+    },
+    {
+      "name": "Lee Rob",
+      "url": "https://vercel.com"
+    }
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
+    "class-variance-authority": "^0.7.1",
+    "next": "15.0.4",
+    "next-mdx-remote": "^5.0.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-icons": "^5.4.0",
+    "react-share": "^5.1.1",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.0.0-alpha.13",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/bun": "^1.1.14",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "19.0.2",
+    "bright": "^0.8.5",
+    "postcss": "^8.4.49",
+    "tailwindcss": "4.0.0-alpha.13",
+    "typescript": "5.7.2"
+  },
+  "module": "index.ts",
+  "type": "module"
 }

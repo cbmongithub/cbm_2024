@@ -1,6 +1,4 @@
-// biome-ignore lint/correctness/noNodejsModules: <explanation>
 import fs from "node:fs";
-// biome-ignore lint/correctness/noNodejsModules: <explanation>
 import path from "node:path";
 import { cache } from "react";
 
