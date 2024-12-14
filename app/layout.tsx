@@ -12,7 +12,7 @@ import Loader from "./_components/loader";
 import Navbar from "./_components/navbar";
 
 export const metadata: Metadata = {
-  metadataBase: baseUrl as unknown as URL,
+  metadataBase: new URL(baseUrl as unknown as URL),
   title: {
     default: "Christian B. Martinez",
     template: "%s | Christian B. Martinez",
