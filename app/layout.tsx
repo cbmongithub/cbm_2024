@@ -12,31 +12,31 @@ import Loader from "./_components/loader";
 import Navbar from "./_components/navbar";
 
 export const metadata: Metadata = {
-	metadataBase: new URL(baseUrl as unknown as URL),
-	title: {
-		default: "Christian B. Martinez",
-		template: "%s | Christian B. Martinez",
-	},
-	description: "I build apps and tools for the web.",
-	openGraph: {
-		title: "Christian B. Martinez",
-		description: "I build apps and tools for the web.",
-		url: baseUrl,
-		siteName: "christianbmartinez.com",
-		locale: "en_US",
-		type: "website",
-	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  metadataBase: baseUrl as unknown as URL,
+  title: {
+    default: "Christian B. Martinez",
+    template: "%s | Christian B. Martinez",
+  },
+  description: "I build apps and tools for the web.",
+  openGraph: {
+    title: "Christian B. Martinez",
+    description: "I build apps and tools for the web.",
+    url: baseUrl,
+    siteName: "christianbmartinez.com",
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
