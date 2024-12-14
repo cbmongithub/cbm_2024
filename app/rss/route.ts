@@ -1,6 +1,6 @@
 import { baseUrl } from "@/_lib/config";
-import type { MetadataWithSlug } from "@/_lib/posts";
 import { getPosts } from "@/_lib/posts";
+import type { MetadataWithSlug } from "@/_types";
 
 
 export function GET() {

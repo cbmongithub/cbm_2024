@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { ArrowRightIcon } from "./icons";
+import { ArrowRightIcon } from "@/_components/ui/icons";
 
-export default function CardAlt({
+export default function CardImg({
   title,
   imgSrc,
   imgAlt,
@@ -20,7 +20,7 @@ export default function CardAlt({
   contentUrl: string;
 }) {
   return (
-    <div className="relative h-auto rounded-2xl my-6 flex flex-col md:flex-row border border-neutral-800">
+    <div className="relative h-auto lg:h-48 rounded-2xl my-6 flex flex-col md:flex-row border border-neutral-800">
       <div className="relative md:w-2/5 shrink-0 overflow-hidden">
         <Image
           src={imgSrc}

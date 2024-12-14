@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import Button from "./button";
-import { ArrowRightIcon } from "./icons";
+import Button from "@/_components/ui/button";
+import { ArrowRightIcon } from "@/_components/ui/icons";
 
 export default function ButtonAlt({ href, content }: { href: string; content: string }) {
   return (

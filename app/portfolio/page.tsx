@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "@/_lib/config";
 
+import { portfolioData } from "@/_content/portfolio/data";
+
 import Header from "@/_components/header";
 import Title from "@/_components/title";
 import CardImg from "@/_components/ui/card-img";
@@ -38,15 +40,18 @@ export default function Page() {
       <Header title="Portfolio" description="Some of my favorite projects" />
       <Container>
         <Title>Projects</Title>
-        <CardImg
-          title="Project Title"
-          imgSrc="https://images.pexels.com/photos/417458/pexels-photo-417458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          imgAlt="Project Image"
-          date="2024-01-01"
-          description="Project Description"
-          content="Project Content"
-          contentUrl="/path/to/content"
-        />
+        {portfolioData.map((project) => (
+          <CardImg
+            key={project.title}
+            imgSrc={project.imgUrl}
+            imgAlt={project.alt}
+            content="project"
+            contentUrl={`/blog/${project.repo}`}
+            title={project.title}
+            date={project.date}
+            description={project.description}
+          />
+        ))}
       </Container>
     </>
   );
