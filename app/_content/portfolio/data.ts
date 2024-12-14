@@ -83,7 +83,7 @@ export const portfolioData = [
   {
     title: "Create Chattr App",
     imgUrl:
-      "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1611262588019-db6cc2032da3?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     alt: "Image for christians portfolio create-chattr-app project",
     description: "A Nextjs chatbot boilerplate that uses the chattr library I authored.",
     repo: "https://github.com/christianbmartinez/create-chattr-app",
