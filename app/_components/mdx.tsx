@@ -4,9 +4,8 @@ import Link, { type LinkProps } from "next/link";
 import { type ComponentProps, type ElementType, createElement } from "react";
 
 import { slugify } from "@/_lib/helpers";
-import theme from "@/_lib/theme.json";
 
-Code.theme = theme;
+Code.theme = "github-dark";
 
 function createHeading(level: number) {
   const Heading = ({ children }: { children: string }) => {
