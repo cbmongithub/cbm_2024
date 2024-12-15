@@ -22,7 +22,7 @@ npm install openai
 
 Once you have installed the package, you can import it into your JavaScript file like this:
 
-```ts
+```lib/openai.ts
 const openai = require('openai')
 ```
 
@@ -46,7 +46,7 @@ Be sure to replace `'your-api-key-here'` with your actual API key.
 
 The OpenAI package provides a variety of functions for interacting with the OpenAI API. Here is an example of how to use the `completions` function to generate text:
 
-```ts
+```lib/openai.ts
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,

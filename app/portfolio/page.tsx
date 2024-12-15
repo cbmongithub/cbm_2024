@@ -1,3 +1,4 @@
+// TODO: Create tabs for each project, categorize U of U projects, personal projects, and freelance projects
 import type { Metadata } from "next";
 
 import { baseUrl } from "@/_lib/config";

@@ -19,6 +19,7 @@ function createHeading(level: number) {
           href: `#${slug}`,
           key: `link-${slug}`,
           className: "anchor",
+          "aria-label": `Link to heading ${children}`,
         }),
       ],
       children,
@@ -35,6 +36,8 @@ const components = {
   h2: createHeading(2),
   h3: createHeading(3),
   h4: createHeading(4),
+  h5: createHeading(5),
+  h6: createHeading(6),
   a: (props: LinkProps) => <Link {...props} />,
   pre: Code,
 };

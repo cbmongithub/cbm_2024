@@ -16,6 +16,7 @@ export default function Repos() {
     async function fetchRepos() {
       const response = await fetch(
         "https://api.github.com/search/repositories?q=user:cbmongithub&sort=updated&per_page=6",
+        { next: { revalidate: 43200 } }, // 12 hours
       );
       const data = await response.json();
       setRepos(data.items);

@@ -15,10 +15,12 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <aside className="mb-32 tracking-tight pt-8">
+    <aside className="mb-32 tracking-tight pt-8" aria-label="Main Navigation">
       <nav className="flex flex-row items-center justify-between">
-        <Link href="/">
-          <p className="mb-1 text-2xl">&#120148;</p>
+        <Link href="/" aria-label="Home">
+          <p className="mb-1 text-2xl" aria-hidden="true">
+            &#120148;
+          </p>
         </Link>
         <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-md text-neutral-800 dark:text-neutral-200">
           {links.nav.map((link: { href: string; text: string }) => {
@@ -27,6 +29,7 @@ export default function Navbar() {
                 <Link
                   className={`${setActiveLink(link.href, pathname)} transition duration-300 hover:text-blue-500 dark:hover:text-blue-600`}
                   href={link.href}
+                  aria-current={pathname === link.href ? "page" : undefined}
                 >
                   {link.text}
                 </Link>

@@ -6,7 +6,9 @@ export default function Container({ children }: { children: ReactNode }) {
       <div className="w-full">
         <div className="relative">
           <div className="grid grid-cols-1 pb-10">
-            <div className="flex flex-col">{children}</div>
+            <div className="flex flex-col" aria-label="Content Container">
+              {children}
+            </div>
           </div>
         </div>
       </div>

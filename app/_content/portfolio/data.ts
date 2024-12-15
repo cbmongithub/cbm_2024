@@ -19,18 +19,17 @@ export const portfolioData = [
   },
   {
     title: "Colorfill App",
-    imgUrl:
-      "https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    imgUrl: "https://github.com/christianbmartinez/colorfill/raw/main/colorfill.jpg",
     alt: "Image for christians colorfill app project",
     description: "A css tool that configures text fill animations. Also available on npm.",
     repo: "https://github.com/christianbmartinez/colorfill",
-    href: "https://codepen.io/_coderchris/pen/KKgyywR",
-    date: "Dec 10 2024",
+    href: "https://colorfillapp.vercel.app/",
+    date: "Dec 10 2022",
   },
   {
     title: "Full Stack Blog",
     imgUrl:
-      "https://images.unsplash.com/photo-1508416163602-e4eb39645e86?q=80&w=1174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://github.com/christianbmartinez/tech-blog/raw/main/public/assets/img/techblog.jpg",
     alt: "Image for christians full stack blog project",
     description: "A full stack tech blog written with MVC architecture",
     repo: "https://github.com/christianbmartinez/tech-blog",
@@ -39,8 +38,7 @@ export const portfolioData = [
   },
   {
     title: "Consulting Site",
-    imgUrl:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1738&q=80",
+    imgUrl: "https://github.com/christianbmartinez/mmbc/raw/main/public/assets/mmbc.jpg",
     alt: "Image for christians mmbc website project",
     description: "A single page application built with react and tailwind.",
     repo: "https://github.com/christianbmartinez/mmbc",
@@ -49,8 +47,7 @@ export const portfolioData = [
   },
   {
     title: "Employee Tracker",
-    imgUrl:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    imgUrl: "https://github.com/christianbmartinez/employee-tracker/raw/main/employeetracker.jpg",
     alt: "Image for christians employee tracker project",
     description: "A node cli application that uses mysql to manage employees.",
     repo: "https://github.com/christianbmartinez/employee-tracker",
@@ -59,8 +56,7 @@ export const portfolioData = [
   },
   {
     title: "Mysteryboard",
-    imgUrl:
-      "https://images.unsplash.com/photo-1615185990778-a15d7015b41d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+    imgUrl: "https://github.com/christianbmartinez/mysteryboard/raw/main/public/mysteryboard.jpg",
     alt: "Image for christians mysteryboard project",
     description: "A full stack application that allows users to post anonymously.",
     repo: "https://github.com/christianbmartinez/mysteryboard",
@@ -69,8 +65,7 @@ export const portfolioData = [
   },
   {
     title: "Tic Tac Toe",
-    imgUrl:
-      "https://images.unsplash.com/photo-1602632003094-0494b73b7c4a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imgUrl: "https://github.com/christianbmartinez/tic-tac-toe/raw/main/md-image.jpg",
     alt: "Image for christians portfolio tic tac toe project",
     description:
       "A tic tac toe multiplayer game with chat. Built with Next, Socketio, and Express.",
@@ -81,7 +76,7 @@ export const portfolioData = [
   {
     title: "Create Chattr App",
     imgUrl:
-      "https://images.unsplash.com/photo-1611262588019-db6cc2032da3?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://github.com/christianbmartinez/create-chattr-app/raw/main/public/createchattrapp.jpg",
     alt: "Image for christians portfolio create-chattr-app project",
     description: "A Nextjs chatbot boilerplate that uses the chattr library I authored.",
     repo: "https://github.com/christianbmartinez/create-chattr-app",
@@ -91,7 +86,7 @@ export const portfolioData = [
   {
     title: "Logo Generator",
     imgUrl:
-      "https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+      "https://github.com/christianbmartinez/svg-logo-generator/raw/main/svglogogenerator.jpg",
     alt: "Image for christians portfolio SVG Logo generator project",
     description: "A node cli application for generating quality svg logos",
     repo: "https://github.com/christianbmartinez/svg-logo-generator",

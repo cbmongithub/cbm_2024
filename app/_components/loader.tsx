@@ -13,5 +13,13 @@ export default function Loader({
     setIsLoaded(true);
   }, []);
 
-  return <div className={`${!isLoaded && "animate-pulse blur-lg"}`}>{children}</div>;
+  return (
+    <div
+      className={`${!isLoaded && "animate-pulse blur-lg"}`}
+      aria-busy={!isLoaded}
+      aria-live="polite"
+    >
+      {children}
+    </div>
+  );
 }

@@ -9,9 +9,11 @@ export function XIcon(props: IconProps) {
       width="64"
       height="64"
       className={`ml-0.5 ${props.className ?? "size-6"} group flex-none fill-neutral-200 transition group-hover:fill-neutral-300`}
+      role="img"
+      aria-labelledby="xIconTitle"
       {...props}
     >
-      <title>X Icon</title>
+      <title id="xIconTitle">X Icon</title>
       <rect
         className="fill-neutral-200 group-hover:fill-neutral-300"
         width="64"
@@ -35,9 +37,11 @@ export function ArrowLeftIcon(props: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
+      role="img"
+      aria-labelledby="arrowLeftIconTitle"
       {...props}
     >
-      <title>Arrow Icon</title>
+      <title id="arrowLeftIconTitle">Arrow Left Icon</title>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -55,9 +59,11 @@ export function ArrowRightIcon(props: IconProps) {
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
+      role="img"
+      aria-labelledby="arrowRightIconTitle"
       {...props}
     >
-      <title>Arrow Icon</title>
+      <title id="arrowRightIconTitle">Arrow Right Icon</title>
       <path
         strokeLinecap="round"
         strokeLinejoin="round"

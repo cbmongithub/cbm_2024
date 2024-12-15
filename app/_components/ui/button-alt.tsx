@@ -1,7 +1,7 @@
-import Link from "next/link";
 
 import Button from "@/_components/ui/button";
 import { ArrowRightIcon } from "@/_components/ui/icons";
+import Link from "next/link";
 
 export default function ButtonAlt({ href, content }: { href: string; content: string }) {
   return (
@@ -11,11 +11,13 @@ export default function ButtonAlt({ href, content }: { href: string; content: st
       aria-labelledby="button"
     >
       <Button
-        className="group cursor-pointer inline-flex w-auto items-center justify-center gap-2 rounded-md  px-3 py-2 text-sm font-medium text-neutral-900 outline-offset-2 transition hover:bg-neutral-100 active:bg-neutral-100 active:text-neutral-900/60 active:transition-none dark:bg-neutral-800/75 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:active:bg-neutral-800/50 dark:active:text-neutral-50/70"
+        className="group cursor-pointer inline-flex w-auto items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-neutral-900 outline-offset-2 transition hover:bg-neutral-100 active:bg-neutral-100 active:text-neutral-900/60 active:transition-none dark:bg-neutral-800/75 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:active:bg-neutral-800/50 dark:active:text-neutral-50/70"
         aria-label={`View ${content}`}
+        id="button"
       >
-        View {content}
-        <ArrowRightIcon className="ml-2 size-3" />
+        <span className="sr-only">{`View ${content}`}</span>
+        <span aria-hidden="true">View {content}</span>
+        <ArrowRightIcon className="ml-2 size-3" aria-hidden="true" />
       </Button>
     </Link>
   );

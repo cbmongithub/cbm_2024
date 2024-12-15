@@ -60,6 +60,7 @@ export default function Spotlight({
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
       className={`relative flex ${height} ${width} items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 my-6`}
+      aria-pressed={mouseDownState} // Indicate the pressed state
     >
       <div
         className="absolute inset-0 transition-opacity duration-300"

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function WorkHistory() {
   return (
-    <div className="relative w-full p-16">
+    <div className="relative w-full p-8 sm:p-16">
       <h2 className="flex text-sm font-semibold text-neutral-900 dark:text-neutral-100">
         <svg
           viewBox="0 0 24 24"
@@ -26,87 +26,61 @@ export default function WorkHistory() {
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        <li className="flex gap-4">
-          <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-            <Image
-              alt=""
-              width={28}
-              height={28}
-              className="size-7 rounded-full"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKLqS4eru5_cEDH2O8ET9zq_R5hNarBTq2Z_XjXvo6dCLIyEC9bF9TBIdzBVJwZg_m4IA&usqp=CAU"
-            />
-          </div>
-          <dl className="flex flex-auto flex-wrap gap-x-2">
-            <dt className="sr-only">Company</dt>
-            <dd className="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
-              Northrop Grumman
-            </dd>
-            <dt className="sr-only">Role</dt>
-            <dd className="text-xs text-neutral-500 dark:text-neutral-400">Technician</dd>
-            <dt className="sr-only">Date</dt>
-            <dd
-              className="ml-auto text-xs text-neutral-400 dark:text-neutral-500"
-              aria-label="2019 until Present"
-            >
-              <time dateTime="2019">2019</time> <span aria-hidden="true">—</span>{" "}
-              <time dateTime="2023">Present</time>
-            </dd>
-          </dl>
-        </li>
-        <li className="flex gap-4">
-          <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-            <Image
-              alt="Hello world"
-              width={28}
-              height={28}
-              className="size-7 object-contain aspect-square rounded-full bg-black"
-              src="/img/cbmlogo.webp"
-            />
-          </div>
-          <dl className="flex flex-auto flex-wrap gap-x-2">
-            <dt className="sr-only">Company</dt>
-            <dd className="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
-              CBM, LLC
-            </dd>
-            <dt className="sr-only">Role</dt>
-            <dd className="text-xs text-neutral-500 dark:text-neutral-400">Web Developer</dd>
-            <dt className="sr-only">Date</dt>
-            <dd
-              className="ml-auto text-xs text-neutral-400 dark:text-neutral-500"
-              aria-label="2014 until Present"
-            >
-              <time dateTime="2014">2018</time> <span aria-hidden="true">—</span>{" "}
-              <time dateTime="Present">Present</time>
-            </dd>
-          </dl>
-        </li>
-        <li className="flex gap-4">
-          <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
-            <Image
-              alt=""
-              width={28}
-              height={28}
-              className="size-7 rounded-full bg-white"
-              src="/img/mixdlogo.webp"
-            />
-          </div>
-          <dl className="flex flex-auto flex-wrap gap-x-2">
-            <dt className="sr-only">Company</dt>
-            <dd className="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
-              Mixdlabs
-            </dd>
-            <dt className="sr-only">Role</dt>
-            <dd className="text-xs text-neutral-500 dark:text-neutral-400">Technical Founder</dd>
-            <dt className="sr-only">Date</dt>
-            <dd
-              className="ml-auto text-xs text-neutral-400 dark:text-neutral-500"
-              aria-label="2011 until 2014"
-            >
-              <time dateTime="2011">2012</time> <span aria-hidden="true">—</span>{" "}
-              <time dateTime="2014">2017</time>
-            </dd>
-          </dl>
-        </li>
+        {[
+          {
+            company: "Northrop Grumman",
+            role: "Technician",
+            startDate: "2019",
+            endDate: "Present",
+            logoSrc:
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKLqS4eru5_cEDH2O8ET9zq_R5hNarBTq2Z_XjXvo6dCLIyEC9bF9TBIdzBVJwZg_m4IA&usqp=CAU",
+            logoAlt: "Northrop Grumman logo",
+          },
+          {
+            company: "CBM, LLC",
+            role: "Web Developer",
+            startDate: "2018",
+            endDate: "Present",
+            logoSrc: "/img/cbmlogo.webp",
+            logoAlt: "CBM, LLC logo",
+          },
+          {
+            company: "Mixdlabs",
+            role: "Technical Founder",
+            startDate: "2012",
+            endDate: "2017",
+            logoSrc: "/img/mixdlogo.webp",
+            logoAlt: "Mixdlabs logo",
+          },
+        ].map((job) => (
+          <li key={job.startDate} className="flex gap-4">
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 dark:border dark:border-neutral-700/50 dark:bg-neutral-800 dark:ring-0">
+              <Image
+                alt={job.logoAlt}
+                width={28}
+                height={28}
+                className="size-7 rounded-full"
+                src={job.logoSrc}
+              />
+            </div>
+            <dl className="flex flex-auto flex-wrap gap-x-2">
+              <dt className="sr-only">Company</dt>
+              <dd className="w-full flex-none text-sm font-medium text-neutral-900 dark:text-neutral-100">
+                {job.company}
+              </dd>
+              <dt className="sr-only">Role</dt>
+              <dd className="text-xs text-neutral-500 dark:text-neutral-400">{job.role}</dd>
+              <dt className="sr-only">Date</dt>
+              <dd
+                className="ml-auto text-xs text-neutral-400 dark:text-neutral-500"
+                aria-label={`${job.startDate} until ${job.endDate}`}
+              >
+                <time dateTime={job.startDate}>{job.startDate}</time>{" "}
+                <span aria-hidden="true">—</span> <time dateTime={job.endDate}>{job.endDate}</time>
+              </dd>
+            </dl>
+          </li>
+        ))}
       </ol>
       <Link
         className="group mt-6 inline-flex w-full items-center justify-center rounded-md bg-neutral-50 px-3 py-2 text-sm font-medium text-neutral-900 outline-offset-2 transition hover:bg-neutral-100 active:bg-neutral-100 active:text-neutral-900/75 active:transition-none dark:bg-neutral-800/75 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:hover:text-neutral-50 dark:active:bg-neutral-800/50 dark:active:text-neutral-50/70"
