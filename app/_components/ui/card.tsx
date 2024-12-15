@@ -28,7 +28,11 @@ export default function Card({
       <time className="sm:flex z-30 relative order-first mb-3 items-center text-sm text-neutral-400 dark:text-neutral-500">
         {date}
       </time>
-      <p className="sm:flex mt-2 text-sm text-neutral-600 dark:text-neutral-400">{description}</p>
+      <p
+        className={`sm:flex mt-2 text-sm  ${center ? "text-center" : "text-left"}  text-neutral-600 dark:text-neutral-400`}
+      >
+        {description}
+      </p>
       <Link
         href={contentUrl as unknown as URL}
         aria-hidden="true"

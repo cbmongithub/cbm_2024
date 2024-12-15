@@ -1,8 +1,7 @@
 export const portfolioData = [
   {
     title: "cbm_2022",
-    imgUrl:
-      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    imgUrl: "https://github.com/christianbmartinez/cbm_2022/raw/main/public/cbm2022img.jpg",
     alt: "Image for christians portfolio site project",
     description: "My old portfolio site built with react, bootstrap, and threejs.",
     repo: "https://github.com/christianbmartinez/cbm_2022",
@@ -11,8 +10,7 @@ export const portfolioData = [
   },
   {
     title: "cbm_2023",
-    imgUrl:
-      "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80",
+    imgUrl: "https://github.com/christianbmartinez/cbm_2023/raw/main/public/img/md-image.jpg",
     alt: "Image for christians portfolio site project",
     description: "My 2023 portfolio site built next js and tailwind.",
     repo: "https://github.com/christianbmartinez/cbm_2023",
