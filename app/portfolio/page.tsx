@@ -43,13 +43,13 @@ export default function Page() {
       <Container>
         <Title>Projects</Title>
         {projectData.map((project) => (
-          <Spotlight key={project.title} height="h-auto sm:h-48" width="w-full">
+          <Spotlight key={project.title} height="h-auto sm:h-48" width="w-full" margin="mb-4">
             <CardImg
               key={project.title}
               imgSrc={project.imgUrl}
               imgAlt={project.alt}
               content="project"
-              contentUrl={`/blog/${project.repo}`}
+              contentUrl={project.repo}
               title={project.title}
               date={project.date}
               description={project.description}

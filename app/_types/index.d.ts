@@ -117,7 +117,7 @@ type Metadata = {
 };
 
 export type MetadataWithSlug = {
-  slug: string;
   metadata: Metadata;
+  slug: string;
   content: string;
 };

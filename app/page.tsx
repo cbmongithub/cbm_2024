@@ -25,7 +25,7 @@ export default function Page() {
     <Repos />
     <Title>Subscribe</Title>
     <Spotlight>
-      <SignUpForm />
+      <SignUpForm email="hello@example.com" />
     </Spotlight>
   </>
 );

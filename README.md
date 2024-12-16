@@ -49,22 +49,22 @@ To get started with this project, follow these steps:
 
 2. **Install dependencies**:
     ```bash
-    pnpm install
+    bun install
     ```
 
 3. **Run the development server**:
     ```bash
-    pnpm dev
+    bun run dev
     ```
 
 4. **Build the project**:
     ```bash
-    pnpm build
+    bun run build
     ```
 
 5. **Start the production server**:
     ```bash
-    pnpm start
+    bun run start
     ```
 
 ## Contributors

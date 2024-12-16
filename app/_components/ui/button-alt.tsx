@@ -11,7 +11,7 @@ export default function ButtonAlt({ href, content }: { href: string; content: st
       aria-labelledby="button"
     >
       <Button
-        className="group cursor-pointer inline-flex w-auto items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-800/75 text-neutral-300 hover:bg-neutral-800 hover:text-neutral-50 active:bg-neutral-800/50 active:text-neutral-50/70"
+        className="group cursor-pointer inline-flex w-auto items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-900/75 text-neutral-300 hover:bg-neutral-900 hover:text-neutral-100 active:bg-neutral-900/50 active:text-neutral-100/70"
         aria-label={`View ${content}`}
         id="button"
       >

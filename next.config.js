@@ -18,7 +18,6 @@ const config = {
     ],
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"],
-  reactStrictMode: true,
 };
 
 export default config;

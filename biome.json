@@ -9,6 +9,9 @@
     "enabled": true,
     "rules": {
       "all": true,
+      "complexity": {
+        "useLiteralKeys": "off"
+      },
       "correctness": {
         "noNodejsModules": "off",
         "useImportExtensions": "off"

@@ -1,8 +1,47 @@
+"use client";
+
+import { type FormEvent, useState } from "react";
+
 import Button from "./ui/button";
 
-export default function SignUpForm() {
+type SignUpFormProps = {
+  email: string;
+};
+
+export default function SignUpForm({ email: initialEmail }: SignUpFormProps) {
+  const [email, setEmail] = useState(initialEmail);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/email/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      setSuccess(true);
+    } catch (error) {
+      setError(`❗️Error: ${(error as Error).message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <form className="z-50 rounded-2xl p-8 sm:p-16 border-neutral-700/40" action="/thank-you">
+    <form onSubmit={handleSubmit} className="z-50 rounded-2xl p-8 sm:p-16 border-neutral-700/40">
       <h2 className="flex text-sm font-semibold text-neutral-100">
         <svg
           viewBox="0 0 24 24"
@@ -36,14 +75,20 @@ export default function SignUpForm() {
         </label>
         <input
           type="email"
-          id="email"
+          name="email"
           placeholder="Email address"
           aria-label="Email address"
+          value={email}
+          onChange={({ target: { value } }) => setEmail(value)}
           required={true}
-          className="relative min-w-32 flex-auto appearance-none rounded-md border px-3 focus:outline-none focus:ring-4 border-neutral-700 bg-neutral-700/[0.15] text-neutral-200 placeholder:text-neutral-500 focus:border-blue-400 focus:ring-blue-400/10 sm:text-sm"
+          className="relative min-w-32 flex-auto appearance-none rounded-md border px-3 focus:outline-none focus:ring-4 border-neutral-700 bg-neutral-900/[0.15] text-neutral-200 placeholder:text-neutral-500 focus:border-blue-400 focus:ring-blue-400/10 sm:text-sm"
         />
-        <Button className="ml-3 relative z-30">Signup</Button>
+        <Button type="submit" className="ml-3 relative z-30" disabled={loading}>
+          {loading ? "Signing up..." : "Signup"}
+        </Button>
       </div>
+      {error && <p className="text-xs text-red-500 mt-2">{error}</p>}
+      {success && <p className="text-xs text-green-500 mt-2">✅ Subscribed</p>}
     </form>
   );
 }
