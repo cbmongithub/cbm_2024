@@ -5,10 +5,12 @@ import { type MouseEvent, type ReactNode, useCallback, useRef, useState } from "
 export default function Spotlight({
   height = "h-48",
   width = "w-full",
+  margin = "",
   children,
 }: {
   height?: string;
   width?: string;
+  margin?: string;
   children: ReactNode;
 }) {
   const divRef = useRef<HTMLDivElement>(null);
@@ -59,7 +61,7 @@ export default function Spotlight({
       onBlur={handleBlur}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className={`relative flex ${height} ${width} items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 my-6`}
+      className={`relative flex ${height} ${width} items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 ${margin && "mt-4"} `}
       aria-pressed={mouseDownState}
     >
       <div

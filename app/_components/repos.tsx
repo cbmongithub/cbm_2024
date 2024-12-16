@@ -29,7 +29,7 @@ export default function Repos() {
   }
 
   return (
-    <>
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
       {repos.map((repo) => (
         <Spotlight key={repo.id}>
           <Card
@@ -43,6 +43,6 @@ export default function Repos() {
           />
         </Spotlight>
       ))}
-    </>
+    </div>
   );
 }

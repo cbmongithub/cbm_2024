@@ -41,7 +41,9 @@ export default function Card({
       >
         {description}
       </p>
-      <div className="absolute z-10 bottom-0 left-0 flex flex-col justify-center items-center w-full h-52 bg-gradient-to-t from-black" />
+      {!center && (
+        <div className="absolute z-10 bottom-0 left-0 flex flex-col justify-center items-center w-full h-52 bg-gradient-to-t from-black" />
+      )}
       {contentUrl && (
         <Link
           href={contentUrl}

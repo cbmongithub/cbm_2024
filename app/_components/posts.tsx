@@ -22,7 +22,7 @@ export function Posts() {
           return 1;
         })
         .map((post) => (
-          <Spotlight height="h-auto" key={post.slug}>
+          <Spotlight height="h-auto" margin="my-4" key={post.slug}>
             <Card
               key={post.slug}
               content="article"
