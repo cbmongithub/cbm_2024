@@ -20,8 +20,8 @@ export default function CardImg({
   contentUrl: string;
 }) {
   return (
-    <div className="relative h-auto lg:h-48 rounded-2xl my-6 flex flex-col md:flex-row border border-neutral-800">
-      <div className="relative md:w-2/5 shrink-0 overflow-hidden">
+    <div className="relative w-full rounded-2xl my-6 flex flex-col sm:flex-row">
+      <div className="relative sm:w-2/5 shrink-0 overflow-hidden">
         <Image
           src={imgSrc}
           alt={imgAlt}
@@ -30,30 +30,28 @@ export default function CardImg({
           className="size-full rounded-2xl object-cover"
         />
       </div>
-      <div className="p-6">
+      <div className="p-12 sm:p-6">
         <time
-          className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-neutral-400 dark:text-neutral-500"
+          className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-neutral-500"
           dateTime={new Date(date).toISOString()}
         >
           <span className="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
-            <span className="h-4 w-0.5 rounded-full bg-neutral-200 dark:bg-neutral-500" />
+            <span className="h-4 w-0.5 rounded-full bg-neutral-500" />
           </span>
           {date}
         </time>
-        <h2 className="text-sm md:text-base font-semibold tracking-tight text-neutral-800 dark:text-neutral-100">
+        <h2 className="text-sm sm:text-base font-semibold tracking-tight text-neutral-100">
           <div
-            className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-neutral-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl"
+            className="absolute -inset-x-4 -inset-y-6 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl"
             aria-hidden="true"
           />
           <span
             className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"
             aria-hidden="true"
           />
-          <span className="relative z-10">{title}</span>
+          <span className="relative">{title}</span>
         </h2>
-        <p className="hidden sm:block relative z-10 mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-          {description}
-        </p>
+        <p className="hidden sm:block relative mt-2 text-sm text-neutral-400">{description}</p>
         <div className="flex flex-row justify-between items-center">
           <Link
             href={contentUrl}

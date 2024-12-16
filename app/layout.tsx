@@ -12,7 +12,7 @@ import Loader from "./_components/loader";
 import Navbar from "./_components/navbar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl as unknown as URL),
+  metadataBase: new URL(`${baseUrl}`),
   title: {
     default: "Christian B. Martinez",
     template: "%s | Christian B. Martinez",
@@ -50,7 +50,7 @@ export default function RootLayout({
       className="flex size-full flex-col scroll-smooth antialiased text-neutral-100 bg-black"
     >
       <body>
-        <main className="mx-auto flex flex-col px-6 max-w-2xl">
+        <main className="mx-auto flex flex-col px-6 max-w-3xl">
           <Suspense fallback={<div>Loading...</div>}>
             <Loader>
               <Navbar />

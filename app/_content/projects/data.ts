@@ -1,4 +1,4 @@
-export const portfolioData = [
+export const projectData = [
   {
     title: "cbm_2022",
     imgUrl: "https://github.com/christianbmartinez/cbm_2022/raw/main/public/cbm2022img.jpg",

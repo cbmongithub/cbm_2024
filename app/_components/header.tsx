@@ -9,7 +9,7 @@ export default function Header({
     <header>
       <h1 className="text-balance font-bold text-4xl tracking-tighter">{title}</h1>
       {date && (
-        <time className="py-3 text-sm text-neutral-600 dark:text-neutral-400" dateTime={date}>
+        <time className="py-3 text-sm text-neutral-400" dateTime={date}>
           {formatDate(date)}
         </time>
       )}

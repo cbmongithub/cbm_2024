@@ -3,9 +3,10 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "@/_lib/config";
 
-import { portfolioData } from "@/_content/portfolio/data";
+import { projectData } from "@/_content/projects/data";
 
 import Header from "@/_components/header";
+import Spotlight from "@/_components/spotlight";
 import Title from "@/_components/title";
 import CardImg from "@/_components/ui/card-img";
 import Container from "@/_components/ui/container";
@@ -41,17 +42,19 @@ export default function Page() {
       <Header title="Portfolio" description="Some of my favorite projects" />
       <Container>
         <Title>Projects</Title>
-        {portfolioData.map((project) => (
-          <CardImg
-            key={project.title}
-            imgSrc={project.imgUrl}
-            imgAlt={project.alt}
-            content="project"
-            contentUrl={`/blog/${project.repo}`}
-            title={project.title}
-            date={project.date}
-            description={project.description}
-          />
+        {projectData.map((project) => (
+          <Spotlight key={project.title} height="h-96 sm:h-48">
+            <CardImg
+              key={project.title}
+              imgSrc={project.imgUrl}
+              imgAlt={project.alt}
+              content="project"
+              contentUrl={`/blog/${project.repo}`}
+              title={project.title}
+              date={project.date}
+              description={project.description}
+            />
+          </Spotlight>
         ))}
       </Container>
     </>

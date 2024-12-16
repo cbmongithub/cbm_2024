@@ -10,7 +10,7 @@ export default function Navbar() {
     if (pathname === href || (pathname.split("/")[1] === "blog" && href === "/blog")) {
       return "text-blue-500";
     }
-    return "text-white";
+    return "text-neutral-400";
   }
   const pathname = usePathname();
 
