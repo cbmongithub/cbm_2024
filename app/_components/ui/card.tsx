@@ -28,10 +28,10 @@ export default function Card({
       {date && (
         <time
           dateTime={new Date(date).toISOString()}
-          className="order-first mb-4 relative inline-flex overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 focus:ring-offset-neutral-50"
+          className="order-first shadow-2xl mb-4 relative inline-flex overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-neutral-400 focus:ring-offset-2 focus:ring-offset-neutral-50"
         >
-          <span className="absolute inset-[-400%] animate-[spin_4s_linear_alternate_infinite] bg-[conic-gradient(from_180deg_at_50%_50%,#3b82f6_0%,#000000,#3b82f6_100%)]" />
-          <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-neutral-950 px-3 py-1 text-sm font-medium text-neural-200 backdrop-blur-3xl">
+          <span className="absolute inset-[-200%] animate-[spin_8s_linear_alternate_infinite] bg-[conic-gradient(from_180deg_at_50%_50%,#3b82f6_0%,#262626,#3b82f6_100%)]" />
+          <span className="inline-flex cursor-default size-full text-neutral-100 items-center justify-center rounded-full bg-neutral-950 px-3 py-1 text-sm font-medium text-neural-200 backdrop-blur-3xl">
             {date}
           </span>
         </time>

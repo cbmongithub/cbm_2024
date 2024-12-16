@@ -21,16 +21,16 @@ export default function CardImg({
 }) {
   return (
     <div className="relative w-full rounded-2xl my-6 flex flex-col sm:flex-row">
-      <div className="relative sm:w-2/5 shrink-0 overflow-hidden">
+      <div className="w-full h-48 mt-[-25px] sm:mt-0 sm:w-2/5 shrink-0 overflow-hidden rounded-2xl">
         <Image
           src={imgSrc}
           alt={imgAlt}
           height={360}
           width={480}
-          className="size-full rounded-3xl object-cover"
+          className="size-full rounded-2xl object-cover"
         />
       </div>
-      <div className="p-12 sm:p-6">
+      <div className="p-6">
         <time
           className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-neutral-500"
           dateTime={new Date(date).toISOString()}
@@ -56,7 +56,7 @@ export default function CardImg({
           <Link
             href={contentUrl}
             aria-label={`Go to demo of ${title}`}
-            className="relative text-xs -20 mt-4 flex items-center font-medium text-blue-500 hover:text-blue-600"
+            className="relative text-xs sm:text-sm z-20 mt-4 flex items-center font-medium text-blue-500 hover:text-blue-600"
           >
             Go to demo
             <ArrowRightIcon className="ml-2 size-3" />
@@ -64,7 +64,7 @@ export default function CardImg({
           <Link
             href={contentUrl}
             aria-label={`View source of ${title}`}
-            className="relative z-20 mt-4 ml-12 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
+            className="relative z-20 mt-4 ml-12 flex items-center text-xs sm:text-sm font-medium text-blue-500 hover:text-blue-600"
           >
             View source
             <ArrowRightIcon className="ml-2 size-3" />

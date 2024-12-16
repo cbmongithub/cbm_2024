@@ -43,7 +43,7 @@ export default function Page() {
       <Container>
         <Title>Projects</Title>
         {projectData.map((project) => (
-          <Spotlight key={project.title} height="h-96 sm:h-48">
+          <Spotlight key={project.title} height="h-auto sm:h-48" width="w-full">
             <CardImg
               key={project.title}
               imgSrc={project.imgUrl}
