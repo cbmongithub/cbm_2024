@@ -3,7 +3,7 @@ import Button from "./ui/button";
 export default function SignUpForm() {
   return (
     <form className="rounded-2xl p-8 sm:p-16 border-neutral-700/40" action="/thank-you">
-      <h2 className="flex text-sm font-semibold text-neutral-900 text-neutral-100">
+      <h2 className="flex text-sm font-semibold text-neutral-100">
         <svg
           viewBox="0 0 24 24"
           fill="none"

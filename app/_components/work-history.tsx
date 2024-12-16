@@ -55,7 +55,7 @@ export default function WorkHistory() {
           },
         ].map((job) => (
           <li key={job.startDate} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-neutral-800/5 ring-1 ring-neutral-900/5 border border-neutral-700/50 bg-neutral-800 ring-0">
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-neutral-900/5 border border-neutral-700/50 bg-neutral-800 ring-0">
               <Image
                 alt={job.logoAlt}
                 width={28}
@@ -84,7 +84,7 @@ export default function WorkHistory() {
         ))}
       </ol>
       <Link
-        className="group mt-6 inline-flex w-full items-center justify-center rounded-md px-3 py-2 text-sm font-medium text-neutral-900 outline-offset-2 transition hover:bg-neutral-100 active:bg-neutral-100 active:text-neutral-900/75 active:transition-none bg-neutral-800/75 text-neutral-300 hover:bg-neutral-800 hover:text-neutral-50 active:bg-neutral-800/50 active:text-neutral-50/70"
+        className="group mt-6 inline-flex w-full items-center justify-center rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-800/75 text-neutral-300 hover:bg-neutral-800 hover:text-neutral-50 active:bg-neutral-800/50 active:text-neutral-50/70"
         href="/"
       >
         <ArrowRightIcon className="ml-2 size-3" />
