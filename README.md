@@ -1,5 +1,5 @@
 # cbm_2024
-Welcome to my 2024 portfolio! This project showcases my work and skills using the latest web technologies.
+Welcome to my 2024 portfolio! This project showcases my portfolio of works and a blog using the latest web technologies.
 
 ## Table of Contents
 - [About](#about)
