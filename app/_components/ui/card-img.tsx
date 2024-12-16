@@ -27,7 +27,7 @@ export default function CardImg({
           alt={imgAlt}
           height={360}
           width={480}
-          className="size-full rounded-2xl object-cover"
+          className="size-full rounded-3xl object-cover"
         />
       </div>
       <div className="p-12 sm:p-6">
@@ -56,7 +56,7 @@ export default function CardImg({
           <Link
             href={contentUrl}
             aria-label={`Go to demo of ${title}`}
-            className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
+            className="relative text-xs -20 mt-4 flex items-center font-medium text-blue-500 hover:text-blue-600"
           >
             Go to demo
             <ArrowRightIcon className="ml-2 size-3" />
