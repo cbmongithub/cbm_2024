@@ -1,12 +1,15 @@
 import { formatDate } from "@/_lib/helpers";
+import type { ReactNode } from "react";
 
 export default function Header({
   title,
   description,
   date,
-}: { title: string; date?: string; description: string }) {
+  children,
+  ...props
+}: { title: string; date?: string; description: string, children?: ReactNode }) {
   return (
-    <header>
+    <header {...props}>
       <h1 className="text-balance font-bold text-4xl tracking-tighter">{title}</h1>
       {date && (
         <time className="py-3 text-sm text-neutral-400" dateTime={date}>
@@ -14,6 +17,7 @@ export default function Header({
         </time>
       )}
       <p className="pt-6 text-md">{description}</p>
+      {children && (children)}
     </header>
   );
 }

@@ -85,8 +85,8 @@ export default function WorkHistory() {
       </ol>
       <Link
         className="group mt-6 inline-flex w-full items-center justify-center rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-800/75 text-neutral-300 hover:bg-neutral-800 hover:text-neutral-50 active:bg-neutral-800/50 active:text-neutral-50/70"
-        href="/"
-      >
+        href="/resume"
+      >Go to CV
         <ArrowRightIcon className="ml-2 size-3" />
       </Link>
     </div>
