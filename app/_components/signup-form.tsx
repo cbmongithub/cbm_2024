@@ -17,10 +17,9 @@ export default function SignUpForm({ email: initialEmail }: SignUpFormProps) {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
-    setError(null);
 
     try {
-      const response = await fetch("/api/email/signup", {
+      const response = await fetch("/api/email/subscribe", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,7 +33,7 @@ export default function SignUpForm({ email: initialEmail }: SignUpFormProps) {
 
       setSuccess(true);
     } catch (error) {
-      setError(`❗️Error: ${(error as Error).message}`);
+      setError(`Error: ${(error as Error).message}`);
     } finally {
       setLoading(false);
     }
@@ -76,18 +75,18 @@ export default function SignUpForm({ email: initialEmail }: SignUpFormProps) {
         <input
           type="email"
           name="email"
+          className="relative min-w-32 flex-auto appearance-none rounded-md border px-3 focus:outline-none focus:ring-4 focus:border-blue-500 border-neutral-700 bg-neutral-900/[0.15] text-neutral-200 placeholder:text-neutral-500 focus:ring-blue-400/10 sm:text-sm"
           placeholder="Email address"
           aria-label="Email address"
           value={email}
           onChange={({ target: { value } }) => setEmail(value)}
           required={true}
-          className="relative min-w-32 flex-auto appearance-none rounded-md border px-3 focus:outline-none focus:ring-4 border-neutral-700 bg-neutral-900/[0.15] text-neutral-200 placeholder:text-neutral-500 focus:border-blue-400 focus:ring-blue-400/10 sm:text-sm"
         />
         <Button type="submit" className="ml-3 relative z-30" disabled={loading}>
           {loading ? "Signing up..." : "Signup"}
         </Button>
       </div>
-      {error && <p className="text-xs text-red-500 mt-2">{error}</p>}
+      {error && <p className="text-xs text-red-500 mt-2">❗️{error}</p>}
       {success && <p className="text-xs text-green-500 mt-2">✅ Subscribed</p>}
     </form>
   );
