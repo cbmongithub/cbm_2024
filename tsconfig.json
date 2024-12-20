@@ -26,7 +26,30 @@
       }
     ],
     "paths": {
-      "@/*": ["./app/*"]
+      "app/*": [
+        "./app/*"
+      ],
+      "components/*": [
+        "./components/*"
+      ],
+      "content/*": [
+        "./content/*"
+      ],
+      "lib/*": [
+        "./lib/*"
+      ],
+      "helpers/*": [
+        "./lib/helpers/*"
+      ],
+      "ui/*": [
+        "./components/ui/*"
+      ],
+      "types": [
+        "./types/index.d.ts"
+      ],
+      "styles/*": [
+        "./styles/*"
+      ]
     },
     "strictNullChecks": true,
     "allowJs": true
@@ -36,10 +59,9 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/_types/index.d.ts"
+    "types/index.d.ts"
   ],
   "exclude": [
-    "node_modules",
-    "app/_lib/theme.json"
+    "node_modules"
   ]
 }

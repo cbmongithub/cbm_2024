@@ -1,15 +1,15 @@
-import "./globals.css";
+import "styles/tw.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { type ReactNode, Suspense } from "react";
 
-import { baseUrl } from "./_lib/config";
+import { Footer } from "components/footer";
+import { Loader } from "components/loader";
+import { Navbar } from "components/navbar";
 
-import Footer from "./_components/footer";
-import Loader from "./_components/loader";
-import Navbar from "./_components/navbar";
+import { baseUrl } from "lib/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}`),

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-import { baseUrl } from "@/_lib/config";
+import { baseUrl } from "lib/config";
 
-import Header from "@/_components/header";
-import { Posts } from "@/_components/posts";
-import Title from "@/_components/title";
+import { Header } from "components/header";
+import { Posts } from "components/posts";
+import { Title } from "components/title";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}/blog`),
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+const Page = () => {
   return (
     <>
       <Header title="Blog" description="Everything web development" />
@@ -40,3 +40,5 @@ export default function Page() {
     </>
   );
 }
+
+export default Page;

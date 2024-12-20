@@ -1,5 +1,5 @@
-import { baseUrl } from "@/_lib/config";
-import { getPosts } from "@/_lib/posts";
+import { baseUrl } from "lib/config";
+import { getPosts } from "lib/posts";
 
 export default async function sitemap() {
 	const blogs = getPosts().map((post) => ({

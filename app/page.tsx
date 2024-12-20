@@ -1,32 +1,32 @@
-import { getPosts } from "./_lib/posts";
+import { getPosts } from "lib/posts";
 
-import Header from "./_components/header";
-import { Posts } from "./_components/posts";
-import Repos from "./_components/repos";
-import SignUpForm from "./_components/signup-form";
-import Spotlight from "./_components/spotlight";
-import Title from "./_components/title";
-import ButtonAlt from "./_components/ui/button-alt";
+import { Header } from "components/header";
+import { Posts } from "components/posts";
+import { Repos } from "components/repos";
+import { SignUpForm } from "components/signup-form";
+import { Spotlight } from "components/spotlight";
+import { Title } from "components/title";
+import { Button } from "components/ui/button";
 
 export default function Page() {
-	const recentPosts = getPosts();
+  const posts = getPosts();
 
-	if (!recentPosts) {
+  if (!posts) {
   return null;
 }
 
 	return (
   <>
-    <Header title="I'm Christian" description="I code apps and tools" />
-    <Title>Blog</Title>
-    <Posts />
-    <ButtonAlt href="/blog" content="blog" />
-    <Title>Repos</Title>
-    <Repos />
-    <Title>Subscribe</Title>
-    <Spotlight>
-      <SignUpForm email="hello@example.com" />
-    </Spotlight>
+      <Header title="I'm Christian" description="I code apps and tools" />
+      <Title>Blog</Title>
+      <Posts />
+      <Button>blog</Button>
+      <Title>Repos</Title>
+      <Repos />
+      <Title>Subscribe</Title>
+      <Spotlight>
+        <SignUpForm />
+      </Spotlight>
   </>
 );
 }

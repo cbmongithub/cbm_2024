@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+html, body {
+  color-scheme: dark;
+  background: #000;
+}
+
+input[type='text'],
+input[type='email'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+

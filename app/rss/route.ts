@@ -1,9 +1,9 @@
-import { baseUrl } from "@/_lib/config";
-import { getPosts } from "@/_lib/posts";
-import type { MetadataWithSlug } from "@/_types";
+import { baseUrl } from "lib/config";
+import { getPosts } from "lib/posts";
+import type { MetadataWithSlug } from "types";
 
 
-export function GET() {
+const GET = () => {
 	const allBlogs = getPosts();
 
 	const itemsXml = allBlogs
@@ -40,3 +40,5 @@ export function GET() {
 		},
 	});
 }
+
+export default GET;

@@ -19,9 +19,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.1.1",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
-    "next": "15.0.4",
+    "next": "15.1.2",
     "next-mdx-remote": "^5.0.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
@@ -31,16 +32,19 @@
     "resend": "^4.0.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "4.0.0-alpha.13",
+    "@tailwindcss/postcss": "^4.0.0-beta.8",
     "@tailwindcss/typography": "^0.5.15",
     "@types/bun": "latest",
     "@types/node": "^22.10.2",
-    "@types/react": "^19.0.1",
+    "@types/react": "^19.0.2",
     "@types/react-dom": "19.0.2",
     "bright": "^0.8.5",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "postcss": "^8.4.49",
     "sharp": "^0.33.5",
-    "tailwindcss": "4.0.0-alpha.13",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss": "^4.0.0-beta.8",
     "typescript": "5.7.2"
   },
   "module": "index.ts"

@@ -1,33 +1,50 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "formatter": {
-    "enabled": true,
-    "indentStyle": "space",
-    "lineWidth": 80
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "all": true,
-      "complexity": {
-        "useLiteralKeys": "off"
-      },
-      "correctness": {
-        "noNodejsModules": "off",
-        "useImportExtensions": "off"
-      },
-      "style": {
-        "noDefaultExport": "off",
-        "useNamingConvention": "off"
-      },
-      "suspicious": {
-        "noReactSpecificProps": "off"
+  "assists": {
+    "actions": {
+      "source": {
+        "sortJsxProps": "on",
+        "useSortedKeys": "on"
       }
-    }
+    },
+    "enabled": true
+  },
+  "files": {
+    "include": [
+      "*.js",
+      "*.json",
+      "*/**/*.ts",
+      "*/**/*.tsx",
+      "*/**/*.mdx"
+    ]
+  },
+  "formatter": {
+    "bracketSpacing": true,
+    "enabled": true,
+    "formatWithErrors": true,
+    "indentSize": 2,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "useEditorconfig": false
   },
   "javascript": {
     "formatter": {
-      "enabled": true
+      "arrowParentheses": "asNeeded",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "enabled": true,
+      "jsxQuoteStyle": "single",
+      "lineEnding": "lf",
+      "lineWidth": 80,
+      "quoteProperties": "asNeeded",
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "trailingComma": "none",
+      "indentSize": 2,
+      "indentStyle": "space",
+      "indentWidth": 2
     }
   },
   "json": {
@@ -35,7 +52,37 @@
       "enabled": true
     }
   },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "all": true,
+      "complexity": {
+        "noUselessEmptyExport": "off",
+        "useLiteralKeys": "off"
+      },
+      "correctness": {
+        "noNodejsModules": "off",
+        "noUndeclaredDependencies": "off",
+        "useImportExtensions": "off"
+      },
+      "style": {
+        "noDefaultExport": "off",
+        "noNamespace": "off",
+        "useNamingConvention": "off"
+      },
+      "suspicious": {
+        "noReactSpecificProps": "off"
+      }
+    }
+  },
   "organizeImports": {
-    "enabled": true
+    "enabled": true,
+    "include": [
+      "*.js",
+      "*.json",
+      "*/**/*.ts",
+      "*/**/*.tsx",
+      "*/**/*.mdx"
+    ]
   }
 }

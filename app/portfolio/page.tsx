@@ -1,15 +1,15 @@
-// TODO: Create tabs for each project, categorize U of U projects, personal projects, and freelance projects
 import type { Metadata } from "next";
 
-import { baseUrl } from "@/_lib/config";
+import { baseUrl } from "lib/config";
 
-import { projectData } from "@/_content/projects/data";
+import { projectData } from "content/projects/data";
 
-import Header from "@/_components/header";
-import Spotlight from "@/_components/spotlight";
-import Title from "@/_components/title";
-import CardImg from "@/_components/ui/card-img";
-import Container from "@/_components/ui/container";
+import { Header } from "components/header";
+import { Spotlight } from "components/spotlight";
+import { Title } from "components/title";
+
+import { CardImg } from "ui/card";
+import { Container } from "ui/container";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}/portfolio`),
@@ -36,14 +36,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+const Page = () => {
   return (
     <>
       <Header title="Portfolio" description="Some of my favorite projects" />
       <Container>
         <Title>Projects</Title>
         {projectData.map((project) => (
-          <Spotlight key={project.title} height="h-auto sm:h-48" width="w-full" margin="mb-4">
+          <Spotlight key={project.title} className="mb-4 h-auto sm:h-48 w-full">
             <CardImg
               key={project.title}
               imgSrc={project.imgUrl}
@@ -60,3 +60,5 @@ export default function Page() {
     </>
   );
 }
+
+export default Page;

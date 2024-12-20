@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env["RESEND_API_KEY"]);
-export async function POST(req: NextRequest) {
+
+const POST = async (req: NextRequest) => {
   if (req.method === "POST") {
     const { email } = await req.json();
     try {
@@ -23,3 +24,5 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid request method" }, { status: 405 });
   }
 }
+
+export default POST;
