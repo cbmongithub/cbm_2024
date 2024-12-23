@@ -7,6 +7,7 @@ import { SignUpForm } from "components/signup-form";
 import { Spotlight } from "components/spotlight";
 import { Title } from "components/title";
 import { Button } from "components/ui/button";
+import Link from "next/link";
 
 export default function Page() {
   const posts = getPosts();
@@ -20,7 +21,11 @@ export default function Page() {
       <Header title="I'm Christian" description="I code apps and tools" />
       <Title>Blog</Title>
       <Posts />
-      <Button>blog</Button>
+      <Link href="/blog">
+        <Button className="flex flex-row justify-center items-center mx-auto">
+          View Blog
+        </Button>
+      </Link>
       <Title>Repos</Title>
       <Repos />
       <Title>Subscribe</Title>

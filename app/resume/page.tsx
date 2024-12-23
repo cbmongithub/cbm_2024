@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import { Button } from "ui/button";
@@ -7,29 +5,17 @@ import { ArrowLeftIcon } from "ui/icons";
 import { Container } from "ui/container";
 
 export default function Page() {
-
-  const handleClick = () => {
-    const element = document.createElement("a");
-
-    const file = new Blob([document.documentElement.outerHTML], {
-      type: "text/html",
-    });
-
-    element.href = URL.createObjectURL(file);
-    element.download = "resume.html";
-    document.body.appendChild(element);
-    element.click();
-  }
-
   return (
     <>
   <Container>
+    <Link href="/about">
         <Button
           asChild={true}
-          variant="secondary"
+          variant="tertiary"
         >
-          <ArrowLeftIcon className="size-4 transition stroke-neutral-500 group-hover:stroke-neutral-400" />
+          <ArrowLeftIcon className="size-12 transition stroke-neutral-500 group-hover:stroke-neutral-400" />
         </Button>
+        </Link>
     <div className="min-h-screen">
       <div className="max-w-3xl mx-auto rounded-md p-6">
         <header className="mb-6">
@@ -39,17 +25,17 @@ export default function Page() {
             <ul className="flex space-x-2 text-sm">
               <li>
                 <Link href="https://www.linkedin.com/in/cbmonlinkedn" className="text-blue-400 hover:underline">
-                  LinkedIn
+                  @cbmonlinkedn
                 </Link>
               </li>
               <li>
                 <Link href="https://github.com/cbmongithub" className="text-blue-400 hover:underline">
-                  GitHub
+                  @cbmongithub
                 </Link>
               </li>
               <li>
                 <Link href="https://x.com/cbmonx" className="text-blue-400 hover:underline">
-                  X
+                  @cbmonx
                 </Link>
               </li>
             </ul>
@@ -59,8 +45,7 @@ export default function Page() {
         <section className="mb-6" aria-labelledby="summary-heading">
           <h2 id="summary-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Summary</h2>
           <p className="text-sm mt-2">
-            Versatile software engineer with expertise in full stack development, React, and modern technologies. Passionate about building scalable solutions and continuously learning cutting-edge tools.
-          </p>
+          Passionate web developer with 6 years of proficiency in web technologies. I have a proven ability to lead teams, help and mentor developers, and deliver innovative solutions that drive business success.</p>
         </section>
 
         <section className="mb-6" aria-labelledby="technologies-heading">
@@ -68,14 +53,45 @@ export default function Page() {
             Technologies and Languages
           </h2>
           <ul className="list-disc list-inside text-sm mt-2">
-            <li>Languages: JavaScript, TypeScript, Liquid, SQL, NoSQL</li>
-            <li>Technologies: React, Next.js, Node.js, Tailwind CSS, MongoDB</li>
-            <li>Tools: Git, Visual Studio Code, MongoDB Compass, Slack</li>
+            <li>Languages: CSS, HTML, JS, NoSQL, Sass, SQL, TS, TSX, Jquery</li>
+            <li>Technologies: Bootstrap, Next, Node, React, Sanity, Solid, Tailwind, Vite, MySQL, MongoDB</li>
+            <li>TTools: Bun, Git, Github, Pnpm,  Postman, VSCode, MongoDB Compass, Slack, Vitest, Jest</li>
+            <li>Platforms: Heroku, Vercel, GCP,  Netlify, Wavoto, Hostinger, Wix, Wordpress, Shopify</li>
           </ul>
         </section>
 
+        <section className="mb-6" aria-labelledby="skills-heading">
+          <h2 id="skills-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Skills</h2>
+          <div className="mt-4">
+            <article className="mb-4">
+              <h3 className="font-semibold text-sm">Technical Skills</h3>
+              <ul className="list-disc list-inside text-sm mt-2">
+                <li>Problem Solving: Quick and effective at identifying and resolving challenges.</li>
+                <li>Critical Thinking: Analyzes complex problems and develops strategic solutions.</li>
+                <li>Attention to Detail: Ensures accuracy and quality in all technical work.</li>
+              </ul>
+            </article>
+            <article className="mb-4">
+              <h3 className="font-semibold text-sm">Soft Skills</h3>
+                <ul className="list-disc list-inside text-sm mt-2">
+                <li>Collaboration: Works seamlessly with diverse teams and stakeholders.</li>
+                <li>Empathy: Understanding, relating, and addressing the customers needs.</li>
+                <li>Self-Motivated: Proactively tackles tasks and drives personal growth.</li>
+                </ul>
+            </article>
+            <article className="mb-4">
+              <h3 className="font-semibold text-sm">Organizational Skills</h3>
+              <ul className="list-disc list-inside text-sm mt-2">
+                <li>Time Management: Balances priorities and consistently meets deadlines.</li>
+                <li>Creativity: Generates innovative ideas to improve workflows and solve problems.</li>
+                <li>Mentoring: Explains technical concepts clearly and supports team development.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
         <section className="mb-6" aria-labelledby="work-experience-heading">
-          <h2 id="work-experience-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Work Experience</h2>
+          <h2 id="work-experience-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Experience</h2>
           <div className="mt-4">
             <article className="mb-4">
               <h3 className="font-semibold text-sm">Technician</h3>
@@ -148,20 +164,18 @@ export default function Page() {
           <h2 id="certifications-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Certifications</h2>
           <ul className="list-disc list-inside text-sm mt-2">
                 <li>University of Utah - Full Stack <Link className="text-blue-400 hover:underline" href="https://www.credly.com/badges/dc32db26-4653-498e-b3b2-20e2faa9076c">Certification</Link></li>
-                <li>edX Prompt Engineering/ChatGPT <Link className="text-blue-400 hover:underline" href="https://www.credly.com/badges/dc32db26-4653-498e-b3b2-20e2faa9076c">Certification</Link></li>
-                <li>edX Business Applications & ChatGPT<Link className="text-blue-400 hover:underline" href="https://www.credly.com/badges/dc32db26-4653-498e-b3b2-20e2faa9076c">Certification</Link></li>
+                <li>edX Prompt Engineering/ChatGPT <Link className="text-blue-400 hover:underline" href="https://courses.edx.org/certificates/f7da1ede8b6e44e9994a32a479b236df">Certification</Link></li>
+                <li>edX Business Applications & ChatGPT <Link className="text-blue-400 hover:underline" href="https://courses.edx.org/certificates/75fda987fd4447b2bafbcebbdab538f2">Certification</Link></li>
           </ul>
         </section>
       </div>
-    </div>
-  </Container>
-      <div className="flex justify-center mt-6">
-        <Button
-          onClick={handleClick}
-        >
+      <Link href="https://docs.google.com/document/d/1ktymEmZqpK7NLJwil6frgFrcxnwPHd7WOTJvGRLJa90/edit?usp=drive_link">
+        <Button variant="link">
           Download
         </Button>
-      </div>
+        </Link>
+    </div>
+  </Container>
 </>
   );
 }

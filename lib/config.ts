@@ -1,5 +1,20 @@
 export const baseUrl = process.env["NEXT_PUBLIC_BASE_URL"];
 
+export const site = {
+  name: "Christian B. Martinez",
+  url: "https://christianbmartinez.com",
+  ogImage: "https://christianbmartinez.com/ogimage.jpg",
+  description: "I build apps and tools for the web.",
+  links: {
+    twitter: "https://twitter.com/cbmonx",
+    github: "https://github.com/cbmongithub",
+  },
+  handles: {
+    twitter: "@cbmonx",
+    github: "@cbmongithub",
+  },
+}
+
 export const links = {
   nav: [
     {

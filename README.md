@@ -1,3 +1,5 @@
+<p><a href="https://christianbmartinez.com"><img style='border-radius: 12px;filter: drop-shadow(0px 9px 10px #888888);' src="https://repository-images.githubusercontent.com/894207731/eb76fc1e-9aa4-4167-bd5a-0c3a00919d4a" alt="Christian B. Martinez cbm_2024 repo image" /></a></p>
+
 # cbm_2024
 Welcome to my 2024 portfolio! This project showcases my portfolio of works and a blog using the latest web technologies.
 

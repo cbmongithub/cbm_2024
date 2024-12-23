@@ -58,7 +58,7 @@ export const Spotlight = ({
       onBlur={handleBlur}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className={cn(className, "relative flex h-48 w-full items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 my-6")}
+      className={cn(className, "relative flex h-auto w-full items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 my-6")}
       aria-pressed={mouseDownState}
     >
       <div
