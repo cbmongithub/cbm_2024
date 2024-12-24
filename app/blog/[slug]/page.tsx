@@ -69,7 +69,6 @@ const Page = async (props: { params: {slug: string}; }) => {
       <script
         type="application/ld+json"
         suppressHydrationWarning={true}
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: Needed here
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",

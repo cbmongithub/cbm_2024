@@ -55,7 +55,7 @@ export default function Page() {
           <ul className="list-disc list-inside text-sm mt-2">
             <li>Languages: CSS, HTML, JS, NoSQL, Sass, SQL, TS, TSX, Jquery</li>
             <li>Technologies: Bootstrap, Next, Node, React, Sanity, Solid, Tailwind, Vite, MySQL, MongoDB</li>
-            <li>TTools: Bun, Git, Github, Pnpm,  Postman, VSCode, MongoDB Compass, Slack, Vitest, Jest</li>
+            <li>Tools: Bun, Git, Github, Pnpm,  Postman, VSCode, MongoDB Compass, Slack, Vitest, Jest</li>
             <li>Platforms: Heroku, Vercel, GCP,  Netlify, Wavoto, Hostinger, Wix, Wordpress, Shopify</li>
           </ul>
         </section>
@@ -63,37 +63,37 @@ export default function Page() {
         <section className="mb-6" aria-labelledby="skills-heading">
           <h2 id="skills-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Skills</h2>
           <div className="mt-4">
-            <article className="mb-4">
+            <div className="mb-4">
               <h3 className="font-semibold text-sm">Technical Skills</h3>
               <ul className="list-disc list-inside text-sm mt-2">
                 <li>Problem Solving: Quick and effective at identifying and resolving challenges.</li>
                 <li>Critical Thinking: Analyzes complex problems and develops strategic solutions.</li>
                 <li>Attention to Detail: Ensures accuracy and quality in all technical work.</li>
               </ul>
-            </article>
-            <article className="mb-4">
+            </div>
+            <div className="mb-4">
               <h3 className="font-semibold text-sm">Soft Skills</h3>
                 <ul className="list-disc list-inside text-sm mt-2">
                 <li>Collaboration: Works seamlessly with diverse teams and stakeholders.</li>
                 <li>Empathy: Understanding, relating, and addressing the customers needs.</li>
                 <li>Self-Motivated: Proactively tackles tasks and drives personal growth.</li>
                 </ul>
-            </article>
-            <article className="mb-4">
+            </div>
+            <div className="mb-4">
               <h3 className="font-semibold text-sm">Organizational Skills</h3>
               <ul className="list-disc list-inside text-sm mt-2">
                 <li>Time Management: Balances priorities and consistently meets deadlines.</li>
                 <li>Creativity: Generates innovative ideas to improve workflows and solve problems.</li>
                 <li>Mentoring: Explains technical concepts clearly and supports team development.</li>
               </ul>
-            </article>
+            </div>
           </div>
         </section>
 
         <section className="mb-6" aria-labelledby="work-experience-heading">
           <h2 id="work-experience-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Experience</h2>
           <div className="mt-4">
-            <article className="mb-4">
+            <div className="mb-4">
               <h3 className="font-semibold text-sm">Technician</h3>
               <p className="text-xs text-neutral-500">
                 Northrop Grumman | Summer 2022 - Present
@@ -103,20 +103,20 @@ export default function Page() {
                 <li>Operated Airbus computer systems ensuring quality and consistency.</li>
                 <li>Collaborated with engineers to provide feedback on software improvements.</li>
               </ul>
-            </article>
-            <article className="mb-4">
-              <h3 className="font-semibold text-sm">Web Developer</h3>
+            </div>
+            <div className="mb-4">
+              <h3 className="font-semibold text-sm">Freelance Developer</h3>
               <p className="text-xs text-neutral-500">
-                MMBC, LLC | Fall 2020 - Present
+                MMBC, LLC | Fall 2020 - 2024
               </p>
               <ul className="list-disc list-inside text-sm mt-2">
                 <li>Developed a high-performance single-page application using React and Tailwind CSS.</li>
                 <li>Increased website inquiries from 2% to 18% month over month.</li>
                 <li>Deployed solutions with 99.9% uptime using Google Cloud.</li>
               </ul>
-            </article>
-            <article className="mb-4">
-              <h3 className="font-semibold text-sm">Chief Technology Officer</h3>
+            </div>
+            <div className="mb-4">
+              <h3 className="font-semibold text-sm">Technical Founder</h3>
               <p className="text-xs text-neutral-500">
                 Mixdlabs, LLC | Summer 2015 - 2020
               </p>
@@ -125,38 +125,52 @@ export default function Page() {
                 <li>Built a wholesale portal leading to a $140,000 revenue boost.</li>
                 <li>Led a team of four employees, showcasing strong leadership skills.</li>
               </ul>
-            </article>
+            </div>
           </div>
         </section>
 
         <section className="mb-6" aria-labelledby="education-heading">
           <h2 id="education-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Education</h2>
           <div className="mt-4">
-            <article className="mb-4">
-              <h3 className="font-semibold text-sm">Full Stack Coding Bootcamp</h3>
+            <div className="mb-4">
+              <h3 className="font-semibold text-sm">University of Utah</h3>
               <p className="text-xs text-neutral-500">
-                University of Utah | Summer 2023 - Autumn 2023
+                Full Stack Bootcamp | APR  2023 - OCT 2023  Grade: A
               </p>
-              <p className="text-sm mt-2">
-                Advanced coursework in React, MongoDB, GraphQL, JWT, and Redux.
+            </div>
+            <div className="mb-4">
+              <h3 className="font-semibold text-sm">Davis Applied Technology College</h3>
+              <p className="text-xs text-neutral-500">
+                Web Design | MAR  2007 -FEB  2008  Grade: A
               </p>
-            </article>
+            </div>
+            <div className="mb-4">
+              <h3 className="font-semibold text-sm">Roy High School</h3>
+              <p className="text-xs text-neutral-500">
+                General Studies | AUG  2004 - JUN  2007  Grade: A
+              </p>
+            </div>
           </div>
         </section>
 
         <section className="mb-6" aria-labelledby="projects-heading">
           <h2 id="projects-heading" className="text-lg font-semibold border-b border-neutral-800 pb-1">Projects</h2>
           <div className="mt-4">
-            <article className="mb-4">
-              <h3 className="font-semibold text-sm">CBM_2023</h3>
+            <div className="mb-4">
+            <div className="mb-4">
+              <h3 className="font-semibold text-sm">Chattr App</h3>
+              <p className="text-xs text-neutral-500">2023</p>
+              <p className="text-sm mt-2">Chattr is a full stack application designed  to help developers quickly setup a chatbot.</p>
+            </div>
+              <h3 className="font-semibold text-sm">Developer Portfolio</h3>
               <p className="text-xs text-neutral-500">2023</p>
               <p className="text-sm mt-2">Portfolio website built with Next.js, Tailwind CSS, and Framer Motion.</p>
-            </article>
-            <article className="mb-4">
+            </div>
+          <div className="mb-4">
               <h3 className="font-semibold text-sm">Chattr App</h3>
               <p className="text-xs text-neutral-500">2023</p>
               <p className="text-sm mt-2">Real-time chat app using React, Node, and Socket.io.</p>
-            </article>
+            </div>
           </div>
         </section>
 

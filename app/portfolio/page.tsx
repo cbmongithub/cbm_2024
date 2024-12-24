@@ -49,7 +49,8 @@ const Page = () => {
               imgSrc={project.imgUrl}
               imgAlt={project.alt}
               content="project"
-              contentUrl={project.repo}
+              contentUrl={project.href}
+              repoUrl={project.repo}
               title={project.title}
               date={project.date}
               description={project.description}

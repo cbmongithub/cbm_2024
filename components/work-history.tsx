@@ -39,11 +39,11 @@ export const WorkHistory: FC = () => {
             logoAlt: "Northrop Grumman logo",
           },
           {
-            company: "CBM, LLC",
-            role: "Web Developer",
+            company: "CBM",
+            role: "Freelance Developer",
             startDate: "2018",
             endDate: "Present",
-            logoSrc: "/img/cbmlogo.webp",
+            logoSrc: "/img/apple-touch-icon.png",
             logoAlt: "CBM, LLC logo",
           },
           {
@@ -61,7 +61,7 @@ export const WorkHistory: FC = () => {
                 alt={job.logoAlt}
                 width={28}
                 height={28}
-                className="size-7 rounded-full object-cover object-square bg-black"
+                className="size-8 rounded-full object-fit object-cover aspect-square bg-black"
                 src={job.logoSrc}
               />
             </div>

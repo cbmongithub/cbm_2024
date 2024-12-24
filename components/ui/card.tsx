@@ -42,9 +42,6 @@ export const Card = ({
       >
         {description}
       </p>
-      {!center && (
-        <div className="absolute z-10 bottom-0 left-0 flex flex-col justify-center items-center w-full h-52 bg-gradient-to-t from-black" />
-      )}
       {contentUrl && (
         <Link
           href={contentUrl}
@@ -67,6 +64,7 @@ export const CardImg = ({
   date,
   description,
   contentUrl,
+  repoUrl,
 }: {
   title: string;
   imgSrc: string;
@@ -75,6 +73,7 @@ export const CardImg = ({
   description: string;
   content: string;
   contentUrl: string;
+  repoUrl: string;
 }) => {
   return (
     <div className="relative w-full rounded-2xl my-6 flex flex-col sm:flex-row">
@@ -109,22 +108,20 @@ export const CardImg = ({
           <span className="relative">{title}</span>
         </h2>
         <p className="hidden sm:block relative mt-2 text-sm text-neutral-400">{description}</p>
-        <div className="flex flex-row justify-between items-center">
+        <div className="inline-flex flex-row justify-evenly mt-4 space-x-4">
           <Link
             href={contentUrl}
             aria-label={`Go to demo of ${title}`}
-            className="relative text-xs sm:text-sm z-20 mt-4 flex items-center font-medium text-blue-500 hover:text-blue-600"
+            className="z-50 font-medium text-blue-500 hover:text-blue-600"
           >
-            Go to demo
-            <ArrowRightIcon className="ml-2 size-3" />
+            Demo
           </Link>
           <Link
-            href={contentUrl}
+            href={repoUrl}
             aria-label={`View source of ${title}`}
-            className="relative z-20 mt-4 ml-12 flex items-center text-xs sm:text-sm font-medium text-blue-500 hover:text-blue-600"
+            className="z-50 font-medium text-blue-500 hover:text-blue-600"
           >
-            View source
-            <ArrowRightIcon className="ml-2 size-3" />
+            Source
           </Link>
         </div>
       </div>
