@@ -41,6 +41,7 @@ const Page = () => {
     <>
       <Header title="Portfolio" description="Some of my favorite projects" />
       <Container>
+        <section>
         <Title>Projects</Title>
         {projectData.map((project) => (
           <Spotlight key={project.title} className="mb-4 h-auto sm:h-48 w-full">
@@ -57,6 +58,7 @@ const Page = () => {
             />
           </Spotlight>
         ))}
+        </section>
       </Container>
     </>
   );

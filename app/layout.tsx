@@ -56,8 +56,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    shortcut: "/icon",
+    apple: "/apple-touch-icon.jpg",
   },
 }
 
@@ -69,20 +69,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="flex size-full flex-col scroll-smooth antialiased text-neutral-100 bg-black"
+      className="flex size-full flex-col scroll-smooth antialiased text-neutral-100 bg-neutral-950"
     >
       <body>
-        <main className="mx-auto flex flex-col px-6 max-w-3xl">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Loader>
+      <Suspense fallback={<div>Loading...</div>}>
+      <Loader>
               <Navbar />
               {children}
               <Footer />
-            </Loader>
-          </Suspense>
           <Analytics />
           <SpeedInsights />
-        </main>
+        </Loader>
+        </Suspense>
       </body>
     </html>
   );

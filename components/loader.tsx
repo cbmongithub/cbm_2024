@@ -14,12 +14,13 @@ export function Loader({
   }, []);
 
   return (
-    <div
-      className={`${!isLoaded && "animate-pulse blur-lg"}`}
+    <main
+      className={`mx-auto flex flex-col px-6 max-w-2xl ${!isLoaded && "animate-pulse blur-lg"}`}
       aria-busy={!isLoaded}
       aria-live="polite"
+      aria-label="Main Content"
     >
       {children}
-    </div>
+    </main>
   );
 }

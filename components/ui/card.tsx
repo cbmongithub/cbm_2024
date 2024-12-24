@@ -45,10 +45,10 @@ export const Card = ({
       {contentUrl && (
         <Link
           href={contentUrl}
-          aria-label={`Go to ${content}`}
+          aria-label={`${content}`}
           className="z-30 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
         >
-          Go to {content}
+          {content.charAt(0).toUpperCase() + content.slice(1)}
           <ArrowRightIcon className="ml-2 size-3" />
         </Link>
       )}
@@ -90,6 +90,7 @@ export const CardImg = ({
         <time
           className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-neutral-500"
           dateTime={new Date(date).toISOString()}
+          aria-label={`Date ${date}`}
         >
           <span className="absolute inset-y-0 left-0 flex items-center" aria-hidden="true">
             <span className="h-4 w-0.5 rounded-full bg-neutral-500" />

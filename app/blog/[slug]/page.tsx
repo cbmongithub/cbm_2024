@@ -65,7 +65,7 @@ const Page = async (props: { params: {slug: string}; }) => {
   }
 
   return (
-    <>
+    <section>
       <script
         type="application/ld+json"
         suppressHydrationWarning={true}
@@ -91,12 +91,13 @@ const Page = async (props: { params: {slug: string}; }) => {
       <Button
         asChild={true}
         variant="tertiary"
+        aria-label="Back Button"
       >
-        <Link href="/blog">
+        <Link aria-label="Back Button" href="/blog">
         <ArrowLeftIcon className="size-6" />
         </Link>
       </Button>
-      <article className="prose">
+      <article aria-label="Article" className="prose">
         <Header
           title={post.metadata.title}
           description={post.metadata.summary}
@@ -111,7 +112,7 @@ const Page = async (props: { params: {slug: string}; }) => {
           url={`${baseUrl}/blog/${post.slug}`}
         />
       </article>
-    </>
+    </section>
   );
 }
 

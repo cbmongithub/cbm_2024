@@ -35,8 +35,10 @@ const Page = () => {
   return (
     <>
       <Header title="Blog" description="Everything web development" />
+      <section>
       <Title>Posts</Title>
       <Posts />
+      </section>
     </>
   );
 }

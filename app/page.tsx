@@ -19,6 +19,7 @@ export default function Page() {
 	return (
   <>
       <Header title="I'm Christian" description="I code apps and tools" />
+      <section>
       <Title>Blog</Title>
       <Posts />
       <Link href="/blog">
@@ -26,12 +27,17 @@ export default function Page() {
           View Blog
         </Button>
       </Link>
+      </section>
+      <section>
       <Title>Repos</Title>
       <Repos />
+      </section>
+      <section>
       <Title>Subscribe</Title>
       <Spotlight>
         <SignUpForm />
       </Spotlight>
+      </section>
   </>
 );
 }
