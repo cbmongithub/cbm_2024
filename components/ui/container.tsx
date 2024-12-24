@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 export function Container({ children }: { children: ReactNode }) {
   return (
+    <section>
     <div className="mx-auto max-w-2xl">
       <div className="w-full">
         <div className="relative">
@@ -13,5 +14,6 @@ export function Container({ children }: { children: ReactNode }) {
         </div>
       </div>
     </div>
+    </section>
   );
 }

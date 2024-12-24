@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 import { baseUrl } from "lib/config";
 
@@ -42,33 +43,12 @@ const Page = () => {
 			<Header title="About" description="A little about me" />
 			<Container>
 				<Title>Who</Title>
+				<Image className="rounded-lg my-6" src="/img/me.webp" width={300} height={300} alt="Christian Martinez" />
 				<Description>
-					Hey there, I&apos;m Christian, a dedicated Full Stack Web Developer
-					from Utah. I am actively pursuing a full time role within the dynamic
-					world of the tech industry.
-				</Description>
-				<Description>
-					I recently completed coding bootcamp program at the University of
-					Utah, where I honed my skills by successfully delivering a multitude
-					of full stack projects.
-				</Description>
-				<Description>
-					This hands-on experience, alongside my current role in freelance web
-					development, has equipped me with a strong foundation in full stack
-					web development. My passion for technology drives me to stay current
-					with emerging trends and cutting-edge technologies, making me
-					ever-ready to adapt and excel in this rapidly evolving field.
-				</Description>
-				<Description>
-					In addition to my technical skills, I am a strong advocate for
-					collaboration and continuous learning. I believe that the best
-					solutions come from diverse perspectives and teamwork.
-				</Description>
-				<Description>
-					When I'm not coding, you can find me exploring the great outdoors,
-					reading up on the latest tech trends, or experimenting with new
-					recipes in the kitchen. I am always open to connect with like-minded
-					individuals and explore new opportunities in the tech world.
+					I’m Christian, a Full Stack Web Developer from Utah, seeking a full-time role in tech. <br /><br />
+					With experience from the University of Utah’s coding bootcamp and freelance development, I’ve built a solid foundation in full-stack development and a passion for learning emerging technologies.<br /><br />
+					I love working with others, always eager to learn new things, and enjoy coming up with creative solutions. <br /><br />
+					Outside of work, I enjoy exploring the outdoors, keeping up with tech trends, and experimenting with new dishes in the kitchen.
 				</Description>
 				<Title>When</Title>
 				<Spotlight className="h-auto w-full">

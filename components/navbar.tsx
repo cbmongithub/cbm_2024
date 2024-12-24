@@ -16,16 +16,16 @@ export function Navbar() {
 
   return (
     <aside className="mb-32 tracking-tight pt-8" aria-label="Main Navigation">
-      <nav className="flex flex-row items-center justify-between">
+      <nav aria-label="Navigation" className="flex flex-row items-center justify-between">
         <Link href="/" aria-label="Home">
-          <p className="mb-1 text-2xl" aria-hidden="true">
+          <p className="mb-1 text-2xl" aria-label="Christian's Logo">
             &#120148;
           </p>
         </Link>
-        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-md text-neutral-800 dark:text-neutral-200">
+        <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-md text-neutral-800 dark:text-neutral-200" aria-label='Navigation List'>
           {links.nav.map((link: { href: string; text: string }) => {
             return (
-              <li key={link.text}>
+              <li key={link.text} aria-label="Navigation Item">
                 <Link
                   className={`${setActiveLink(link.href, pathname)} transition duration-300 hover:text-blue-500 dark:hover:text-blue-600`}
                   href={link.href}
