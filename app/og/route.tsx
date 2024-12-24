@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
+import { NextRequest } from "next/server";
 
-export function GET(request: Request) {
+const GET = (request: NextRequest) => {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || "Christian B. Martinez";
 
@@ -18,3 +19,5 @@ export function GET(request: Request) {
     },
   );
 }
+
+export default GET;

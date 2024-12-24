@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -15,7 +19,6 @@
     "noUnusedParameters": true,
     "noPropertyAccessFromIndexSignature": true,
     "isolatedModules": true,
-    "strict": true,
     "noFallthroughCasesInSwitch": true,
     "moduleDetection": "force",
     "jsx": "preserve",
@@ -26,20 +29,43 @@
       }
     ],
     "paths": {
-      "@/*": ["./app/*"]
+      "app/*": [
+        "./app/*"
+      ],
+      "components/*": [
+        "./components/*"
+      ],
+      "content/*": [
+        "./content/*"
+      ],
+      "lib/*": [
+        "./lib/*"
+      ],
+      "helpers/*": [
+        "./lib/helpers/*"
+      ],
+      "ui/*": [
+        "./components/ui/*"
+      ],
+      "types": [
+        "./types/index.d.ts"
+      ],
+      "styles/*": [
+        "./styles/*"
+      ]
     },
     "strictNullChecks": true,
-    "allowJs": true
+    "allowJs": true,
+    "strict": false
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/_types/index.d.ts"
+    "types/index.d.ts"
   ],
   "exclude": [
-    "node_modules",
-    "app/_lib/theme.json"
+    "node_modules"
   ]
 }

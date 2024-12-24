@@ -1,32 +1,36 @@
+import "styles/prose.css";
+
 import { notFound } from "next/navigation";
 
-import { baseUrl } from "@/_lib/config";
-import { getPosts } from "@/_lib/posts";
+import { baseUrl } from "lib/config";
+import { getPosts } from "lib/posts"
 
-import Header from "@/_components/header";
-import Mdx from "@/_components/mdx";
-import Share from "@/_components/share";
-import ButtonRound from "@/_components/ui/button-round";
+import { Header } from "components/header";
+import { Mdx } from "components/mdx";
+import { Share } from "components/share";
+import { ArrowLeftIcon } from "components/ui/icons";
+
+import Link from "next/link";
+import { Button } from "ui/button";
 
 const posts = getPosts();
 
-export function generateStaticParams() {
-	return posts.map((post) => ({
-		slug: post.slug,
+export const generateStaticParams = () => {
+  return posts.map(({ slug }) => ({
+    slug: slug,
 	}));
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: Unknown type
-export async function generateMetadata(props: any) {
+export const generateMetadata = async (props: { params: {slug: string}; }) => {
   const params = await props.params;
   const post = posts.find((post) => post.slug === params.slug);
 
   if (!post) {
-    return notFound();
+    return notFound()
   }
 
   const { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
-  const ogImage = image ? image : `${baseUrl}/og?title=${encodeURIComponent(title)}`;
+  const ogImage = image ?? `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
     title,
@@ -52,13 +56,12 @@ export async function generateMetadata(props: any) {
   };
 }
 
-// biome-ignore lint/suspicious/noExplicitAny: Unknown type
-export default async function Page(props: any) {
+const Page = async (props: { params: {slug: string}; }) => {
   const params = await props.params;
   const post = posts.find((post) => post.slug === params.slug);
 
   if (!post) {
-    return notFound();
+    return notFound()
   }
 
   return (
@@ -66,7 +69,6 @@ export default async function Page(props: any) {
       <script
         type="application/ld+json"
         suppressHydrationWarning={true}
-        // biome-ignore lint/security/noDangerouslySetInnerHtml: Needed here
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -86,7 +88,14 @@ export default async function Page(props: any) {
           }),
         }}
       />
-      <ButtonRound href="/blog" />
+      <Button
+        asChild={true}
+        variant="tertiary"
+      >
+        <Link href="/blog">
+        <ArrowLeftIcon className="size-6" />
+        </Link>
+      </Button>
       <article className="prose">
         <Header
           title={post.metadata.title}
@@ -105,3 +114,5 @@ export default async function Page(props: any) {
     </>
   );
 }
+
+export default Page;

@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 
-import { baseUrl } from "@/_lib/config";
+import { baseUrl } from "lib/config";
 
-import Description from "@/_components/description";
-import Header from "@/_components/header";
-import Socials from "@/_components/socials";
-import Spotlight from "@/_components/spotlight";
-import Title from "@/_components/title";
-import Container from "@/_components/ui/container";
-import WorkHistory from "@/_components/work-history";
+import { Description } from "components/description";
+import { Header } from "components/header";
+import { Socials } from "components/socials";
+import { Spotlight } from "components/spotlight";
+import { Title } from "components/title";
+import { WorkHistory } from "components/work-history";
+
+import { Container } from "ui/container";
 
 export const metadata: Metadata = {
   metadataBase: new URL(`${baseUrl}/about`),
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function About() {
+const Page = () => {
 	return (
 		<>
 			<Header title="About" description="A little about me" />
@@ -70,7 +71,7 @@ export default function About() {
 					individuals and explore new opportunities in the tech world.
 				</Description>
 				<Title>When</Title>
-				<Spotlight height="h-auto" width="w-full">
+				<Spotlight className="h-auto w-full">
 					<WorkHistory />
 				</Spotlight>
 				<Title>Where</Title>
@@ -79,3 +80,5 @@ export default function About() {
 		</>
 	);
 }
+
+export default Page;

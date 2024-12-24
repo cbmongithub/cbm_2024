@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import Header from "./_components/header";
-import Container from "./_components/ui/container";
-import { ArrowLeftIcon } from "./_components/ui/icons";
+import { Header } from "components/header";
+import { Container } from "ui/container";
+import { ArrowLeftIcon } from "ui/icons";
 
-export default function NotFound() {
+export default function Page() {
   return (
     <>
       <Header title="404" description="Page not found" />

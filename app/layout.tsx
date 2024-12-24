@@ -1,43 +1,65 @@
-import "./globals.css";
+import "styles/tw.css";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { type ReactNode, Suspense } from "react";
 
-import { baseUrl } from "./_lib/config";
+import { Footer } from "components/footer";
+import { Loader } from "components/loader";
+import { Navbar } from "components/navbar";
 
-import Footer from "./_components/footer";
-import Loader from "./_components/loader";
-import Navbar from "./_components/navbar";
+import { site } from "lib/config";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(`${baseUrl}`),
   title: {
-    default: "Christian B. Martinez",
-    template: "%s | Christian B. Martinez",
+    default: site.name,
+    template: `%s - ${site.name}`,
   },
-  description: "I build apps and tools for the web.",
-  openGraph: {
-    title: "Christian B. Martinez",
-    description: "I build apps and tools for the web.",
-    url: baseUrl,
-    siteName: "christianbmartinez.com",
-    locale: "en_US",
-    type: "website",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+  metadataBase: new URL(site.url),
+  description: site.description,
+  keywords: [
+    "Next.js v15",
+    "Next.js 15 template",
+    "Tailwind CSS v4",
+    "Tailwind v4 template",
+  ],
+  authors: [
+    {
+      name: site.name,
+      url: site.url,
     },
+  ],
+  creator: site.name,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: site.url,
+    title: site.name,
+    description: site.description,
+    siteName: site.name,
+    images: [
+      {
+        url: site.ogImage,
+        width: 1200,
+        height: 630,
+        alt: site.name,
+      },
+    ],
   },
-};
+  twitter: {
+    card: "summary_large_image",
+    title: site.name,
+    description: site.description,
+    images: [site.ogImage],
+    creator: site.handles.twitter,
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+}
 
 export default function RootLayout({
   children,
