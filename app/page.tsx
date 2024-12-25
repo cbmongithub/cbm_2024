@@ -19,26 +19,29 @@ export default function Page() {
 
 	return (
   <>
-      <Header title="I'm Christian" description="I code apps and tools" />
-      <section>
-      <Title>Blog</Title>
+    <Header title="I'm Christian" description='I code apps and tools' />
+    <section aria-label='Blog Section'>
+      <Title text='Blog' />
       <Posts />
-      <Link href="/blog">
-        <Button className="flex flex-row justify-center items-center mx-auto">
+      <Link href='/blog'>
+        <Button
+          className='flex flex-row justify-center items-center mx-auto'
+          aria-label='View Blog'
+        >
           View Blog
         </Button>
       </Link>
-      </section>
-      <section>
-      <Title>Repos</Title>
+    </section>
+    <section>
+      <Title text='Repos' />
       <Repos />
-      </section>
-      <section>
-      <Title>Subscribe</Title>
+    </section>
+    <section>
+      <Title text='Sign Up' />
       <Spotlight>
         <SignUpForm />
       </Spotlight>
-      </section>
+    </section>
   </>
-);
+)
 }

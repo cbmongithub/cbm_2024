@@ -37,15 +37,15 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <>
-      <Header title="Portfolio" description="Some of my favorite projects" />
+      <Header title='Portfolio' description='Some of my favorite projects' />
       <Container>
         <section>
-        <Title>Projects</Title>
-        <Projects />
+          <Title text='Projects' />
+          <Projects />
         </section>
       </Container>
     </>
-  );
+  )
 }
 
 export default Page;

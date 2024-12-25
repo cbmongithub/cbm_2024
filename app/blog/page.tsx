@@ -34,13 +34,13 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <>
-      <Header title="Blog" description="Everything web development" />
+      <Header title='Blog' description='Everything web development' />
       <section>
-      <Title>Posts</Title>
-      <Posts />
+        <Title text='Posts' />
+        <Posts />
       </section>
     </>
-  );
+  )
 }
 
 export default Page;
