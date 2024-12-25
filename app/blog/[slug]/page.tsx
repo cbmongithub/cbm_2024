@@ -12,6 +12,7 @@ import { ArrowLeftIcon } from "components/ui/icons";
 
 import Link from "next/link";
 import { Button } from "ui/button";
+import { Title } from 'components/title'
 
 const posts = getPosts();
 
@@ -67,12 +68,12 @@ const Page = async (props: any) => {
   return (
     <section>
       <script
-        type="application/ld+json"
+        type='application/ld+json'
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
+            '@context': 'https://schema.org',
+            '@type': 'BlogPosting',
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
@@ -82,38 +83,35 @@ const Page = async (props: any) => {
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
-              "@type": "Person",
-              name: "Christian B. Martinez",
+              '@type': 'Person',
+              name: 'Christian B. Martinez',
             },
           }),
         }}
       />
-      <Button
-        asChild={true}
-        variant="tertiary"
-        aria-label="Back Button"
-      >
-        <Link aria-label="Back Button" href="/blog">
-        <ArrowLeftIcon className="size-6" />
+      <Button asChild={true} variant='tertiary' aria-label='Back Button'>
+        <Link aria-label='Back Button' href='/blog'>
+          <ArrowLeftIcon className='size-6' />
         </Link>
       </Button>
-      <article aria-label="Article" className="prose">
+      <article aria-label='Article' className='prose'>
         <Header
           title={post.metadata.title}
           description={post.metadata.summary}
           date={post.metadata.publishedAt}
         />
         <Mdx source={post.content} />
-        <h2>Share</h2>
+        <Title text='Share' />
         <Share
-          className="mt-6"
+          aria-label='Share Icons'
+          className='mt-6'
           title={post.metadata.title}
           description={post.metadata.summary}
           url={`${baseUrl}/blog/${post.slug}`}
         />
       </article>
     </section>
-  );
+  )
 }
 
 export default Page;
