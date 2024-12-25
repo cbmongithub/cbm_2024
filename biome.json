@@ -70,7 +70,11 @@
         "noNonNullAssertion": "off"
       },
       "suspicious": {
-        "noReactSpecificProps": "off"
+        "noReactSpecificProps": "off",
+        "noExplicitAny": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
       }
     }
   },
