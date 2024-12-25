@@ -7,6 +7,7 @@ export const SignUpForm = () => {
   const [email, setEmail] = useState('')
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
 
   const handleChange = e => {
     setEmail(e.target.value)
@@ -14,25 +15,34 @@ export const SignUpForm = () => {
 
   const handleSubmit = async event => {
     event.preventDefault()
-
-    return await fetch('/api/email/subscribe', {
-      method: 'POST',
-      body: JSON.stringify({ email }),
-    })
-      .then(response => {
-        response.ok && setSuccess(true)
-        setTimeout(() => {
-          setSuccess(false)
-          setEmail('')
-        }, 3000)
+    try {
+      const response = await fetch('/api/email/subscribe', {
+        method: 'POST',
+        body: JSON.stringify({ email }),
       })
-      .catch(error => {
-        error && setError(true)
+
+      if (!response.ok) {
+        setError(true)
         setTimeout(() => {
           setError(false)
           setEmail('')
         }, 3000)
-      })
+      }
+
+      setSuccess(true)
+      setTimeout(() => {
+        setSuccess(false)
+        setEmail('')
+      }, 3000)
+    } catch (error) {
+      setError(true)
+      setErrorMessage(error.message)
+      setTimeout(() => {
+        setError(false)
+        setEmail('')
+        setErrorMessage('')
+      }, 3000)
+    }
   }
 
   return (
@@ -92,7 +102,7 @@ export const SignUpForm = () => {
       )}
       {error && (
         <p className='mt-4 text-sm text-red-500'>
-          An error occurred, please try again!
+          {errorMessage || 'An error occurred. Please try again.'}
         </p>
       )}
     </form>
