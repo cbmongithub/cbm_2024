@@ -46,8 +46,7 @@ export const Card = ({
       </p>
       {contentUrl && (
         <Link
-          href={contentUrl}
-          aria-label={content}
+          href={content.charAt(0).toUpperCase() + content.slice(1)}
           className='z-30 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600'
         >
           {content.charAt(0).toUpperCase() + content.slice(1)}
