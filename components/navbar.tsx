@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { links } from "lib/config";
 
-export function Navbar() {
+export const Navbar = () => {
   function setActiveLink(href: string, pathname: string) {
     if (pathname === href || (pathname.split("/")[1] === "blog" && href === "/blog")) {
       return "text-blue-500";

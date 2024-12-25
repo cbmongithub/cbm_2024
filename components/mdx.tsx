@@ -7,7 +7,7 @@ import { slugify } from "lib/helpers";
 
 Code.theme = "github-dark";
 
-function createHeading(level: number) {
+const createHeading = (level: number) =>{
   const Heading = ({ children }: { children: string }) => {
     const slug = slugify(children);
     return createElement(
@@ -39,10 +39,8 @@ const components = {
   pre: Code,
 };
 
-export function Mdx(
+export const Mdx = (
   props: MDXRemoteProps & {
     components?: ComponentProps<ElementType>;
   },
-) {
-  return <MDXRemote components={{ ...components }} {...props} />;
-}
+) => <MDXRemote components={{ ...components }} {...props} />;

@@ -1,11 +1,12 @@
 
+
 import { fd } from "lib/helpers";
 import { getPosts } from "lib/posts";
 
 import { Spotlight } from "components/spotlight";
 import { Card } from "components/ui/card";
 
-export function Posts() {
+export const Posts = () => {
   const posts = getPosts();
 
   if (!posts) {
@@ -22,7 +23,7 @@ export function Posts() {
           return 1;
         })
         .map((post) => (
-          <Spotlight className="h-auto" key={post.slug}>
+          <Spotlight key={post.slug} className="h-auto">
             <Card
               key={post.slug}
               content="article"
@@ -33,6 +34,6 @@ export function Posts() {
             />
           </Spotlight>
         ))}
-    </>
+        </>
   );
 }

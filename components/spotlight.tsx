@@ -7,6 +7,8 @@ export const Spotlight = ({
   className,
   children,
 }: {
+  key?: string | number;
+  delay?: number;
   className?: string;
   children: ReactNode;
 }) => {

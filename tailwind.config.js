@@ -7,7 +7,7 @@ const twCssConfig = {
   theme: {
     extend: {},
   },
-  plugins: [typography()],
+  plugins: [typography],
 };
 
 export default twCssConfig;

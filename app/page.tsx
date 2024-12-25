@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { getPosts } from "lib/posts";
 
 import { Header } from "components/header";
@@ -7,7 +9,6 @@ import { SignUpForm } from "components/signup-form";
 import { Spotlight } from "components/spotlight";
 import { Title } from "components/title";
 import { Button } from "components/ui/button";
-import Link from "next/link";
 
 export default function Page() {
   const posts = getPosts();

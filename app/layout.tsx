@@ -1,9 +1,10 @@
 import "styles/tw.css";
 
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
 import { type ReactNode, Suspense } from "react";
+import type { Metadata } from "next";
+
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Footer } from "components/footer";
 import { Loader } from "components/loader";
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/icon",
-    apple: "/apple-touch-icon.jpg",
+    apple: "/apple-touch-icon.png",
   },
 }
 
@@ -72,14 +73,14 @@ export default function RootLayout({
       className="flex size-full flex-col scroll-smooth antialiased text-neutral-100 bg-neutral-950"
     >
       <body>
-      <Suspense fallback={<div>Loading...</div>}>
-      <Loader>
-              <Navbar />
+        <Suspense fallback={<div>Loading...</div>}>
+          <Loader>
+            <Navbar />
               {children}
-              <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </Loader>
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
+          </Loader>
         </Suspense>
       </body>
     </html>

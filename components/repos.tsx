@@ -8,11 +8,11 @@ import { Spotlight } from "components/spotlight";
 import { Card } from "ui/card";
 import type { RepoProps } from "types";
 
-export function Repos() {
+export const Repos = () => {
     const [repos, setRepos] = useState<RepoProps>();
 
     useEffect(() => {
-        async function fetchRepos() {
+        const fetchRepos = async() => {
             const response = await fetch(
                 "https://api.github.com/search/repositories?q=user:cbmongithub&sort=updated&per_page=6",
                 { next: { revalidate: 43200 } }, // 12 hours
