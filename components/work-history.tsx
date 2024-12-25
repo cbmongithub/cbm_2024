@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { FC } from "react";
+
 import { ArrowRightIcon } from "ui/icons";
 
-export const WorkHistory: FC = () => {
+export const WorkHistory = () => {
   return (
     <div className="relative w-full p-8 sm:p-16">
       <h2 className="flex text-sm font-semibold text-neutral-100">

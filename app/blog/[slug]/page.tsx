@@ -21,7 +21,7 @@ export const generateStaticParams = () => {
 	}));
 }
 
-export const generateMetadata = async (props: { params: {slug: string}; }) => {
+export const generateMetadata = async (props: any) => {
   const params = await props.params;
   const post = posts.find((post) => post.slug === params.slug);
 
@@ -56,7 +56,7 @@ export const generateMetadata = async (props: { params: {slug: string}; }) => {
   };
 }
 
-const Page = async (props: { params: {slug: string}; }) => {
+const Page = async (props: any) => {
   const params = await props.params;
   const post = posts.find((post) => post.slug === params.slug);
 

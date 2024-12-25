@@ -1,28 +1,23 @@
-// import type { NextRequest } from "next/server";
-// import { NextResponse } from "next/server";
-// import { Resend } from "resend";
+import { Resend } from "resend";
+import { redirect } from 'next/navigation'
 
-// const resend = new Resend(process.env["RESEND_API_KEY"]);
+const resend = new Resend(process.env["RESEND_API_KEY"]);
 
-// const POST = async (req: NextRequest) => {
-//     if (req.method === "POST") {
-//         const { email } = await req.json();
-//         try {
-//             await resend.contacts.remove({
-//                 email: email,
-//                 audienceId: "7674c4bf-d841-4147-9871-b1a889805feb",
-//             });
-//             // For demonstration, we'll just log the email to the console
-//             return NextResponse.json({});
-//         } catch (error) {
-//             if (error instanceof Error) {
-//                 return NextResponse.json({ error: error.message }, { status: 500 });
-//             }
-//             return NextResponse.json({ error: "Unknown error" }, { status: 500 });
-//         }
-//     } else {
-//         return NextResponse.json({ error: "Invalid request method" }, { status: 405 });
-//     }
-// }
+export const POST = async(request: Request) => {
+    const { email } = await request.json();
+    try {
+    const { error } = await resend.contacts.remove({
+            email: email,
+            audienceId: process.env["RESEND_AUDIENCE_ID"]!,
+          })
 
-// export default POST;
+    if (error) {
+      return Response.json({ error }, { status: 500 });
+    }
+
+    return redirect(`${process.env["NEXT_PUBLIC_BASE_URL"]}/unsubscribed`);
+
+  } catch (error) {
+    return Response.json({ error }, { status: 500 });
+  }
+}

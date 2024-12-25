@@ -1,10 +1,10 @@
 import { fd } from "lib/helpers";
 
-export function Header({
+export const Header = ({
   title,
   description,
   date,
-}: { title: string; date?: string; description?: string }) {
+}: { title: string; date?: string; description?: string }) =>{
   return (
     <header aria-label={`${title} Header`}>
       <h1 className="text-balance font-bold text-4xl tracking-tighter">{title}</h1>

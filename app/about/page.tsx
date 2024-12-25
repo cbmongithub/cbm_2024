@@ -3,7 +3,6 @@ import Image from "next/image";
 
 import { baseUrl } from "lib/config";
 
-import { Description } from "components/description";
 import { Header } from "components/header";
 import { Socials } from "components/socials";
 import { Spotlight } from "components/spotlight";
@@ -39,17 +38,17 @@ export const metadata: Metadata = {
 
 const Page = () => {
 	return (
-		<>
+    <>
 			<Header title="About" description="A little about me" />
 			<Container>
 				<Title>Who</Title>
 				<Image className="rounded-lg my-6" src="/img/me.webp" width={300} height={300} alt="Christian Martinez" />
-				<Description>
-					I’m Christian, a Full Stack Web Developer from Utah, seeking a full-time role in tech. <br /><br />
+				<p>
+					I&apos;m Christian, a Full Stack Web Developer from Utah, seeking a full-time role in tech. <br /><br />
 					With experience from the University of Utah’s coding bootcamp and freelance development, I’ve built a solid foundation in full-stack development and a passion for learning emerging technologies.<br /><br />
 					I love working with others, always eager to learn new things, and enjoy coming up with creative solutions. <br /><br />
 					Outside of work, I enjoy exploring the outdoors, keeping up with tech trends, and experimenting with new dishes in the kitchen.
-				</Description>
+				</p>
 				<Title>When</Title>
 				<Spotlight className="h-auto w-full">
 					<WorkHistory />
@@ -57,7 +56,7 @@ const Page = () => {
 				<Title>Where</Title>
 				<Socials />
 			</Container>
-		</>
+      </>
 	);
 }
 

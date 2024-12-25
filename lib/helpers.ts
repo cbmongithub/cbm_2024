@@ -14,8 +14,9 @@ export const fd = (date: string, includeRelative = false) => {
 
 	let formattedDate = "";
 
-	y === 0 && m === 0 && d === 1 &&
-		(formattedDate = "Yesterday");
+	if (y === 0 && m === 0 && d === 1) {
+		formattedDate = "Yesterday";
+	}
 
 	const fullDate = td.toLocaleString("en-us", {
 		month: "numeric",

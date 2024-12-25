@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "lib/config";
 
-import { projectData } from "content/projects/data";
 
 import { Header } from "components/header";
-import { Spotlight } from "components/spotlight";
 import { Title } from "components/title";
+import { Projects } from "components/projects";
 
-import { CardImg } from "ui/card";
 import { Container } from "ui/container";
 
 export const metadata: Metadata = {
@@ -43,21 +41,7 @@ const Page = () => {
       <Container>
         <section>
         <Title>Projects</Title>
-        {projectData.map((project) => (
-          <Spotlight key={project.title} className="mb-4 h-auto sm:h-48 w-full">
-            <CardImg
-              key={project.title}
-              imgSrc={project.imgUrl}
-              imgAlt={project.alt}
-              content="project"
-              contentUrl={project.href}
-              repoUrl={project.repo}
-              title={project.title}
-              date={project.date}
-              description={project.description}
-            />
-          </Spotlight>
-        ))}
+        <Projects />
         </section>
       </Container>
     </>

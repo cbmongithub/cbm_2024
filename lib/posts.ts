@@ -6,7 +6,7 @@ import type { Metadata } from "types";
 const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
 const quotesRegex = /^['"](.*)['"]$/;
 
-function parseFrontmatter(fileContent: string) {
+const parseFrontmatter = (fileContent: string) =>{
   const match = frontmatterRegex.exec(fileContent);
   const frontMatterBlock = match?.[1];
   const content = fileContent.replace(frontmatterRegex, "").trim();
@@ -23,7 +23,7 @@ function parseFrontmatter(fileContent: string) {
   return { metadata: metadata as Metadata, content };
 }
 
-function getMdxData(dir: string) {
+const getMdxData = (dir: string) =>{
   const mdxFiles = fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 
   return mdxFiles.map((file) => {
