@@ -160,16 +160,16 @@ export default function Page() {
             <div className="mb-4">
                     <Link className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" href="https://chattr-app-tau.vercel.app">Chattr App</Link>
               <p className="text-xs text-neutral-500">2023</p>
-              <p className="text-sm mt-2">Chattr is a full stack application designed  to help developers quickly setup a chatbot.</p>
+                    <p className="text-sm mt-2">A next js chattr boilerplate which helps developers create chatbots. Built with Nextjs, The Chattr library I wrote, Tailwindcss, OpenAI, and Typescript.</p>
             </div>
                   <Link className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" href="https://cbm-2023.vercel.app/">Developer Portfolio</Link>
               <p className="text-xs text-neutral-500">2023</p>
-              <p className="text-sm mt-2">Portfolio website built with Next.js, Tailwind CSS, and Framer Motion.</p>
+                  <p className="text-sm mt-2">My 2023 developer portfolio and full-stack application built with React, Axios, Next.js, Next Themes, Tailwind CSS, Framer Motion, OpenAI API, MongoDB, Giphy API, TS Particles, GitHub API, EmailJS, Next MDX Remote, and Redis.</p>
             </div>
           <div className="mb-4">
                   <Link className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" href="https://blogger-techblog-ed6d0a6ca50f.herokuapp.com/">Tech Blog</Link>
                   <p className="text-xs text-neutral-500">2024</p>
-                  <p className="text-sm mt-2">A Tech Blogging Platform and CMS</p>
+                  <p className="text-sm mt-2">A full stack tech blog built with MVC architecture using node, tailwindcss, mysql2, sequelize, express-handlebars, express-session, connect-session-sequelize, and bcrypt.</p>
             </div>
           </div>
         </section>
