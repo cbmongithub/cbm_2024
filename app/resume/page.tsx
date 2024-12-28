@@ -158,18 +158,18 @@ export default function Page() {
           <div className="mt-4">
             <div className="mb-4">
             <div className="mb-4">
-              <h3 className="font-semibold text-sm">Chattr App</h3>
+                    <Link className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" href="https://chattr-app-tau.vercel.app">Chattr App</Link>
               <p className="text-xs text-neutral-500">2023</p>
               <p className="text-sm mt-2">Chattr is a full stack application designed  to help developers quickly setup a chatbot.</p>
             </div>
-              <h3 className="font-semibold text-sm">Developer Portfolio</h3>
+                  <Link className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" href="https://cbm-2023.vercel.app/">Developer Portfolio</Link>
               <p className="text-xs text-neutral-500">2023</p>
               <p className="text-sm mt-2">Portfolio website built with Next.js, Tailwind CSS, and Framer Motion.</p>
             </div>
           <div className="mb-4">
-              <h3 className="font-semibold text-sm">Chattr App</h3>
-              <p className="text-xs text-neutral-500">2023</p>
-              <p className="text-sm mt-2">Real-time chat app using React, Node, and Socket.io.</p>
+                  <Link className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer" href="https://blogger-techblog-ed6d0a6ca50f.herokuapp.com/">Tech Blog</Link>
+                  <p className="text-xs text-neutral-500">2024</p>
+                  <p className="text-sm mt-2">A Tech Blogging Platform and CMS</p>
             </div>
           </div>
         </section>
