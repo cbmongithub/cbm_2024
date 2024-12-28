@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
-import { NextRequest } from "next/server";
 
-const GET = (request: NextRequest) => {
+const GET = (request: Request) => {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || "Christian B. Martinez";
 
