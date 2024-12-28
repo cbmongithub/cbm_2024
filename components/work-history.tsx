@@ -43,7 +43,7 @@ export const WorkHistory = () => {
             role: "Freelance Developer",
             startDate: "2018",
             endDate: "Present",
-            logoSrc: "/img/apple-touch-icon.png",
+            logoSrc: "/apple-touch-icon.png",
             logoAlt: "CBM, LLC logo",
           },
           {

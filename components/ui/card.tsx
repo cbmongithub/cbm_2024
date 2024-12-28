@@ -24,8 +24,8 @@ export const Card = ({
     <div
       className={`flex flex-col ${center ? 'items-center' : 'items-start'} p-8 sm:p-16`}
     >
-      <h2 className='z-30 text-sm md:text-base font-semibold tracking-tight text-neutral-100'>
-        <div className='-inset-x-4 -inset-y-6 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 bg-neutral-800/50 sm:-inset-x-6 sm:rounded-2xl' />
+      <h2 className='z-30 text-sm md:text-base font-semibold tracking-tight'>
+        <div className='-inset-x-4 -inset-y-6 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl' />
         <span className='z-30'>{title}</span>
       </h2>
       {date && (
