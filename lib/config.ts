@@ -18,10 +18,6 @@ export const site = {
 export const links = {
   nav: [
     {
-      href: "/",
-      text: "home",
-    },
-    {
       href: "/about",
       text: "about",
     },
