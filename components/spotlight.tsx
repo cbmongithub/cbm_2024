@@ -60,7 +60,7 @@ export const Spotlight = ({
       onBlur={handleBlur}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className={cn(className, "relative flex h-auto w-full items-center justify-center overflow-hidden rounded-2xl border border-neutral-800 my-6")}
+      className={cn(className, "relative flex h-auto w-full items-center justify-center overflow-hidden rounded-md border border-neutral-800 my-6")}
       aria-pressed={mouseDownState}
     >
       <div
@@ -70,6 +70,7 @@ export const Spotlight = ({
           background: `radial-gradient(${mouseDownState ? "300px" : "150px"} circle at ${position.x}px ${position.y}px, rgba(0,0,255,.25), transparent 100%)`,
         }}
       />
+      <div className='absolute size-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:14px_14px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_10%,transparent_100%)]' />
       {children}
     </div>
   );
