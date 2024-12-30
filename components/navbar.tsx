@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from "next/navigation";
 
 import { links } from "lib/config";
+import Logo from './logo';
 
 export const Navbar = () => {
   function setActiveLink(href: string, pathname: string) {
@@ -18,9 +19,7 @@ export const Navbar = () => {
     <aside className="mb-32 tracking-tight pt-8" aria-label="Main Navigation">
       <nav aria-label="Navigation" className="flex flex-row items-center justify-between">
         <Link href="/" aria-label="Home">
-          <p className="mb-1 text-2xl" aria-label="Christian's Logo">
-            &#120148;
-          </p>
+          <Logo className="h-6 w-full" />
         </Link>
         <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-md text-neutral-800 dark:text-neutral-200" aria-label='Navigation List'>
           {links.nav.map((link: { href: string; text: string }) => {

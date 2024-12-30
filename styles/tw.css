@@ -1,5 +1,36 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-*: initial;
+
+  --color-white: oklch(1 0 0);
+  --color-black: oklch(0 0 0);
+
+  --color-neutral-50: oklch(0.985 0 0);
+  --color-neutral-100: oklch(0.970 0 0);
+  --color-neutral-200: oklch(0.922 0 0);
+  --color-neutral-300: oklch(0.870 0 0);
+  --color-neutral-400: oklch(0.700 0 0);
+  --color-neutral-500: oklch(0.560 0 0);
+  --color-neutral-600: oklch(0.440 0 0);
+  --color-neutral-700: oklch(0.370 0 0);
+  --color-neutral-800: oklch(0.260 0 0);
+  --color-neutral-900: oklch(0.215 0 0);
+  --color-neutral-950: oklch(0.170 0 0);
+
+  --color-blue-50: oklch(0.97 0.014 254.604);
+  --color-blue-100: oklch(0.932 0.032 255.585);
+  --color-blue-200: oklch(0.882 0.059 254.128);
+  --color-blue-300: oklch(0.809 0.105 251.813);
+  --color-blue-400: oklch(0.707 0.165 254.624);
+  --color-blue-500: oklch(0.623 0.214 259.815);
+  --color-blue-600: oklch(0.546 0.245 262.881);
+  --color-blue-700: oklch(0.488 0.243 264.376);
+  --color-blue-800: oklch(0.424 0.199 265.638);
+  --color-blue-900: oklch(0.379 0.146 265.522);
+  --color-blue-950: oklch(0.282 0.091 267.935);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
