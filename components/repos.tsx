@@ -31,7 +31,7 @@ export const Repos = () => {
         <div className='min-h-screen w-full'>
             <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
             {repos.map((repo) => (
-                <Spotlight key={repo.id} className="h-28 w-1/2">
+                <Spotlight key={repo.id}>
                     <Card
                         center={true}
                         key={repo.id}
