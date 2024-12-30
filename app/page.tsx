@@ -25,7 +25,7 @@ export default function Page() {
       <Posts />
       <Link href='/blog'>
         <Button
-          className='flex flex-row justify-center items-center mx-auto'
+            className='mt-16 flex flex-row justify-center items-center mx-auto'
           aria-label='View Blog'
         >
           View Blog
@@ -35,6 +35,14 @@ export default function Page() {
     <section>
       <Title text='Repos' />
       <Repos />
+        <Link href='https://github.com/cbmongithub'>
+          <Button
+            className='mt-16 flex flex-row justify-center items-center mx-auto'
+            aria-label='View Repos'
+          >
+            View Repos
+          </Button>
+        </Link>
     </section>
     <section>
       <Title text='Sign Up' />

@@ -47,7 +47,7 @@ export const SignUpForm = () => {
 
   return (
     <form
-      className='rounded-2xl p-8 sm:p-16 border-neutral-700/40'
+      className='rounded-2xl p-8 sm:p-16 border-neutral-800'
       onSubmit={handleSubmit}
     >
       <h2 className='flex text-sm font-semibold text-neutral-100'>
@@ -89,7 +89,7 @@ export const SignUpForm = () => {
           placeholder='Email address'
           aria-label='Email address'
           required={true}
-          className='relative min-w-32 flex-auto appearance-none rounded-md border px-3 focus:outline-none focus:ring-4 border-neutral-700 bg-neutral-700/[0.15] text-neutral-200 placeholder:text-neutral-500 focus:border-blue-400 focus:ring-blue-400/10 sm:text-sm'
+          className='bg-black relative min-w-32 flex-auto appearance-none rounded-md border px-3 focus:outline-none focus:ring-4 border-neutral-700 text-neutral-200 placeholder:text-neutral-500 focus:border-blue-400 focus:ring-blue-400/10 sm:text-sm'
         />
         <Button type='submit' className='ml-3 relative z-30'>
           Signup
