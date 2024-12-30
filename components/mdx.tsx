@@ -2,10 +2,10 @@ import { Code } from "bright";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import Link, { type LinkProps } from "next/link";
 import { type ComponentProps, type ElementType, createElement } from "react";
-
+import myTheme from "lib/theme.json";
 import { slugify } from "lib/helpers";
 
-Code.theme = "github-dark";
+Code.theme = myTheme as unknown as Record<string, string>;
 
 const createHeading = (level: number) =>{
   const Heading = ({ children }: { children: string }) => {
