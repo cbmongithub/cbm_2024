@@ -16,7 +16,7 @@ export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <aside className="mb-32 tracking-tight pt-8" aria-label="Main Navigation">
+    <aside className="mb-32 border border-neutral-900 p-6 tracking-tight" aria-label="Main Navigation">
       <nav aria-label="Navigation" className="flex flex-row items-center justify-between">
         <Link href="/" aria-label="Home">
           <Logo className="h-6 w-full" />
