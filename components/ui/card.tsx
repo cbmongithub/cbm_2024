@@ -77,19 +77,19 @@ export const CardImg = ({
   repoUrl: string;
 }) => {
   return (
-    <div className="relative w-full my-6 flex flex-col sm:flex-row">
-      <div className="w-full h-48 mt-[-25px] sm:mt-0 sm:w-2/5 shrink-0 overflow-hidden rounded-2xl">
+    <div className="relative w-full flex flex-col sm:flex-row">
+      <div className="w-full h-48 mt-[-25px] sm:mt-0 sm:w-2/5 shrink-0 overflow-hidden">
         <Image
           src={imgSrc}
           alt={imgAlt}
           height={360}
           width={480}
-          className="size-full object-cover"
+          className="size-full grayscale object-cover"
         />
       </div>
       <div className="p-6">
         <time
-          className="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-neutral-500"
+          className="relative z-10 order-first flex items-center pl-3.5 text-sm text-neutral-500"
           dateTime={new Date(date).toISOString()}
           aria-label={`Date ${date}`}
         >

@@ -47,7 +47,7 @@ export const projectData = [
   },
   {
     title: "chattr",
-    imgUrl: "https://github.com/cbmongithub/mmbc/raw/main/public/assets/mmbc.jpg",
+    imgUrl: "https://camo.githubusercontent.com/6ef20816ce611cb2199153eb182a16821ac4f81c298abef4e74f7099271cb0bc/68747470733a2f2f692e6962622e636f2f387358636463562f6368617474726c6f676f2e77656270",
     alt: "Image for christians mmbc website project",
     description: "A chatgpt chatbot component library for nextjs",
     repo: "https://github.com/cbmongithub/chattr",

@@ -6,7 +6,7 @@ export const Projects = () => {
     return (
         <>
             {projectData.map((project) => (
-            <Spotlight key={project.title} className="mb-4 h-auto sm:h-48 w-full">
+            <Spotlight key={project.title} className="h-auto sm:h-48 w-full">
                 <CardImg
                 key={project.title}
                 imgSrc={project.imgUrl}
