@@ -5,11 +5,10 @@ import { links } from "lib/config";
 export const Footer = () => {
   return (
     <footer
-      className='relative bottom-0 left-0 flex-none pt-32'
+      className='relative bottom-0 left-0 flex-none p-6 border border-x-neutral-900 border-t-0 border-b-neutral-900'
       aria-label='Footer'
     >
       <div className='mx-auto w-full max-w-7xl lg:px-8'>
-        <div className='border-t pb-16 pt-10 border-neutral-700/40'>
           <div className='relative px-4 sm:px-8 lg:px-12'>
             <div className='mx-auto max-w-2xl lg:max-w-5xl'>
               <div className='flex flex-col items-center justify-between gap-6 sm:flex-row'>
@@ -37,7 +36,6 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
     </footer>
   )
 }
