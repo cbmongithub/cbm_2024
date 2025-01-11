@@ -29,7 +29,6 @@ export const Repos = () => {
 
     return (
         <div className='min-h-screen w-full'>
-            <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
             {repos.map((repo) => (
                 <Spotlight key={repo.id}>
                     <Card
@@ -43,7 +42,6 @@ export const Repos = () => {
                     />
                 </Spotlight>
             ))}
-            </div>
         </div>
     );
 }

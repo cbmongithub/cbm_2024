@@ -23,7 +23,7 @@ export const Posts = () => {
           return 1;
         })
         .map((post) => (
-          <Spotlight key={post.slug} className="h-auto mb-6">
+          <Spotlight key={post.slug} className="h-auto">
             <Card
               key={post.slug}
               content="article"

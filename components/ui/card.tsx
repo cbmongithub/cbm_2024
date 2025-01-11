@@ -22,10 +22,10 @@ export const Card = ({
 }) => {
   return (
     <div
-      className={`flex flex-col ${center ? 'items-center' : 'items-start'} p-8 sm:p-16`}
+      className={`flex flex-col ${center ? 'items-center' : 'items-start'} p-6 sm:p-16`}
     >
       <h2 className='z-30 text-sm md:text-base font-semibold tracking-tight'>
-        <div className='-inset-x-4 -inset-y-6 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl' />
+        <div className='-inset-x-4 -inset-y-6 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6' />
         <span className='z-30'>{title}</span>
       </h2>
       {date && (
@@ -40,14 +40,14 @@ export const Card = ({
         </time>
       )}
       <p
-        className={`sm:flex mt-2 text-sm ${center ? 'text-center' : 'text-left'} text-neutral-400`}
+        className={`sm:flex pt-2 text-sm ${center ? 'text-center' : 'text-left'} text-neutral-400`}
       >
         {description}
       </p>
       {contentUrl && (
         <Link
           href={contentUrl}
-          className='z-30 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600'
+          className='z-30 pt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600'
         >
           {content.charAt(0).toUpperCase() + content.slice(1)}
           <ArrowRightIcon className='ml-2 size-3' />
@@ -77,14 +77,14 @@ export const CardImg = ({
   repoUrl: string;
 }) => {
   return (
-    <div className="relative w-full rounded-2xl my-6 flex flex-col sm:flex-row">
+    <div className="relative w-full my-6 flex flex-col sm:flex-row">
       <div className="w-full h-48 mt-[-25px] sm:mt-0 sm:w-2/5 shrink-0 overflow-hidden rounded-2xl">
         <Image
           src={imgSrc}
           alt={imgAlt}
           height={360}
           width={480}
-          className="size-full rounded-2xl object-cover"
+          className="size-full object-cover"
         />
       </div>
       <div className="p-6">
