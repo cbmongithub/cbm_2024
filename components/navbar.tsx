@@ -19,7 +19,7 @@ export const Navbar = () => {
     <aside className="mb-32 tracking-tight pt-8" aria-label="Main Navigation">
       <nav aria-label="Navigation" className="flex flex-row items-center justify-between">
         <Link href="/" aria-label="Home">
-          <Logo className="h-6 w-full" />
+          <Logo className="h-6 w-full max-w-[41.82px]" />
         </Link>
         <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1 text-md text-neutral-800 dark:text-neutral-200" aria-label='Navigation List'>
           {links.nav.map((link: { href: string; text: string }) => {
