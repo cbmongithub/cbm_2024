@@ -84,7 +84,7 @@ export const CardImg = ({
           alt={imgAlt}
           height={360}
           width={480}
-          className="size-full rounded-2xl object-cover"
+          className="size-full grayscale rounded-2xl object-cover"
         />
       </div>
       <div className="p-6">
