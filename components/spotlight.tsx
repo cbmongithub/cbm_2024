@@ -1,6 +1,6 @@
 "use client";
 
-import { cx } from "class-variance-authority";
+import { cx } from "lib/helpers";
 import { type MouseEvent, type ReactNode, useRef, useState } from "react";
 
 export const Spotlight = ({
