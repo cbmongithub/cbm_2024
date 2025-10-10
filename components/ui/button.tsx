@@ -1,8 +1,9 @@
-import { Slot } from "@radix-ui/react-slot"
-import { cva } from "class-variance-authority"
+import { Slot } from "@radix-ui/react-slot";
+import { cva } from "class-variance-authority";
 import { forwardRef } from "react";
 
-import { cn } from "lib/helpers";
+import { cx } from "lib/helpers";
+
 import type { ButtonProps } from "types";
 
 const Variant = cva(
@@ -12,9 +13,12 @@ const Variant = cva(
       variant: {
         primary:
           "group cursor-pointer inline-flex w-auto items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-900 text-neutral-300 hover:bg-neutral-800 hover:text-neutral-50 active:bg-neutral-700 active:text-neutral-50/70",
-        secondary: "group cursor-pointer inline-flex w-auto items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-900/75 text-neutral-300 hover:bg-neutral-800/75 hover:text-neutral-100 active:bg-neutral-700/50 active:text-neutral-100/70",
-        tertiary: "group cursor-pointer mb-8 flex size-10 items-center justify-center transition border border-neutral-800/50 bg-neutral-950 hover:border-neutral-800 hover:ring-neutral-100 active:border-neutral-700 active:ring-neutral-50",
-        ghost: "group cursor-pointer hover:bg-neutral-900 hover:text-white active:bg-neutral-900 active:text-neutral-100 transition-opacity",
+        secondary:
+          "group cursor-pointer inline-flex w-auto items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-900/75 text-neutral-300 hover:bg-neutral-800/75 hover:text-neutral-100 active:bg-neutral-700/50 active:text-neutral-100/70",
+        tertiary:
+          "group cursor-pointer mb-8 flex size-10 items-center justify-center transition border border-neutral-800/50 bg-neutral-950 hover:border-neutral-800 hover:ring-neutral-100 active:border-neutral-700 active:ring-neutral-50",
+        ghost:
+          "group cursor-pointer hover:bg-neutral-900 hover:text-white active:bg-neutral-900 active:text-neutral-100 transition-opacity",
         link: "group cursor-pointer text-blue-500 underline-offset-4 hover:text-blue-600 hover:underline active:text-blue-700 visited:text-blue-400 transition-opacity",
       },
       size: {
@@ -28,22 +32,22 @@ const Variant = cva(
       variant: "primary",
       size: "default",
     },
-  },
+  }
 );
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps<typeof Variant>>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+    const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(Variant({ variant, size, className }))}
+        className={cx(Variant({ variant, size, className }))}
         ref={ref}
         {...props}
       />
-    )
+    );
   }
-)
+);
 
-Button.displayName = "Button"
+Button.displayName = "Button";
 
-export { Button, Variant }
+export { Button, Variant };
