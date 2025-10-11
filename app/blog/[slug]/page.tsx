@@ -29,7 +29,9 @@ export const generateStaticParams = () => {
   }));
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const post = posts.find((entry) => entry.slug === slug);
 
@@ -101,7 +103,7 @@ const Page = async ({ params }: PageProps) => {
           }),
         }}
       />
-      <Button asChild={true} variant="tertiary" aria-label="Back Button">
+      <Button asChild={true} variant="ghost" aria-label="Back Button">
         <Link aria-label="Back Button" href="/blog">
           <ArrowLeftIcon className="size-6" />
         </Link>

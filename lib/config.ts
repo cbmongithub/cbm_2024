@@ -1,8 +1,12 @@
 export const baseUrl =
-  process.env["NEXT_PUBLIC_BASE_URL"] ?? "https://christianbmartinez.com";
+  process.env["NEXT_PUBLIC_BASE_URL"] ?? "https://www.christianbmartinez.com";
 
 export const links = {
   nav: [
+    {
+      href: "/",
+      text: "home",
+    },
     {
       href: "/about",
       text: "about",
@@ -14,6 +18,10 @@ export const links = {
     {
       href: "/blog",
       text: "blog",
+    },
+    {
+      href: "/resume",
+      text: "resume",
     },
   ],
   footer: [
@@ -29,6 +37,10 @@ export const links = {
       href: "/rss",
       text: "rss",
     },
+    {
+      href: "/sitemap.xml",
+      text: "sitemap",
+    },
   ],
   socials: {
     github: "https://www.github.com/cbmongithub",
@@ -40,7 +52,7 @@ export const links = {
 export const site = {
   name: "Christian B. Martinez",
   url: baseUrl,
-  ogImage: "https://www.christianbmartinez.com/og-image.png",
+  ogImage: `${baseUrl}/opengraph-image.png`,
   description: "I build apps and tools for the web.",
   links: {
     twitter: links.socials.twitter,

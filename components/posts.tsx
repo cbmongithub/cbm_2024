@@ -12,13 +12,15 @@ export const Posts = () => {
   }
 
   const sortedPosts = [...posts].sort(
-    (a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime(),
+    (a, b) =>
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
   );
 
   return (
-    <>
+    <div className="mt-8 space-y-6">
       {sortedPosts.map((post) => (
-        <Spotlight key={post.slug} className="h-auto mb-6">
+        <Spotlight key={post.slug} className="h-auto" border={false}>
           <Card
             key={post.slug}
             content="article"
@@ -29,6 +31,6 @@ export const Posts = () => {
           />
         </Spotlight>
       ))}
-    </>
+    </div>
   );
 };

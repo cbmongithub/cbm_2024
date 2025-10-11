@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @theme {
   --color-*: initial;
@@ -7,16 +7,16 @@
   --color-black: oklch(0 0 0);
 
   --color-neutral-50: oklch(0.985 0 0);
-  --color-neutral-100: oklch(0.970 0 0);
+  --color-neutral-100: oklch(0.97 0 0);
   --color-neutral-200: oklch(0.922 0 0);
-  --color-neutral-300: oklch(0.870 0 0);
-  --color-neutral-400: oklch(0.700 0 0);
-  --color-neutral-500: oklch(0.560 0 0);
-  --color-neutral-600: oklch(0.440 0 0);
-  --color-neutral-700: oklch(0.370 0 0);
-  --color-neutral-800: oklch(0.260 0 0);
+  --color-neutral-300: oklch(0.87 0 0);
+  --color-neutral-400: oklch(0.7 0 0);
+  --color-neutral-500: oklch(0.56 0 0);
+  --color-neutral-600: oklch(0.44 0 0);
+  --color-neutral-700: oklch(0.37 0 0);
+  --color-neutral-800: oklch(0.26 0 0);
   --color-neutral-900: oklch(0.215 0 0);
-  --color-neutral-950: oklch(0.170 0 0);
+  --color-neutral-950: oklch(0.17 0 0);
 
   --color-blue-50: oklch(0.97 0.014 254.604);
   --color-blue-100: oklch(0.932 0.032 255.585);
@@ -37,16 +37,19 @@
   }
 }
 
-html, body {
+html,
+body {
   color-scheme: dark;
-  background: #000;
+  background-color: var(--color-black);
 }
 
-input[type='text'],
-input[type='email'] {
+body {
+  font-feature-settings: "liga", "kern";
+}
+
+input[type="text"],
+input[type="email"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-
-

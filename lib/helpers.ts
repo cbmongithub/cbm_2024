@@ -1,5 +1,7 @@
-export const cx = (...cn: (string | boolean | undefined)[]) =>
-  cn.filter(Boolean).join(" ");
+import clsx, { type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export const cn = (...cn: ClassValue[]) => twMerge(clsx(...cn));
 
 export const formatDate = (date: string, includeRelative = false) => {
   const currentDate = new Date();

@@ -14,42 +14,36 @@ export default function Page() {
   const posts = getPosts();
 
   if (!posts) {
-  return null;
-}
+    return null;
+  }
 
-	return (
-  <>
-    <Header title="I'm Christian" description='I code apps and tools' />
-    <section aria-label='Blog Section'>
-      <Title text='Blog' />
-      <Posts />
-      <Link href='/blog'>
-        <Button
-            className='mt-16 flex flex-row justify-center items-center mx-auto'
-          aria-label='View Blog'
-        >
-          View Blog
-        </Button>
-      </Link>
-    </section>
-    <section>
-      <Title text='Repos' />
-      <Repos />
-        <Link href='https://github.com/cbmongithub'>
-          <Button
-            className='mt-16 flex flex-row justify-center items-center mx-auto'
-            aria-label='View Repos'
-          >
-            View Repos
-          </Button>
-        </Link>
-    </section>
-    <section>
-      <Title text='Sign Up' />
-      <Spotlight>
-        <SignUpForm />
-      </Spotlight>
-    </section>
-  </>
-)
+  return (
+    <>
+      <Header title="I'm Christian" description="I code apps and tools" />
+      <section aria-label="Blog Section" className="mt-16 space-y-10">
+        <Title text="Blog" />
+        <Posts />
+        <div className="flex justify-center">
+          <Link href="/blog" aria-label="View Blog">
+            <Button variant="ghost">View Blog</Button>
+          </Link>
+        </div>
+      </section>
+      <section aria-label="Repository Highlights" className="mt-20 space-y-10">
+        <Title text="Repos" />
+        <Repos />
+        <div className="flex justify-center">
+          <Link href="https://github.com/cbmongithub" aria-label="View Repos">
+            <Button variant="ghost">View Repos</Button>
+          </Link>
+        </div>
+      </section>
+      <section aria-label="Newsletter Sign Up" className="mt-20 space-y-10">
+        <Title text="Sign Up" />
+        <Spotlight border={true} className="p-0">
+          <SignUpForm />
+        </Spotlight>
+      </section>
+    </>
+  );
 }

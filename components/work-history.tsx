@@ -56,7 +56,7 @@ export const WorkHistory = () => {
           },
         ].map((job) => (
           <li key={job.startDate} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-neutral-900/5 border border-neutral-700/50 bg-neutral-800 ring-0">
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full border border-neutral-800/60 bg-neutral-800 ring-0">
               <Image
                 alt={job.logoAlt}
                 width={28}
@@ -78,18 +78,20 @@ export const WorkHistory = () => {
                 aria-label={`${job.startDate} until ${job.endDate}`}
               >
                 <time dateTime={job.startDate}>{job.startDate}</time>{" "}
-                <span aria-hidden="true">—</span> <time dateTime={job.endDate}>{job.endDate}</time>
+                <span aria-hidden="true">—</span>{" "}
+                <time dateTime={job.endDate}>{job.endDate}</time>
               </dd>
             </dl>
           </li>
         ))}
       </ol>
       <Link
-        className="group mt-6 inline-flex w-full items-center justify-center rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-800/75 text-neutral-300 hover:bg-neutral-800 hover:text-neutral-50 active:bg-neutral-800/50 active:text-neutral-50/70"
+        className="z-50 group mt-6 inline-flex w-full items-center justify-center rounded-md px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none bg-neutral-800 text-neutral-300 hover:bg-neutral-700 hover:text-neutral-50 active:bg-neutral-800 active:text-neutral-50"
         href="/resume"
-      >View Resume
+      >
+        View Resume
         <ArrowRightIcon className="ml-2 size-3" />
       </Link>
     </div>
   );
-}
+};

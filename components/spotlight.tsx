@@ -1,13 +1,15 @@
 "use client";
 
-import { cx } from "lib/helpers";
+import { cn } from "lib/helpers";
 import { type MouseEvent, type ReactNode, useRef, useState } from "react";
 
 export const Spotlight = ({
   className,
+  border,
   children,
 }: {
   key?: string | number;
+  border?: boolean;
   delay?: number;
   className?: string;
   children: ReactNode;
@@ -57,9 +59,10 @@ export const Spotlight = ({
       onBlur={handleBlur}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className={cx(
+      className={cn(
         className,
-        "relative flex h-auto w-full items-center justify-center overflow-hidden rounded-md border border-neutral-800"
+        "relative flex h-auto w-full items-center justify-center overflow-hidden rounded-2xl",
+        border && "border border-neutral-800/60"
       )}
       aria-pressed={mouseDownState}
     >
@@ -71,7 +74,6 @@ export const Spotlight = ({
         }}
       />
       <div className="absolute size-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:14px_14px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_10%,transparent_100%)]" />
-
       {children}
     </div>
   );
