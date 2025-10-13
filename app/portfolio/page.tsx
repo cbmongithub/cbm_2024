@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 
 import { baseUrl } from "lib/config";
 
-
 import { Header } from "components/header";
-import { Title } from "components/title";
 import { Projects } from "components/projects";
+import { Title } from "components/title";
 
 import { Container } from "ui/container";
 
@@ -37,15 +36,16 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <>
-      <Header title='Portfolio' description='Some of my favorite projects' />
+      <Header title="Portfolio" description="Some of my favorite projects" />
       <Container>
         <section>
-          <Title text='Projects' />
+          <Title text="Projects" />
+          <div className="pb-6" />
           <Projects />
         </section>
       </Container>
     </>
-  )
-}
+  );
+};
 
 export default Page;

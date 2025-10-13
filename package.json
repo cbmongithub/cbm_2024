@@ -35,22 +35,20 @@
     "react-share": "^5.1.1",
     "resend": "^4.0.1",
     "sharp": "^0.33.5",
-    "tailwind-merge": "^2.6.0",
+    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.0.0-beta.8"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@eslint/eslintrc": "^3.2.0",
     "@tailwindcss/postcss": "^4.0.0-beta.8",
     "@types/bun": "latest",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "19.0.2",
     "bright": "^0.8.5",
-    "eslint": "^9.17.0",
-    "eslint-config-next": "^15.1.2",
     "postcss": "^8.4.49",
     "typescript": "5.7.2"
   },
-  "module": "index.ts"
+  "module": "index.ts",
+  "packageManager": "npm@10.9.0"
 }

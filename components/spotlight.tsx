@@ -1,13 +1,15 @@
 "use client";
 
 import { cn } from "lib/helpers";
-import { type MouseEvent, type ReactNode, useCallback, useRef, useState } from "react";
+import { type MouseEvent, type ReactNode, useRef, useState } from "react";
 
 export const Spotlight = ({
   className,
+  border,
   children,
 }: {
   key?: string | number;
+  border?: boolean;
   delay?: number;
   className?: string;
   children: ReactNode;
@@ -18,17 +20,14 @@ export const Spotlight = ({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
 
-  const handleMouseMove = useCallback(
-    (e: MouseEvent<HTMLDivElement>) => {
-      if (!divRef.current || isFocused) {
-        return;
-      }
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    if (!divRef.current || isFocused) {
+      return;
+    }
 
-      const rect = divRef.current.getBoundingClientRect();
-      setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-    },
-    [isFocused],
-  );
+    const rect = divRef.current.getBoundingClientRect();
+    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -60,7 +59,11 @@ export const Spotlight = ({
       onBlur={handleBlur}
       onMouseEnter={() => setOpacity(1)}
       onMouseLeave={() => setOpacity(0)}
-      className={cn(className, "relative flex h-auto w-full items-center justify-center overflow-hidden rounded-md border border-neutral-800")}
+      className={cn(
+        className,
+        "relative flex h-auto w-full items-center justify-center overflow-hidden rounded-2xl",
+        border && "border border-neutral-800/60"
+      )}
       aria-pressed={mouseDownState}
     >
       <div
@@ -70,9 +73,8 @@ export const Spotlight = ({
           background: `radial-gradient(${mouseDownState ? "300px" : "150px"} circle at ${position.x}px ${position.y}px, rgba(0,0,255,.25), transparent 100%)`,
         }}
       />
-      <div className='absolute size-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:14px_14px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_10%,transparent_100%)]' />
-
+      <div className="absolute size-full bg-[linear-gradient(to_right,#b1b1b12e_1px,transparent_1px),linear-gradient(to_bottom,#b1b1b12e_1px,transparent_1px)] bg-[size:14px_14px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_10%,transparent_100%)]" />
       {children}
     </div>
   );
-}
+};

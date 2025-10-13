@@ -1,10 +1,10 @@
 import "styles/tw.css";
 
-import { type ReactNode, Suspense } from "react";
 import type { Metadata } from "next";
+import { type ReactNode, Suspense } from "react";
 
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Footer } from "components/footer";
 import { Loader } from "components/loader";
@@ -13,17 +13,19 @@ import { Navbar } from "components/navbar";
 import { site } from "lib/config";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: {
     default: site.name,
     template: `%s - ${site.name}`,
   },
-  metadataBase: new URL(site.url),
   description: site.description,
   keywords: [
-    "Next.js v15",
-    "Next.js 15 template",
-    "Tailwind CSS v4",
-    "Tailwind v4 template",
+    "Christian B. Martinez",
+    "Christian Martinez Full Stack Developer",
+    "Christian B Martinez Full Stack",
+    "Full Stack developer Utah",
+    "Christian Full Stack Developer",
+    "cbm full stack developer",
   ],
   authors: [
     {
@@ -60,13 +62,22 @@ export const metadata: Metadata = {
     shortcut: "/icon",
     apple: "/apple-touch-icon.png",
   },
-}
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html
       lang="en"
@@ -76,7 +87,7 @@ export default function RootLayout({
         <Suspense fallback={<div>Loading...</div>}>
           <Loader>
             <Navbar />
-              {children}
+            {children}
             <Footer />
             <Analytics />
             <SpeedInsights />

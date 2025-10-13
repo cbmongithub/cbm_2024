@@ -2,9 +2,9 @@ export const Title = ({ text }: { text: string }) => {
   return (
     <h1
       aria-label={`${text} Heading`}
-      className='mt-32 text-2xl pb-3 font-semibold tracking-tight text-neutral-100'
+      className="mt-20 text-sm! font-medium uppercase tracking-[0.45em] text-neutral-400"
     >
       {text}
     </h1>
-  )
-}
+  );
+};

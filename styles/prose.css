@@ -16,15 +16,15 @@
   .prose a {
     text-decoration: underline;
     transition: all;
-    text-decoration-color: #a3a3a3;
-    text-decoration-color: #4b5563;
+    text-decoration-color: var(--color-neutral-400);
+    text-decoration-color: var(--color-neutral-500);
     text-underline-offset: 0.3em;
     text-decoration-thickness: 0.1em;
   }
 
   .prose .anchor:after {
-    color: #d1d5db;
-    color: #374151;
+    color: var(--color-neutral-200);
+    color: var(--color-neutral-600);
     content: '#';
   }
 
@@ -39,7 +39,7 @@
   .prose p {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    color: #e5e7eb;
+    color: var(--color-neutral-200);
   }
 
   .prose h1 {

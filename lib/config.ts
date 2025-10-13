@@ -1,22 +1,12 @@
-export const baseUrl = process.env["NEXT_PUBLIC_BASE_URL"];
-
-export const site = {
-  name: "Christian B. Martinez",
-  url: "https://christianbmartinez.com",
-  ogImage: "https://christianbmartinez.com/ogimage.jpg",
-  description: "I build apps and tools for the web.",
-  links: {
-    twitter: "https://twitter.com/cbmonx",
-    github: "https://github.com/cbmongithub",
-  },
-  handles: {
-    twitter: "@cbmonx",
-    github: "@cbmongithub",
-  },
-}
+export const baseUrl =
+  process.env["NEXT_PUBLIC_BASE_URL"] ?? "https://www.christianbmartinez.com";
 
 export const links = {
   nav: [
+    {
+      href: "/",
+      text: "home",
+    },
     {
       href: "/about",
       text: "about",
@@ -28,6 +18,10 @@ export const links = {
     {
       href: "/blog",
       text: "blog",
+    },
+    {
+      href: "/resume",
+      text: "resume",
     },
   ],
   footer: [
@@ -43,10 +37,29 @@ export const links = {
       href: "/rss",
       text: "rss",
     },
+    {
+      href: "/sitemap.xml",
+      text: "sitemap",
+    },
   ],
   socials: {
-    github: "https://github.com/cbmongithub",
+    github: "https://www.github.com/cbmongithub",
     linkedin: "https://www.linkedin.com/in/cbmonlinkedn/",
-    twitter: "https://x.com/cbmonx",
+    twitter: "https://www.twitter.com/cbmonx",
+  },
+};
+
+export const site = {
+  name: "Christian B. Martinez",
+  url: baseUrl,
+  ogImage: `${baseUrl}/opengraph-image.png`,
+  description: "I build apps and tools for the web.",
+  links: {
+    twitter: links.socials.twitter,
+    github: links.socials.github,
+  },
+  handles: {
+    twitter: "@cbmonx",
+    github: "@cbmongithub",
   },
 };

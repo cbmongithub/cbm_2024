@@ -1,6 +1,8 @@
 import { ImageResponse } from "next/og";
 
-const GET = (request: Request) => {
+export const runtime = "edge";
+
+export function GET(request: Request) {
   const url = new URL(request.url);
   const title = url.searchParams.get("title") || "Christian B. Martinez";
 
@@ -18,5 +20,3 @@ const GET = (request: Request) => {
     },
   );
 }
-
-export default GET;

@@ -1,6 +1,4 @@
-
-
-import { fd } from "lib/helpers";
+import { formatDate } from "lib/helpers";
 import { getPosts } from "lib/posts";
 
 import { Spotlight } from "components/spotlight";
@@ -13,27 +11,26 @@ export const Posts = () => {
     return null;
   }
 
-  return (
-    <>
-      {posts
-        .sort((a, b) => {
-          if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
-            return -1;
-          }
-          return 1;
-        })
-        .map((post) => (
-          <Spotlight key={post.slug} className="h-auto mb-6">
-            <Card
-              key={post.slug}
-              content="article"
-              contentUrl={`/blog/${post.slug}`}
-              title={post.metadata.title}
-              date={fd(post.metadata.publishedAt)}
-              description={post.metadata.summary}
-            />
-          </Spotlight>
-        ))}
-        </>
+  const sortedPosts = [...posts].sort(
+    (a, b) =>
+      new Date(b.metadata.publishedAt).getTime() -
+      new Date(a.metadata.publishedAt).getTime()
   );
-}
+
+  return (
+    <div className="mt-8 space-y-6">
+      {sortedPosts.map((post) => (
+        <Spotlight key={post.slug} className="h-auto" border={false}>
+          <Card
+            key={post.slug}
+            content="article"
+            contentUrl={`/blog/${post.slug}`}
+            title={post.metadata.title}
+            date={formatDate(post.metadata.publishedAt)}
+            description={post.metadata.summary}
+          />
+        </Spotlight>
+      ))}
+    </div>
+  );
+};

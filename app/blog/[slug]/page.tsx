@@ -1,36 +1,50 @@
 import "styles/prose.css";
 
+import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { baseUrl } from "lib/config";
-import { getPosts } from "lib/posts"
+import { getPosts } from "lib/posts";
 
 import { Header } from "components/header";
 import { Mdx } from "components/mdx";
 import { Share } from "components/share";
+import { Title } from "components/title";
 import { ArrowLeftIcon } from "components/ui/icons";
 
-import Link from "next/link";
 import { Button } from "ui/button";
-import { Title } from 'components/title'
 
 const posts = getPosts();
 
+type PageProps = {
+  params: Promise<{
+    slug: string;
+  }>;
+};
+
 export const generateStaticParams = () => {
   return posts.map(({ slug }) => ({
-    slug: slug,
-	}));
-}
+    slug,
+  }));
+};
 
-export const generateMetadata = async (props: any) => {
-  const params = await props.params;
-  const post = posts.find((post) => post.slug === params.slug);
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = posts.find((entry) => entry.slug === slug);
 
   if (!post) {
-    return notFound()
+    notFound();
   }
 
-  const { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
+  const {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    image,
+  } = post.metadata;
   const ogImage = image ?? `${baseUrl}/og?title=${encodeURIComponent(title)}`;
 
   return {
@@ -57,23 +71,23 @@ export const generateMetadata = async (props: any) => {
   };
 }
 
-const Page = async (props: any) => {
-  const params = await props.params;
-  const post = posts.find((post) => post.slug === params.slug);
+const Page = async ({ params }: PageProps) => {
+  const { slug } = await params;
+  const post = posts.find((entry) => entry.slug === slug);
 
   if (!post) {
-    return notFound()
+    notFound();
   }
 
   return (
     <section>
       <script
-        type='application/ld+json'
+        type="application/ld+json"
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
             headline: post.metadata.title,
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
@@ -83,35 +97,35 @@ const Page = async (props: any) => {
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
-              '@type': 'Person',
-              name: 'Christian B. Martinez',
+              "@type": "Person",
+              name: "Christian B. Martinez",
             },
           }),
         }}
       />
-      <Button asChild={true} variant='tertiary' aria-label='Back Button'>
-        <Link aria-label='Back Button' href='/blog'>
-          <ArrowLeftIcon className='size-6' />
+      <Button asChild={true} variant="ghost" aria-label="Back Button">
+        <Link aria-label="Back Button" href="/blog">
+          <ArrowLeftIcon className="size-6" />
         </Link>
       </Button>
-      <article aria-label='Article' className='prose'>
+      <article aria-label="Article" className="prose">
         <Header
           title={post.metadata.title}
           description={post.metadata.summary}
           date={post.metadata.publishedAt}
         />
         <Mdx source={post.content} />
-        <Title text='Share' />
+        <Title text="Share" />
         <Share
-          aria-label='Share Icons'
-          className='mt-6'
+          aria-label="Share Icons"
+          className="mt-6"
           title={post.metadata.title}
           description={post.metadata.summary}
           url={`${baseUrl}/blog/${post.slug}`}
         />
       </article>
     </section>
-  )
-}
+  );
+};
 
 export default Page;

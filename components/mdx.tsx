@@ -1,13 +1,13 @@
 import { Code } from "bright";
+import { slugify } from "lib/helpers";
+import myTheme from "lib/theme.json";
 import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
 import Link, { type LinkProps } from "next/link";
 import { type ComponentProps, type ElementType, createElement } from "react";
-import myTheme from "lib/theme.json";
-import { slugify } from "lib/helpers";
 
 Code.theme = myTheme as unknown as Record<string, string>;
 
-const createHeading = (level: number) =>{
+const createHeading = (level: number) => {
   const Heading = ({ children }: { children: string }) => {
     const slug = slugify(children);
     return createElement(
@@ -21,14 +21,14 @@ const createHeading = (level: number) =>{
           "aria-label": `Link to heading ${children}`,
         }),
       ],
-      children,
+      children
     );
   };
 
   Heading.displayName = `Heading${level}`;
 
   return Heading;
-}
+};
 
 const components = {
   h1: createHeading(1),
@@ -42,5 +42,5 @@ const components = {
 export const Mdx = (
   props: MDXRemoteProps & {
     components?: ComponentProps<ElementType>;
-  },
+  }
 ) => <MDXRemote components={{ ...components }} {...props} />;

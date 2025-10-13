@@ -1,11 +1,25 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 import { Header } from "components/header";
+import { Button } from "components/ui/button";
 import { Container } from "ui/container";
 import { ArrowLeftIcon } from "ui/icons";
 
 export default function Page() {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleBack = () => {
+    if (pathname === "/") {
+      router.refresh();
+      return;
+    }
+    router.push("/");
+  };
+
   return (
     <>
       <Header title="404" description="Page not found" />
@@ -21,16 +35,16 @@ export default function Page() {
         <p className="mt-4 text-base text-neutral-400">
           The page you have requested does not exist
         </p>
-        <Link
-          href="/"
-          aria-hidden="true"
-          className="relative z-20 mt-4 flex items-center text-sm font-medium text-blue-500 hover:text-blue-600"
+        <Button
+          onClick={handleBack}
+          variant="secondary"
+          className="relative z-20 mt-4 inline-flex items-center gap-2 text-sm"
+          aria-label="Go back home"
         >
-          <ArrowLeftIcon className="size-3" />
+          <ArrowLeftIcon className="size-4" />
           Go back home
-        </Link>
+        </Button>
       </Container>
     </>
   );
-
 }
