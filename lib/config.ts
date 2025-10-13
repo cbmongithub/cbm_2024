@@ -52,7 +52,7 @@ export const links = {
 export const site = {
   name: "Christian B. Martinez",
   url: baseUrl,
-  ogImage: `${baseUrl}/opengraph-image.png`,
+  ogImage: `${baseUrl}/og-image.png`,
   description: "I build apps and tools for the web.",
   links: {
     twitter: links.socials.twitter,
