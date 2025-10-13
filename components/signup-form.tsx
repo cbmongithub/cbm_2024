@@ -1,56 +1,84 @@
 "use client";
 
 import { Button } from "components/ui/button";
-import { type ChangeEvent, type FormEvent, useState } from "react";
+import { type ChangeEvent, type FormEvent, useId, useState } from "react";
 
 export const SignUpForm = () => {
   const [email, setEmail] = useState("");
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+  const [message, setMessage] = useState("");
+
+  const emailFieldId = useId();
+  const feedbackId = useId();
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
+
+    if (status !== "idle") {
+      setStatus("idle");
+      setMessage("");
+    }
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const trimmedEmail = email.trim();
+
+    if (!trimmedEmail) {
+      setStatus("error");
+      setMessage("Please enter an email address.");
+      return;
+    }
+
+    setStatus("submitting");
+    setMessage("");
+
     try {
       const response = await fetch("/api/email/subscribe", {
         method: "POST",
-        body: JSON.stringify({ email }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: trimmedEmail }),
       });
 
+      const payload = await response.json().catch(() => undefined);
+
       if (!response.ok) {
-        setError(true);
-        setTimeout(() => {
-          setError(false);
-          setEmail("");
-        }, 3000);
+        const errorText =
+          (payload && (payload.error ?? payload.message)) ||
+          "Unable to subscribe right now. Please try again later.";
+        setStatus("error");
+        setMessage(errorText);
+        return;
       }
 
-      setSuccess(true);
-      setTimeout(() => {
-        setSuccess(false);
-        setEmail("");
-      }, 3000);
+      setStatus("success");
+      setMessage(
+        (payload && (payload.message ?? payload.success)) ||
+          "You have successfully subscribed!"
+      );
+      setEmail("");
     } catch (error) {
-      setError(true);
-      setErrorMessage(
+      setStatus("error");
+      setMessage(
         error instanceof Error ? error.message : "Something went wrong."
       );
-      setTimeout(() => {
-        setError(false);
-        setEmail("");
-        setErrorMessage("");
-      }, 3000);
     }
   };
 
+  const isSubmitting = status === "submitting";
+  const showSuccess = status === "success";
+  const showError = status === "error";
+
   return (
     <form
-      className="flex w-full flex-col gap-6 rounded-2xl bg-neutral-950/50 p-6 sm:p-10"
+      className="flex w-full flex-col gap-6 rounded-2xl border border-neutral-800/60 bg-neutral-950/45 p-6 sm:p-10"
       onSubmit={handleSubmit}
+      noValidate
     >
       <h2 className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-neutral-300">
         <svg
@@ -82,38 +110,41 @@ export const SignUpForm = () => {
         Get notified when I publish something new, and unsubscribe at any time.
       </p>
       <div className="flex flex-col gap-3 sm:flex-row">
-        <label htmlFor="email" className="sr-only">
+        <label htmlFor={emailFieldId} className="sr-only">
           Email address
         </label>
         <input
           type="email"
-          id="email"
+          id={emailFieldId}
           onChange={handleChange}
           value={email}
           placeholder="Email address"
           aria-label="Email address"
+          aria-describedby={feedbackId}
+          aria-invalid={showError || undefined}
           required={true}
-          className="z-50 relative flex-1 appearance-none rounded-lg border border-neutral-800/60 bg-neutral-900 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 focus:border-blue-400 focus:outline-none focus:ring-1 focus:ring-blue-400"
+          className="relative z-50 flex-1 appearance-none rounded-lg border border-neutral-800/60 bg-neutral-900/70 px-3 py-2 text-sm text-neutral-100 placeholder:text-neutral-500 transition focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-400/20"
+          autoComplete="email"
         />
         <Button
           type="submit"
           className="relative z-30 sm:w-auto"
           variant="primary"
+          disabled={isSubmitting}
         >
-          Signup
+          {isSubmitting ? "Submitting…" : "Signup"}
         </Button>
       </div>
-      <div className="min-h-[1.5rem]" aria-live="polite">
-        {success && (
-          <p className="text-sm text-emerald-400">
-            You have successfully subscribed!
-          </p>
-        )}
-        {error && (
-          <p className="text-sm text-red-400">
-            {errorMessage || "An error occurred. Please try again."}
-          </p>
-        )}
+      <div
+        id={feedbackId}
+        className="min-h-[1.5rem]"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {showSuccess ? (
+          <p className="text-sm text-emerald-400">{message}</p>
+        ) : null}
+        {showError ? <p className="text-sm text-red-400">{message}</p> : null}
       </div>
     </form>
   );
