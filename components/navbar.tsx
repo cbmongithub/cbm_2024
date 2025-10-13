@@ -6,16 +6,20 @@ import { usePathname } from "next/navigation";
 import { links } from "lib/config";
 import Logo from "./logo";
 
-export const Navbar = () => {
-  function setActiveLink(href: string, pathname: string) {
-    if (
-      pathname === href ||
-      (pathname.split("/")[1] === "blog" && href === "/blog")
-    ) {
-      return "text-neutral-100";
-    }
-    return "text-neutral-400";
+const isLinkActive = (href: string, pathname: string | null) => {
+  if (!pathname) {
+    return false;
   }
+
+  if (pathname === href) {
+    return true;
+  }
+
+  const [, topLevelSegment] = pathname.split("/");
+  return topLevelSegment === "blog" && href === "/blog";
+};
+
+export const Navbar = () => {
   const pathname = usePathname();
 
   return (
@@ -32,12 +36,16 @@ export const Navbar = () => {
           aria-label="Navigation List"
         >
           {links.nav.map((link: { href: string; text: string }) => {
+            const active = isLinkActive(link.href, pathname);
+
             return (
               <li key={link.text} aria-label="Navigation Item">
                 <Link
-                  className={`${setActiveLink(link.href, pathname)} transition duration-200 hover:text-blue-400 focus-visible:outline-offset-4 focus-visible:outline-neutral-200`}
+                  className={`${
+                    active ? "text-neutral-100" : "text-neutral-400"
+                  } transition duration-200 hover:text-blue-400 focus-visible:outline-offset-4 focus-visible:outline-neutral-200`}
                   href={link.href}
-                  aria-current={pathname === link.href ? "page" : undefined}
+                  aria-current={active ? "page" : undefined}
                 >
                   {link.text}
                 </Link>
